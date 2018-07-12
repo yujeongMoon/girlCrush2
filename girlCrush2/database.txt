@@ -8,8 +8,9 @@ CREATE SEQUENCE ID_USER
 START WITH 1
 INCREMENT BY 1;
 
-Create table TRAVEL_BOARD_DOMESTIC(
-TBD_id NUMBER(10,0) NOT NULL PRIMARY KEY,
+Create table TRAVEL_BOARD(
+travel_id NUMBER(10,0) NOT NULL PRIMARY KEY,
+key number default 1,
 writer VARCHAR2(100) DEFAULT NULL,
 title VARCHAR2(255) DEFAULT NULL,
 content VARCHAR2(4000) DEFAULT NULL,
@@ -19,34 +20,19 @@ price NUMBER(20,0) DEFAULT 0,
 IMG_id VARCHAR2(100) DEFAULT NULL
 );
 
-CREATE SEQUENCE ID_TBD
+CREATE SEQUENCE ID_TRAVEL
 START WITH 1
 INCREMENT BY 1;
 
-Create table TRAVEL_BOARD_FOREIGN(
-TBF_id NUMBER(10,0) NOT NULL PRIMARY KEY,
-writer VARCHAR2(100) DEFAULT NULL,
-title VARCHAR2(255) DEFAULT NULL,
-content VARCHAR2(4000) DEFAULT NULL,
-reg_date DATE DEFAULT NULL,
-hit_count NUMBER(10,0) DEFAULT 0,
-price NUMBER(20,0) DEFAULT 0,
-IMG_id VARCHAR2(100) DEFAULT NULL
-);
-
-CREATE SEQUENCE ID_TBF
-START WITH 1
-INCREMENT BY 1;
-
-Create table D_CART(
-TBD_id NUMBER(10,0) NOT NULL PRIMARY KEY,
+Create table TRAVEL_CART(
+cart_id number(10,0) not null PRIMARY KEY,
+travel_id NUMBER(10,0) NOT NULL,
 user_id NUMBER(10,0) NOT NULL
 );
 
-Create table F_CART(
-TBF_id NUMBER(10,0) NOT NULL PRIMARY KEY,
-user_id NUMBER(10,0) NOT NULL
-);
+create sequence ID_CART
+start with 1
+increment by 1;
 
 Create table IMG(
 IMG_id NUMBER(10,0) NOT NULL PRIMARY KEY,
@@ -93,34 +79,19 @@ CREATE SEQUENCE ID_YOLO_EMP
 START WITH 1
 INCREMENT BY 1;
 
+INSERT INTO TRAVEL_BOARD(travel_id, key, writer, title, content, reg_date, hit_count, price, IMG_id)
+VALUES(1, 1, 'W0', 'T0', 'C0', SYSDATE, 0, 0, '0.img');
+INSERT INTO TRAVEL_BOARD(travel_id, key, writer, title, content, reg_date, hit_count, price, IMG_id)
+VALUES(ID_TRAVEL.NEXTVAL, 1, 'W1', 'T1', 'C1', SYSDATE, 0, 0, '1.img');
+INSERT INTO TRAVEL_BOARD(travel_id, key, writer, title, content, reg_date, hit_count, price, IMG_id)
+VALUES(ID_TRAVEL.NEXTVAL, 2, 'W2', 'T2', 'C2', SYSDATE, 0, 0, '2.img');
+INSERT INTO TRAVEL_BOARD(travel_id, key, writer, title, content, reg_date, hit_count, price, IMG_id)
+VALUES(ID_TRAVEL.NEXTVAL, 2, 'W3', 'T3', 'C3', SYSDATE, 0, 0, '3.img');
 
-INSERT INTO TRAVEL_BOARD_DOMESTIC(TBD_id, writer, title, content, reg_date, hit_count, price, IMG_id)
-VALUES(1, 'W0', 'T0', 'C0', SYSDATE, 0, 0, '0.img');
-INSERT INTO TRAVEL_BOARD_DOMESTIC(TBD_id, writer, title, content, reg_date, hit_count, price, IMG_id)
-VALUES(ID_TBD.NEXTVAL, 'W2', 'T2', 'C2', SYSDATE, 0, 0, '2.img');
-INSERT INTO TRAVEL_BOARD_DOMESTIC(TBD_id, writer, title, content, reg_date, hit_count, price, IMG_id)
-VALUES(ID_TBD.NEXTVAL, 'W3', 'T3', 'C3', SYSDATE, 0, 0, '3.img');
-INSERT INTO TRAVEL_BOARD_DOMESTIC(TBD_id, writer, title, content, reg_date, hit_count, price, IMG_id)
-VALUES(ID_TBD.NEXTVAL, 'W4', 'T4', 'C4', SYSDATE, 0, 0, '4.img');
-
-INSERT INTO TRAVEL_BOARD_FOREIGN(TBF_id, writer, title, content, reg_date, hit_count, price, IMG_id)
-VALUES(1, 'W0', 'T0', 'C0', SYSDATE, 0, 0, '0.img');
-INSERT INTO TRAVEL_BOARD_FOREIGN(TBF_id, writer, title, content, reg_date, hit_count, price, IMG_id)
-VALUES(ID_TBF.NEXTVAL, 'W2', 'T2', 'C2', SYSDATE, 0, 0, '2.img');
-INSERT INTO TRAVEL_BOARD_FOREIGN(TBF_id, writer, title, content, reg_date, hit_count, price, IMG_id)
-VALUES(ID_TBF.NEXTVAL, 'W3', 'T3', 'C3', SYSDATE, 0, 0, '3.img');
-INSERT INTO TRAVEL_BOARD_FOREIGN(TBF_id, writer, title, content, reg_date, hit_count, price, IMG_id)
-VALUES(ID_TBF.NEXTVAL, 'W4', 'T4', 'C4', SYSDATE, 0, 0, '4.img');
-
-insert into d_cart values (1,1,1);
-insert into d_cart values (ID_D.NEXTVAL,2,1);
-insert into d_cart values (ID_D.NEXTVAL,1,2);
-insert into d_cart values (ID_D.NEXTVAL,3,2);
-
-insert into f_cart values (1,1,1);
-insert into f_cart values (ID_F.NEXTVAL,2,1);
-insert into f_cart values (ID_F.NEXTVAL,1,2);
-insert into f_cart values (ID_F.NEXTVAL,3,2);
+insert into TRAVEL_CART values (1,1,1);
+insert into TRAVEL_CART values (ID_CART.NEXTVAL,2,1);
+insert into TRAVEL_CART values (ID_CART.NEXTVAL,3,2);
+insert into TRAVEL_CART values (ID_CART.NEXTVAL,4,2);
 
 insert into IMG values ('1.img','/weds/sdsds');
 insert into IMG values ('2.img','/weds/sdsds');
@@ -146,5 +117,3 @@ VALUES(ID_PAYMENT.NEXTVAL, 'yujeong', 'e3@naver.com', 'anseong', 'yujeong', '127
 
 INSERT INTO YOLO_EMP(YOLO_id , email , password)
 VALUES(1, 'octo2917@gmail.com', '1234');
-
-
