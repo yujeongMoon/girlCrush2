@@ -5,41 +5,53 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
-	<head>
+<head>
 
-	
-	
-	
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		
-		<!-- Mobile Specific Meta -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Favicon-->
-		<link rel="shortcut icon" href="img/fav.png">
-		<!-- Author Meta -->
-		<meta name="author" content="colorlib">
-		<!-- Meta Description -->
-		<meta name="description" content="">
-		<!-- Meta Keyword -->
-		<meta name="keywords" content="">
-		<base href="/">
-		<title>Travel Board</title>
-		
-		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
-		
-			<!--
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- Mobile Specific Meta -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Favicon-->
+<link rel="shortcut icon" href="img/fav.png">
+<!-- Author Meta -->
+<meta name="author" content="colorlib">
+<!-- Meta Description -->
+<meta name="description" content="">
+<!-- Meta Keyword -->
+<meta name="keywords" content="">
+<base href="/">
+<title>Travel Board</title>
+
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700"
+	rel="stylesheet">
+
+<!--
 			CSS
 			============================================= -->
-			<link rel="stylesheet" href="css/linearicons.css">
-			<link rel="stylesheet" href="css/font-awesome.min.css">
-			<link rel="stylesheet" href="css/bootstrap.css">
-			<link rel="stylesheet" href="css/magnific-popup.css">
-			<link rel="stylesheet" href="css/jquery-ui.css">				
-			<link rel="stylesheet" href="css/nice-select.css">							
-			<link rel="stylesheet" href="css/animate.min.css">
-			<link rel="stylesheet" href="css/owl.carousel.css">				
-			<link rel="stylesheet" href="css/main.css">
-			
+<link rel="stylesheet" href="css/linearicons.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+<link rel="stylesheet" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/nice-select.css">
+<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" href="css/owl.carousel.css">
+<link rel="stylesheet" href="css/main.css">
+
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
@@ -48,9 +60,9 @@
 	crossorigin="anonymous">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">	
-	
-	<style>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
 div.gallery {
 	margin: 5px;
 	border: 1px solid #ccc;
@@ -77,30 +89,33 @@ form {
 	width: 100%;
 	height: 100%;
 }
+
 form.box {
 	overflow: hidden;
 }
 
 button.w3-yellow {
-	width:40%;
-	color:white;
-	
+	width: 40%;
+	color: white;
 }
 
 w3-panel {
 	align: center;
 }
 
+.container {
+	padding: 30px;
+}
 
 </style>
-			
-	
-		
-	</head>
-	
-	<body>
-		<c:import url="nav_top.jsp"></c:import>
-		<section class="about-banner relative">
+
+
+
+</head>
+
+<body>
+	<c:import url="nav_top.jsp"></c:import>
+	<section class="about-banner relative">
 	<div class="overlay overlay-bg"></div>
 	<div class="container">
 		<div class="row d-flex align-items-center justify-content-center">
@@ -110,78 +125,102 @@ w3-panel {
 		</div>
 	</div>
 	</section>
-	
-		<form class="price-area section-gap box">
-		<div class="container">
-			<div>
-			
-				<div class="w3-panel">
-  				<button class="w3-button w3-yellow">해외여행</button><button class="w3-button w3-yellow">국내여행</button>
-  				
-				</div>
+
+
+	<div class="container">
+		
+
+		<ul class="nav nav-tabs">
+			<li class="active"><a data-toggle="tab" href="#domestic">국내여행</a></li>
+			<li><a data-toggle="tab" href="#foreign">해외여행</a></li>
+		</ul>
+
+		<div class="tab-content">
+			<div id="domestic" class="tab-pane fade in active">
 				
 				<div class="single-price">
-				
-					<c:forEach items="#{boards }" var="board">
+
+					<c:forEach items="#{domestic }" var="domestic">
 						<div class="gallery">
-								<a target="_blank" href="Maldives.jpg"> <img
-									src="img/Maldives.jpg" alt="5Terre" width="1000" height="800">
-								</a>
-							<div class="desc">${board.title }</div>
+							<a target="_blank" href="#"> <img
+								src="/img/${domestic.imgId }" alt="5Terre" width="1000" height="800">
+							</a>
+							<div class="desc">${domestic.title }</div>
 						</div>
 					</c:forEach>
+				</div>
+			</div>
+			
+			
+			<div id="foreign" class="tab-pane fade">
+				<div class="single-price">
 
+					<c:forEach items="#{foreign }" var="foreign">
+						<div class="gallery">
+							<a target="_blank" href="#"> <img
+								src="/img/${foreign.imgId }" alt="5Terre" width="1000" height="800">
+							</a>
+							<div class="desc">${foreign.title }</div>
+						</div>
+					</c:forEach>
 				</div>
 			</div>
 		</div>
-	</form>
-		
-		<div class="row">
-					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-						<ul class="pagination">
-							<c:set var="target" value="boards" />
-							<c:if test="${pager.rows==0 }">
-								<li class="active"><a href="#">1</a></li>
-							</c:if>
-							<c:if test="${pager.rows > 0 }">
-								<c:set var="common"
-									value="size=${pager.size }&bsize=${pager.bsize }" />
-								<c:if test="${pager.bspage > pager.bsize }">
-									<c:set var="home" value="page=1&${common }" />
-									<c:set var="prev" value="page=${pager.bspage-1 }&${common }" />
-									<li><a href="${target }?${home }">Home</a></li>
-									<li><a href='<c:url value="${target }?${prev }"/>'>&laquo;</a></li>
-								</c:if>
-								<c:forEach var="pno" begin="${pager.bspage }"
-									end="${pager.bepage }">
-									<c:if test="${pno==pager.page }">
-										<li class="active"><a href="#">${pno }</a></li>
-									</c:if>
-									<c:if test="${pno!=pager.page }">
-										<c:if test="${pno <= pager.pages }">
-											<c:set var="page" value="page=${pno }&${common }" />
-											<li><a href='<c:url value="${target }?${page }"/>'>${pno }</a></li>
-										</c:if>
-									</c:if>
-								</c:forEach>
-								<c:if test="${pager.bepage < pager.pages }">
-									<c:set var="next" value="page=${pager.bepage+1 }&${common }" />
-									<c:set var="last" value="page=${pager.pages }&${common }" />
-									<li><a href='<c:url value="${target }?${next }"/>'>&raquo;</a></li>
-									<li><a href="${target }?${last }">Last</a></li>
-								</c:if>
-							</c:if>
-						</ul>
-					</div>
-				</div>
+	</div>
+
+
+
+
+
+
 	
+
+	<div class="row">
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+			<ul class="pagination">
+				<c:set var="target" value="boards" />
+				<c:if test="${pager.rows==0 }">
+					<li class="active"><a href="#">1</a></li>
+				</c:if>
+				<c:if test="${pager.rows > 0 }">
+					<c:set var="common"
+						value="size=${pager.size }&bsize=${pager.bsize }" />
+					<c:if test="${pager.bspage > pager.bsize }">
+						<c:set var="home" value="page=1&${common }" />
+						<c:set var="prev" value="page=${pager.bspage-1 }&${common }" />
+						<li><a href="${target }?${home }">Home</a></li>
+						<li><a href='<c:url value="${target }?${prev }"/>'>&laquo;</a></li>
+					</c:if>
+					<c:forEach var="pno" begin="${pager.bspage }"
+						end="${pager.bepage }">
+						<c:if test="${pno==pager.page }">
+							<li class="active"><a href="#">${pno }</a></li>
+						</c:if>
+						<c:if test="${pno!=pager.page }">
+							<c:if test="${pno <= pager.pages }">
+								<c:set var="page" value="page=${pno }&${common }" />
+								<li><a href='<c:url value="${target }?${page }"/>'>${pno }</a></li>
+							</c:if>
+						</c:if>
+					</c:forEach>
+					<c:if test="${pager.bepage < pager.pages }">
+						<c:set var="next" value="page=${pager.bepage+1 }&${common }" />
+						<c:set var="last" value="page=${pager.pages }&${common }" />
+						<li><a href='<c:url value="${target }?${next }"/>'>&raquo;</a></li>
+						<li><a href="${target }?${last }">Last</a></li>
+					</c:if>
+				</c:if>
+			</ul>
+		</div>
+	</div>
+
 	<c:import url="footer.jsp"></c:import>
-	
+
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
-	
+
 	<script src="js/vendor/jquery-2.2.4.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/vendor/bootstrap.min.js"></script>
@@ -197,8 +236,8 @@ w3-panel {
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/mail-script.js"></script>
 	<script src="js/main.js"></script>
-	
-	
-	
-	</body>
+
+
+
+</body>
 </html>
