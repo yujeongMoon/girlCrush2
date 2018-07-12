@@ -1,5 +1,7 @@
 package com.example.web.controller.captain;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,18 +11,21 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.Pager;
 import com.example.myPage.repository.MyPageMapper;
+import com.example.user.model.User;
 
 @Controller
 @RequestMapping("/mypage")
 public class MyPageController {
 	@Autowired
 	private MyPageMapper mypageMapper;
-	
+
 	@GetMapping()
-	public ModelAndView getMypageView(
-			@RequestParam(name="page", required=false, defaultValue="1") int page,
-			@RequestParam(name="size", required=false, defaultValue="10") int size,
-			@RequestParam(name="bsize", required=false, defaultValue="5") int bsize) {
+	public ModelAndView getMypageView(@RequestParam(name = "page", required = false, defaultValue = "1") int page,
+			@RequestParam(name = "size", required = false, defaultValue = "10") int size,
+			@RequestParam(name = "bsize", required = false, defaultValue = "5") int bsize, HttpSession session) {
+
+//		return_login(session);
+
 		ModelAndView mav = new ModelAndView("my_page");
 		mav.addObject("mypageD", mypageMapper.select_travel_domestic());
 		mav.addObject("mypageF", mypageMapper.select_travel_foreign());
@@ -28,6 +33,15 @@ public class MyPageController {
 		mav.addObject("pagerD", new Pager(page, size, bsize, mypageMapper.count_domestic()));
 		mav.addObject("pagerF", new Pager(page, size, bsize, mypageMapper.count_foreign()));
 		return mav;
-		
+
 	}
+
+//	public String return_login(HttpSession session) {
+//		User user = (User) session.getAttribute("user");
+//		if (user == null) {
+//			return "redirect:/login";
+//		}
+//
+//		return "my_page";
+//	}
 }

@@ -15,15 +15,17 @@ public class Application extends WebMvcConfigurerAdapter{
 		SpringApplication.run(Application.class, args);
 	}
 	
-	/*@Autowired
+	// 빈 컨테이너에 LoginInterceptor 자료형의 객체가 없다.
+	@Autowired
 	private LoginInterceptor loginInterceptor;
 	
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(loginInterceptor);
-		//.addPathPatterns("/boards/view/**")
-		//.addPathPatterns("/boards/write/**")
-		//.addPathPatterns("/boards/update/**")
-		//.addPathPatterns("/boards/delete/**");
-	}*/
+		registry.addInterceptor(loginInterceptor)
+		.addPathPatterns("/notices/view/**")
+		.addPathPatterns("/notices/write/**")
+		.addPathPatterns("/notices/update/**")
+		.addPathPatterns("/notices/delete/**")
+		.addPathPatterns("/mypage/**");
+	}
 }
