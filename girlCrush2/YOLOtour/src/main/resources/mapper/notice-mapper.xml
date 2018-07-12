@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.noticeboard.repository.NoticeMapper">
+	
+	<!-- type="스프링이름" id="별명" -->
+	<!-- <result property="스프링" column="DB이름" /> -->
+	<resultMap type="com.example.noticeboard.model.Notice" id="NoticeResultMap">
+		<result property="noticeId" column="NOTICE_ID" />
+		<result property="writer" column="WRITER" />
+		<result property="title" column="TITLE" />
+		<result property="content" column="CONTENT" />
+		<result property="regDate" column="REG_DATE" />
+		<result property="hitCount" column="HIT_COUNT" />
+	</resultMap>
+	
+	<!-- insert, update, delete 작업은 영향 받은 로우의 개수를 값을 자동으로 리턴한다. -->
+	<insert id="insert" parameterType="com.example.noticeboard.model.Notice">
+		INSERT INTO NOTICE_BOARD(notice_id, writer, title, content, reg_date, hit_count)
+		VALUES(ID_NOTICE.NEXTVAL, #{writer}, #{title}, #{content}, SYSDATE, 0)
+	</insert>
+	
+	<update id="update" parameterType="com.example.noticeboard.model.Notice">
+		UPDATE NOTICE_BOARD SET title=#{title}, content=#{content} WHERE notice_id=#{noticeId}
+	</update>
+	
+	<delete id="delete" parameterType="long">
+		DELETE FROM NOTICE_BOARD WHERE notice_id=#{noticeId}
+	</delete>
+	
+
+	<select id="selectById" parameterType="long" resultMap="NoticeResultMap">
+		SELECT * FROM NOTICE_BOARD WHERE notice_id=#{noticeId}
+	</select>
+	
+	<!-- Collection 처리는 자동으로 지원한다. resultType 자동 바인딩-->
+	<!-- resultType="Board"를 사용할 수 있는 경우 테이블 칼럼 명이 모델 클래스 필드 변수명과 같을 때만 사용가능 -->
+	<select id="selectByLimit" resultType="com.example.noticeboard.model.Notice">
+		<bind name="start" value="@com.example.Pager@seekStart(page, size)"/>
+		<bind name="end" value="@com.example.Pager@seekEnd(page, size)"/>
+		SELECT * FROM (
+			SELECT ROWNUM AS rnum, b.* FROM (
+				SELECT * FROM NOTICE_BOARD ORDER BY notice_id DESC
+			) b
+		) WHERE rnum &gt;= #{start} and rnum &lt;= #{end}
+	</select>
+	
+	<update id="increment">
+		UPDATE NOTICE_BOARD SET hit_count=hit_count+1 WHERE notice_id=#{noticeId} and writer!=#{requester}
+	</update>
+	
+</mapper>

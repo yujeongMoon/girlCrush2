@@ -1,0 +1,939 @@
+2018:07:12 09:44:53.995 INFO  --- [main] com.example.Application : Starting Application on DESKTOP-ABU7Q6Q with PID 17852 (D:\girls\girlCrush\YOLOtour\target\classes started by topcredu in D:\girls\girlCrush\YOLOtour) 
+2018:07:12 09:44:54.019 INFO  --- [main] com.example.Application : No active profile set, falling back to default profiles: default 
+2018:07:12 09:44:54.064 INFO  --- [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1e802ef9: startup date [Thu Jul 12 09:44:54 KST 2018]; root of context hierarchy 
+2018:07:12 09:44:55.276 INFO  --- [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http) 
+2018:07:12 09:44:55.314 INFO  --- [main] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2018:07:12 09:44:55.314 INFO  --- [main] o.a.catalina.core.StandardEngine : Starting Servlet Engine: Apache Tomcat/8.5.31 
+2018:07:12 09:44:55.611 INFO  --- [localhost-startStop-1] o.apache.jasper.servlet.TldScanner : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time. 
+2018:07:12 09:44:55.616 INFO  --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2018:07:12 09:44:55.622 INFO  --- [localhost-startStop-1] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 1558 ms 
+2018:07:12 09:44:55.788 INFO  --- [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean : Mapping servlet: 'dispatcherServlet' to [/] 
+2018:07:12 09:44:55.791 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'characterEncodingFilter' to: [/*] 
+2018:07:12 09:44:55.792 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'hiddenHttpMethodFilter' to: [/*] 
+2018:07:12 09:44:55.798 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'httpPutFormContentFilter' to: [/*] 
+2018:07:12 09:44:55.798 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'requestContextFilter' to: [/*] 
+2018:07:12 09:44:56.448 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1e802ef9: startup date [Thu Jul 12 09:44:54 KST 2018]; root of context hierarchy 
+2018:07:12 09:44:56.498 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mypage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.captain.MyPageController.getMypageView(int,int,int) 
+2018:07:12 09:44:56.508 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.captain.NoticeController.getNoticesView(int,int,int) 
+2018:07:12 09:44:56.509 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/view/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getNoticeView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 09:44:56.509 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/write],methods=[POST]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.postInsert(com.example.noticeboard.model.Notice,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 09:44:56.510 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/update],methods=[POST]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.postUpdate(com.example.noticeboard.model.Notice,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 09:44:56.516 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/delete/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getDelete(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 09:44:56.516 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/update/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getUpdateView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 09:44:56.517 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/write],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getInsertView(javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 09:44:56.517 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.example.web.controller.HomeController.getHomeView() 
+2018:07:12 09:44:56.523 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/payment],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.PaymentController.showLoginForm() 
+2018:07:12 09:44:56.526 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/view/{id}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getTravelView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 09:44:56.527 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.marketing.TravelController.getTravelView(int,int,int) 
+2018:07:12 09:44:56.527 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/write],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postInsert(com.example.travelboard.model.Travel,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 09:44:56.527 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/update],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postUpdate(com.example.travelboard.model.Travel,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 09:44:56.528 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/delete/{id}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getDelete(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 09:44:56.528 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/update/{id}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getUpdateView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 09:44:56.529 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/write],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postInsertView(javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 09:44:56.536 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.showLoginForm() 
+2018:07:12 09:44:56.536 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/logout],methods=[GET]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.getLogout(javax.servlet.http.HttpSession) 
+2018:07:12 09:44:56.536 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[POST]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.postLogin(com.example.login.dto.Login,org.springframework.ui.Model,javax.servlet.http.HttpSession) 
+2018:07:12 09:44:56.540 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users/enroll],methods=[POST]}" onto public java.lang.String com.example.web.controller.searchking.UserController.postUser(com.example.user.model.User,org.springframework.ui.Model,javax.servlet.http.HttpSession,org.springframework.web.servlet.mvc.support.RedirectAttributes) 
+2018:07:12 09:44:56.540 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto public java.lang.Object com.example.web.controller.searchking.UserController.getUsersView() 
+2018:07:12 09:44:56.542 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest) 
+2018:07:12 09:44:56.543 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) 
+2018:07:12 09:44:56.575 INFO  --- [main] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:12 09:44:56.575 INFO  --- [main] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:12 09:44:56.612 INFO  --- [main] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:12 09:44:56.834 INFO  --- [main] o.s.j.e.a.AnnotationMBeanExporter : Registering beans for JMX exposure on startup 
+2018:07:12 09:44:56.880 INFO  --- [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http) 
+2018:07:12 09:44:56.884 INFO  --- [main] com.example.Application : Started Application in 3.267 seconds (JVM running for 4.602) 
+2018:07:12 09:45:10.214 INFO  --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring FrameworkServlet 'dispatcherServlet' 
+2018:07:12 09:45:10.222 INFO  --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet : FrameworkServlet 'dispatcherServlet': initialization started 
+2018:07:12 09:45:10.248 INFO  --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet : FrameworkServlet 'dispatcherServlet': initialization completed in 26 ms 
+2018:07:12 10:31:42.292 INFO  --- [main] com.example.Application : Starting Application on DESKTOP-HLQF9U2 with PID 1628 (D:\YOLOtour\YOLOtour\target\classes started by TopCreduD6 in D:\YOLOtour\YOLOtour) 
+2018:07:12 10:31:42.297 INFO  --- [main] com.example.Application : No active profile set, falling back to default profiles: default 
+2018:07:12 10:31:42.333 INFO  --- [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75329a49: startup date [Thu Jul 12 10:31:42 KST 2018]; root of context hierarchy 
+2018:07:12 10:31:43.438 INFO  --- [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http) 
+2018:07:12 10:31:43.466 INFO  --- [main] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2018:07:12 10:31:43.467 INFO  --- [main] o.a.catalina.core.StandardEngine : Starting Servlet Engine: Apache Tomcat/8.5.31 
+2018:07:12 10:31:43.758 INFO  --- [localhost-startStop-1] o.apache.jasper.servlet.TldScanner : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time. 
+2018:07:12 10:31:43.763 INFO  --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2018:07:12 10:31:43.764 INFO  --- [localhost-startStop-1] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 1431 ms 
+2018:07:12 10:31:43.899 INFO  --- [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean : Mapping servlet: 'dispatcherServlet' to [/] 
+2018:07:12 10:31:43.903 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'characterEncodingFilter' to: [/*] 
+2018:07:12 10:31:43.904 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'hiddenHttpMethodFilter' to: [/*] 
+2018:07:12 10:31:43.904 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'httpPutFormContentFilter' to: [/*] 
+2018:07:12 10:31:43.904 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'requestContextFilter' to: [/*] 
+2018:07:12 10:31:44.581 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75329a49: startup date [Thu Jul 12 10:31:42 KST 2018]; root of context hierarchy 
+2018:07:12 10:31:44.632 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mypage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.captain.MyPageController.getMypageView(int,int,int) 
+2018:07:12 10:31:44.636 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/view/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getNoticeView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:31:44.637 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/update],methods=[POST]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.postUpdate(com.example.noticeboard.model.Notice,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:31:44.637 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/delete/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getDelete(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:31:44.638 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/write],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getInsertView(javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:31:44.639 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.captain.NoticeController.getNoticesView(int,int,int) 
+2018:07:12 10:31:44.639 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/write],methods=[POST]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.postInsert(com.example.noticeboard.model.Notice,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:31:44.640 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/update/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getUpdateView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:31:44.640 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.example.web.controller.HomeController.getHomeView() 
+2018:07:12 10:31:44.641 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/payment],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.PaymentController.showLoginForm() 
+2018:07:12 10:31:44.644 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/update],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postUpdate(com.example.travelboard.model.Travel,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:31:44.645 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/delete/{id}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getDelete(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:31:44.645 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/write],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postInsert(com.example.travelboard.model.Travel,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:31:44.646 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/update/{id}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getUpdateView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:31:44.646 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.marketing.TravelController.getTravelView(int,int,int) 
+2018:07:12 10:31:44.647 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/view/{id}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getTravelView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:31:44.647 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/write],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postInsertView(javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:31:44.649 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.showLoginForm() 
+2018:07:12 10:31:44.649 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[POST]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.postLogin(com.example.login.dto.Login,org.springframework.ui.Model,javax.servlet.http.HttpSession) 
+2018:07:12 10:31:44.649 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/logout],methods=[GET]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.getLogout(javax.servlet.http.HttpSession) 
+2018:07:12 10:31:44.653 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users/enroll],methods=[POST]}" onto public java.lang.String com.example.web.controller.searchking.UserController.postUser(com.example.user.model.User,org.springframework.ui.Model,javax.servlet.http.HttpSession,org.springframework.web.servlet.mvc.support.RedirectAttributes) 
+2018:07:12 10:31:44.653 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto public java.lang.Object com.example.web.controller.searchking.UserController.getUsersView() 
+2018:07:12 10:31:44.655 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest) 
+2018:07:12 10:31:44.656 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) 
+2018:07:12 10:31:44.682 INFO  --- [main] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:12 10:31:44.682 INFO  --- [main] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:12 10:31:44.718 INFO  --- [main] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:12 10:31:44.944 INFO  --- [main] o.s.j.e.a.AnnotationMBeanExporter : Registering beans for JMX exposure on startup 
+2018:07:12 10:31:44.989 INFO  --- [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http) 
+2018:07:12 10:31:44.993 INFO  --- [main] com.example.Application : Started Application in 3.021 seconds (JVM running for 4.115) 
+2018:07:12 10:31:58.231 INFO  --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring FrameworkServlet 'dispatcherServlet' 
+2018:07:12 10:31:58.232 INFO  --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet : FrameworkServlet 'dispatcherServlet': initialization started 
+2018:07:12 10:31:58.249 INFO  --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet : FrameworkServlet 'dispatcherServlet': initialization completed in 17 ms 
+2018:07:12 10:32:23.072 ERROR --- [http-nio-8080-exec-5] jdbc.sqlonly :  sun.reflect.NativeMethodAccessorImpl.invoke0(NativeMethodAccessorImpl.java:-2)
+10. SELECT * FROM (
+			SELECT ROWNUM AS rnum, b.* FROM (
+				SELECT * FROM travel_board ORDER BY id DESC
+			) b
+		) WHERE rnum >= 1 and rnum <= 10
+ 
+java.sql.SQLSyntaxErrorException: ORA-00942: 테이블 또는 뷰가 존재하지 않습니다
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:445)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:879)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:450)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:192)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:207)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:884)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1167)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1281)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3584)
+	at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:3685)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.execute(OraclePreparedStatementWrapper.java:1376)
+	at net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy.execute(PreparedStatementSpy.java:443)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+	at com.sun.proxy.$Proxy90.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy60.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy77.selectByLimit(Unknown Source)
+	at com.example.web.controller.marketing.TravelController.getTravelView(TravelController.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018:07:12 10:32:23.078 INFO  --- [http-nio-8080-exec-5] o.s.b.f.xml.XmlBeanDefinitionReader : Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml] 
+2018:07:12 10:32:23.119 INFO  --- [http-nio-8080-exec-5] o.s.j.support.SQLErrorCodesFactory : SQLErrorCodes loaded: [DB2, Derby, H2, HDB, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase] 
+2018:07:12 10:32:23.132 ERROR --- [http-nio-8080-exec-5] o.a.c.c.C.[.[.[.[dispatcherServlet] : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: ORA-00942: 테이블 또는 뷰가 존재하지 않습니다
+
+### The error may exist in file [D:\YOLOtour\YOLOtour\target\classes\mapper\travel-mapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT * FROM (    SELECT ROWNUM AS rnum, b.* FROM (     SELECT * FROM travel_board ORDER BY id DESC    ) b   ) WHERE rnum >= ? and rnum <= ?
+### Cause: java.sql.SQLSyntaxErrorException: ORA-00942: 테이블 또는 뷰가 존재하지 않습니다
+
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: ORA-00942: 테이블 또는 뷰가 존재하지 않습니다
+] with root cause 
+java.sql.SQLSyntaxErrorException: ORA-00942: 테이블 또는 뷰가 존재하지 않습니다
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:445)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:879)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:450)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:192)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:207)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:884)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1167)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1281)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3584)
+	at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:3685)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.execute(OraclePreparedStatementWrapper.java:1376)
+	at net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy.execute(PreparedStatementSpy.java:443)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+	at com.sun.proxy.$Proxy90.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy60.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy77.selectByLimit(Unknown Source)
+	at com.example.web.controller.marketing.TravelController.getTravelView(TravelController.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018:07:12 10:32:27.973 INFO  --- [http-nio-8080-exec-1] jdbc.resultsettable : 
+|-----|----------|-------|------|--------|----------------------|----------|
+|rnum |notice_id |writer |title |content |reg_date              |hit_count |
+|-----|----------|-------|------|--------|----------------------|----------|
+|1    |4         |W3     |T3    |C3      |2018-07-11 12:22:35.0 |1         |
+|2    |3         |W2     |T2    |C2      |2018-07-11 12:22:35.0 |0         |
+|3    |2         |W1     |T1    |C1      |2018-07-11 12:22:35.0 |0         |
+|4    |1         |W0     |T0    |C0      |2018-07-11 12:22:37.0 |0         |
+|-----|----------|-------|------|--------|----------------------|----------|
+ 
+2018:07:12 10:32:27.983 INFO  --- [http-nio-8080-exec-1] jdbc.resultsettable : 
+|---------|
+|count(*) |
+|---------|
+|4        |
+|---------|
+ 
+2018:07:12 10:35:45.991 INFO  --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested. 
+2018:07:12 10:35:45.992 INFO  --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75329a49: startup date [Thu Jul 12 10:31:42 KST 2018]; root of context hierarchy 
+2018:07:12 10:35:45.995 INFO  --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter : Unregistering JMX-exposed beans on shutdown 
+2018:07:12 10:35:50.187 INFO  --- [main] com.example.Application : Starting Application on DESKTOP-HLQF9U2 with PID 11596 (D:\YOLOtour\YOLOtour\target\classes started by TopCreduD6 in D:\YOLOtour\YOLOtour) 
+2018:07:12 10:35:50.194 INFO  --- [main] com.example.Application : No active profile set, falling back to default profiles: default 
+2018:07:12 10:35:50.242 INFO  --- [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75329a49: startup date [Thu Jul 12 10:35:50 KST 2018]; root of context hierarchy 
+2018:07:12 10:35:51.550 INFO  --- [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http) 
+2018:07:12 10:35:51.578 INFO  --- [main] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2018:07:12 10:35:51.579 INFO  --- [main] o.a.catalina.core.StandardEngine : Starting Servlet Engine: Apache Tomcat/8.5.31 
+2018:07:12 10:35:51.903 INFO  --- [localhost-startStop-1] o.apache.jasper.servlet.TldScanner : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time. 
+2018:07:12 10:35:51.908 INFO  --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2018:07:12 10:35:51.909 INFO  --- [localhost-startStop-1] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 1667 ms 
+2018:07:12 10:35:52.074 INFO  --- [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean : Mapping servlet: 'dispatcherServlet' to [/] 
+2018:07:12 10:35:52.079 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'characterEncodingFilter' to: [/*] 
+2018:07:12 10:35:52.080 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'hiddenHttpMethodFilter' to: [/*] 
+2018:07:12 10:35:52.080 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'httpPutFormContentFilter' to: [/*] 
+2018:07:12 10:35:52.081 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'requestContextFilter' to: [/*] 
+2018:07:12 10:35:52.845 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75329a49: startup date [Thu Jul 12 10:35:50 KST 2018]; root of context hierarchy 
+2018:07:12 10:35:52.905 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mypage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.captain.MyPageController.getMypageView(int,int,int) 
+2018:07:12 10:35:52.912 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/update],methods=[POST]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.postUpdate(com.example.noticeboard.model.Notice,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:35:52.912 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/update/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getUpdateView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:35:52.913 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.captain.NoticeController.getNoticesView(int,int,int) 
+2018:07:12 10:35:52.914 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/write],methods=[POST]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.postInsert(com.example.noticeboard.model.Notice,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:35:52.915 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/delete/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getDelete(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:35:52.915 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/view/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getNoticeView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:35:52.916 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/write],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getInsertView(javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:35:52.917 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.example.web.controller.HomeController.getHomeView() 
+2018:07:12 10:35:52.918 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/payment],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.PaymentController.showLoginForm() 
+2018:07:12 10:35:52.921 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/update],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postUpdate(com.example.travelboard.model.Travel,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:35:52.922 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/write],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postInsertView(javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:35:52.922 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/update/{id}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getUpdateView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:35:52.923 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/write],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postInsert(com.example.travelboard.model.Travel,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:35:52.924 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/delete/{id}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getDelete(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:35:52.925 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.marketing.TravelController.getTravelView(int,int,int) 
+2018:07:12 10:35:52.925 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/view/{id}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getTravelView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:35:52.927 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.showLoginForm() 
+2018:07:12 10:35:52.928 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/logout],methods=[GET]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.getLogout(javax.servlet.http.HttpSession) 
+2018:07:12 10:35:52.928 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[POST]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.postLogin(com.example.login.dto.Login,org.springframework.ui.Model,javax.servlet.http.HttpSession) 
+2018:07:12 10:35:52.932 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users/enroll],methods=[POST]}" onto public java.lang.String com.example.web.controller.searchking.UserController.postUser(com.example.user.model.User,org.springframework.ui.Model,javax.servlet.http.HttpSession,org.springframework.web.servlet.mvc.support.RedirectAttributes) 
+2018:07:12 10:35:52.933 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto public java.lang.Object com.example.web.controller.searchking.UserController.getUsersView() 
+2018:07:12 10:35:52.935 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest) 
+2018:07:12 10:35:52.936 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) 
+2018:07:12 10:35:52.968 INFO  --- [main] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:12 10:35:52.969 INFO  --- [main] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:12 10:35:53.015 INFO  --- [main] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:12 10:35:53.289 INFO  --- [main] o.s.j.e.a.AnnotationMBeanExporter : Registering beans for JMX exposure on startup 
+2018:07:12 10:35:53.345 INFO  --- [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http) 
+2018:07:12 10:35:53.350 INFO  --- [main] com.example.Application : Started Application in 3.528 seconds (JVM running for 4.777) 
+2018:07:12 10:36:05.932 INFO  --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring FrameworkServlet 'dispatcherServlet' 
+2018:07:12 10:36:05.932 INFO  --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet : FrameworkServlet 'dispatcherServlet': initialization started 
+2018:07:12 10:36:05.951 INFO  --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet : FrameworkServlet 'dispatcherServlet': initialization completed in 19 ms 
+2018:07:12 10:37:47.270 INFO  --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested. 
+2018:07:12 10:37:47.271 INFO  --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75329a49: startup date [Thu Jul 12 10:35:50 KST 2018]; root of context hierarchy 
+2018:07:12 10:37:47.273 INFO  --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter : Unregistering JMX-exposed beans on shutdown 
+2018:07:12 10:37:50.920 INFO  --- [main] com.example.Application : Starting Application on DESKTOP-HLQF9U2 with PID 12480 (D:\YOLOtour\YOLOtour\target\classes started by TopCreduD6 in D:\YOLOtour\YOLOtour) 
+2018:07:12 10:37:50.925 INFO  --- [main] com.example.Application : No active profile set, falling back to default profiles: default 
+2018:07:12 10:37:50.973 INFO  --- [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75329a49: startup date [Thu Jul 12 10:37:50 KST 2018]; root of context hierarchy 
+2018:07:12 10:37:52.089 INFO  --- [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http) 
+2018:07:12 10:37:52.117 INFO  --- [main] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2018:07:12 10:37:52.117 INFO  --- [main] o.a.catalina.core.StandardEngine : Starting Servlet Engine: Apache Tomcat/8.5.31 
+2018:07:12 10:37:52.407 INFO  --- [localhost-startStop-1] o.apache.jasper.servlet.TldScanner : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time. 
+2018:07:12 10:37:52.412 INFO  --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2018:07:12 10:37:52.413 INFO  --- [localhost-startStop-1] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 1440 ms 
+2018:07:12 10:37:52.549 INFO  --- [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean : Mapping servlet: 'dispatcherServlet' to [/] 
+2018:07:12 10:37:52.553 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'characterEncodingFilter' to: [/*] 
+2018:07:12 10:37:52.554 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'hiddenHttpMethodFilter' to: [/*] 
+2018:07:12 10:37:52.554 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'httpPutFormContentFilter' to: [/*] 
+2018:07:12 10:37:52.554 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'requestContextFilter' to: [/*] 
+2018:07:12 10:37:52.935 WARN  --- [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'loginService': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [D:\YOLOtour\YOLOtour\target\classes\com\example\user\repository\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\YOLOtour\YOLOtour\target\classes\mapper\travel-mapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\YOLOtour\YOLOtour\target\classes\mapper\travel-mapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.example.travelboard.model.Travel'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.example.travelboard.model.Travel 
+2018:07:12 10:37:52.938 INFO  --- [main] o.a.catalina.core.StandardService : Stopping service [Tomcat] 
+2018:07:12 10:37:52.988 INFO  --- [main] o.s.b.a.l.AutoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled. 
+2018:07:12 10:37:52.996 ERROR --- [main] o.s.boot.SpringApplication : Application startup failed 
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'loginService': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [D:\YOLOtour\YOLOtour\target\classes\com\example\user\repository\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\YOLOtour\YOLOtour\target\classes\mapper\travel-mapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\YOLOtour\YOLOtour\target\classes\mapper\travel-mapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.example.travelboard.model.Travel'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.example.travelboard.model.Travel
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1272)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.example.Application.main(Application.java:15)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [D:\YOLOtour\YOLOtour\target\classes\com\example\user\repository\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\YOLOtour\YOLOtour\target\classes\mapper\travel-mapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\YOLOtour\YOLOtour\target\classes\mapper\travel-mapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.example.travelboard.model.Travel'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.example.travelboard.model.Travel
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1365)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1257)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\YOLOtour\YOLOtour\target\classes\mapper\travel-mapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\YOLOtour\YOLOtour\target\classes\mapper\travel-mapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.example.travelboard.model.Travel'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.example.travelboard.model.Travel
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1181)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1075)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireByType(AbstractAutowireCapableBeanFactory.java:1350)
+	... 30 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\YOLOtour\YOLOtour\target\classes\mapper\travel-mapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\YOLOtour\YOLOtour\target\classes\mapper\travel-mapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.example.travelboard.model.Travel'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.example.travelboard.model.Travel
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 42 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\YOLOtour\YOLOtour\target\classes\mapper\travel-mapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\YOLOtour\YOLOtour\target\classes\mapper\travel-mapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.example.travelboard.model.Travel'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.example.travelboard.model.Travel
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:523)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:380)
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:547)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:153)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$e33e431d.CGLIB$sqlSessionFactory$2(<generated>)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$e33e431d$$FastClassBySpringCGLIB$$b14e8ec0.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:358)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$e33e431d.sqlSessionFactory(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 43 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\YOLOtour\YOLOtour\target\classes\mapper\travel-mapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.example.travelboard.model.Travel'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.example.travelboard.model.Travel
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:521)
+	... 56 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.example.travelboard.model.Travel'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.example.travelboard.model.Travel
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:265)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:252)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:244)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:116)
+	... 58 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.example.travelboard.model.Travel'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.example.travelboard.model.Travel
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 62 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.example.travelboard.model.Travel
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116)
+	... 64 common frames omitted
+2018:07:12 10:42:49.494 INFO  --- [main] com.example.Application : Starting Application on DESKTOP-HLQF9U2 with PID 12464 (D:\YOLOtour\YOLOtour\target\classes started by TopCreduD6 in D:\YOLOtour\YOLOtour) 
+2018:07:12 10:42:49.498 INFO  --- [main] com.example.Application : No active profile set, falling back to default profiles: default 
+2018:07:12 10:42:49.535 INFO  --- [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75329a49: startup date [Thu Jul 12 10:42:49 KST 2018]; root of context hierarchy 
+2018:07:12 10:42:50.660 INFO  --- [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http) 
+2018:07:12 10:42:50.687 INFO  --- [main] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2018:07:12 10:42:50.688 INFO  --- [main] o.a.catalina.core.StandardEngine : Starting Servlet Engine: Apache Tomcat/8.5.31 
+2018:07:12 10:42:50.979 INFO  --- [localhost-startStop-1] o.apache.jasper.servlet.TldScanner : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time. 
+2018:07:12 10:42:50.984 INFO  --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2018:07:12 10:42:50.985 INFO  --- [localhost-startStop-1] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 1451 ms 
+2018:07:12 10:42:51.121 INFO  --- [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean : Mapping servlet: 'dispatcherServlet' to [/] 
+2018:07:12 10:42:51.124 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'characterEncodingFilter' to: [/*] 
+2018:07:12 10:42:51.125 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'hiddenHttpMethodFilter' to: [/*] 
+2018:07:12 10:42:51.125 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'httpPutFormContentFilter' to: [/*] 
+2018:07:12 10:42:51.126 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'requestContextFilter' to: [/*] 
+2018:07:12 10:42:51.774 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75329a49: startup date [Thu Jul 12 10:42:49 KST 2018]; root of context hierarchy 
+2018:07:12 10:42:51.825 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mypage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.captain.MyPageController.getMypageView(int,int,int) 
+2018:07:12 10:42:51.830 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/view/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getNoticeView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:42:51.830 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/delete/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getDelete(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:42:51.831 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.captain.NoticeController.getNoticesView(int,int,int) 
+2018:07:12 10:42:51.831 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/write],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getInsertView(javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:42:51.832 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/update],methods=[POST]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.postUpdate(com.example.noticeboard.model.Notice,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:42:51.833 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/write],methods=[POST]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.postInsert(com.example.noticeboard.model.Notice,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:42:51.833 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/update/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getUpdateView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:42:51.834 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.example.web.controller.HomeController.getHomeView() 
+2018:07:12 10:42:51.835 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/payment],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.PaymentController.showLoginForm() 
+2018:07:12 10:42:51.838 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/view/{id}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getTravelView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:42:51.838 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.marketing.TravelController.getTravelView(int,int,int) 
+2018:07:12 10:42:51.839 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/write],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postInsertView(javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:42:51.839 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/delete/{id}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getDelete(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:42:51.840 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/update],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postUpdate(com.example.travelboard.model.Travel,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:42:51.840 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/write],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postInsert(com.example.travelboard.model.Travel,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:42:51.841 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/update/{id}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getUpdateView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 10:42:51.842 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[POST]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.postLogin(com.example.login.dto.Login,org.springframework.ui.Model,javax.servlet.http.HttpSession) 
+2018:07:12 10:42:51.843 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/logout],methods=[GET]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.getLogout(javax.servlet.http.HttpSession) 
+2018:07:12 10:42:51.843 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.showLoginForm() 
+2018:07:12 10:42:51.846 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto public java.lang.Object com.example.web.controller.searchking.UserController.getUsersView() 
+2018:07:12 10:42:51.847 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users/enroll],methods=[POST]}" onto public java.lang.String com.example.web.controller.searchking.UserController.postUser(com.example.user.model.User,org.springframework.ui.Model,javax.servlet.http.HttpSession,org.springframework.web.servlet.mvc.support.RedirectAttributes) 
+2018:07:12 10:42:51.849 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest) 
+2018:07:12 10:42:51.850 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) 
+2018:07:12 10:42:51.878 INFO  --- [main] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:12 10:42:51.878 INFO  --- [main] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:12 10:42:51.915 INFO  --- [main] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:12 10:42:52.138 INFO  --- [main] o.s.j.e.a.AnnotationMBeanExporter : Registering beans for JMX exposure on startup 
+2018:07:12 10:42:52.185 INFO  --- [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http) 
+2018:07:12 10:42:52.189 INFO  --- [main] com.example.Application : Started Application in 3.015 seconds (JVM running for 4.087) 
+2018:07:12 10:43:01.561 INFO  --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring FrameworkServlet 'dispatcherServlet' 
+2018:07:12 10:43:01.562 INFO  --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet : FrameworkServlet 'dispatcherServlet': initialization started 
+2018:07:12 10:43:01.578 INFO  --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet : FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms 
+2018:07:12 10:53:11.192 ERROR --- [http-nio-8080-exec-4] jdbc.sqlonly :  sun.reflect.NativeMethodAccessorImpl.invoke0(NativeMethodAccessorImpl.java:-2)
+10. SELECT * FROM (
+			SELECT ROWNUM AS rnum, b.* FROM (
+				SELECT * FROM travel_board ORDER BY id DESC
+			) b
+		) WHERE rnum >= 1 and rnum <= 10
+ 
+java.sql.SQLSyntaxErrorException: ORA-00942: 테이블 또는 뷰가 존재하지 않습니다
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:445)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:879)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:450)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:192)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:207)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:884)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1167)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1281)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3584)
+	at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:3685)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.execute(OraclePreparedStatementWrapper.java:1376)
+	at net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy.execute(PreparedStatementSpy.java:443)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+	at com.sun.proxy.$Proxy90.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy60.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy77.selectByLimit(Unknown Source)
+	at com.example.web.controller.marketing.TravelController.getTravelView(TravelController.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018:07:12 10:53:11.197 INFO  --- [http-nio-8080-exec-4] o.s.b.f.xml.XmlBeanDefinitionReader : Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml] 
+2018:07:12 10:53:11.234 INFO  --- [http-nio-8080-exec-4] o.s.j.support.SQLErrorCodesFactory : SQLErrorCodes loaded: [DB2, Derby, H2, HDB, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase] 
+2018:07:12 10:53:11.245 ERROR --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[.[dispatcherServlet] : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: ORA-00942: 테이블 또는 뷰가 존재하지 않습니다
+
+### The error may exist in file [D:\YOLOtour\YOLOtour\target\classes\mapper\travel-mapper.xml]
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: SELECT * FROM (    SELECT ROWNUM AS rnum, b.* FROM (     SELECT * FROM travel_board ORDER BY id DESC    ) b   ) WHERE rnum >= ? and rnum <= ?
+### Cause: java.sql.SQLSyntaxErrorException: ORA-00942: 테이블 또는 뷰가 존재하지 않습니다
+
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: ORA-00942: 테이블 또는 뷰가 존재하지 않습니다
+] with root cause 
+java.sql.SQLSyntaxErrorException: ORA-00942: 테이블 또는 뷰가 존재하지 않습니다
+
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:445)
+	at oracle.jdbc.driver.T4CTTIoer.processError(T4CTTIoer.java:396)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:879)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:450)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:192)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:531)
+	at oracle.jdbc.driver.T4CPreparedStatement.doOall8(T4CPreparedStatement.java:207)
+	at oracle.jdbc.driver.T4CPreparedStatement.executeForDescribe(T4CPreparedStatement.java:884)
+	at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:1167)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1281)
+	at oracle.jdbc.driver.OraclePreparedStatement.executeInternal(OraclePreparedStatement.java:3584)
+	at oracle.jdbc.driver.OraclePreparedStatement.execute(OraclePreparedStatement.java:3685)
+	at oracle.jdbc.driver.OraclePreparedStatementWrapper.execute(OraclePreparedStatementWrapper.java:1376)
+	at net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy.execute(PreparedStatementSpy.java:443)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+	at com.sun.proxy.$Proxy90.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy60.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy77.selectByLimit(Unknown Source)
+	at com.example.web.controller.marketing.TravelController.getTravelView(TravelController.java:43)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1468)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2018:07:12 11:57:48.362 INFO  --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested. 
+2018:07:12 11:57:48.365 INFO  --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75329a49: startup date [Thu Jul 12 10:42:49 KST 2018]; root of context hierarchy 
+2018:07:12 11:57:48.367 INFO  --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter : Unregistering JMX-exposed beans on shutdown 
+2018:07:12 11:57:54.875 INFO  --- [main] com.example.Application : Starting Application on DESKTOP-HLQF9U2 with PID 9956 (D:\YOLOtour\YOLOtour\target\classes started by TopCreduD6 in D:\YOLOtour\YOLOtour) 
+2018:07:12 11:57:54.875 INFO  --- [main] com.example.Application : No active profile set, falling back to default profiles: default 
+2018:07:12 11:57:54.906 INFO  --- [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75329a49: startup date [Thu Jul 12 11:57:54 KST 2018]; root of context hierarchy 
+2018:07:12 11:57:56.000 INFO  --- [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http) 
+2018:07:12 11:57:56.021 INFO  --- [main] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2018:07:12 11:57:56.021 INFO  --- [main] o.a.catalina.core.StandardEngine : Starting Servlet Engine: Apache Tomcat/8.5.31 
+2018:07:12 11:57:56.333 INFO  --- [localhost-startStop-1] o.apache.jasper.servlet.TldScanner : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time. 
+2018:07:12 11:57:56.333 INFO  --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2018:07:12 11:57:56.333 INFO  --- [localhost-startStop-1] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 1427 ms 
+2018:07:12 11:57:56.474 INFO  --- [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean : Mapping servlet: 'dispatcherServlet' to [/] 
+2018:07:12 11:57:56.474 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'characterEncodingFilter' to: [/*] 
+2018:07:12 11:57:56.474 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'hiddenHttpMethodFilter' to: [/*] 
+2018:07:12 11:57:56.474 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'httpPutFormContentFilter' to: [/*] 
+2018:07:12 11:57:56.474 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'requestContextFilter' to: [/*] 
+2018:07:12 11:57:57.130 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75329a49: startup date [Thu Jul 12 11:57:54 KST 2018]; root of context hierarchy 
+2018:07:12 11:57:57.190 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mypage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.captain.MyPageController.getMypageView(int,int,int) 
+2018:07:12 11:57:57.190 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/write],methods=[POST]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.postInsert(com.example.noticeboard.model.Notice,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 11:57:57.190 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.captain.NoticeController.getNoticesView(int,int,int) 
+2018:07:12 11:57:57.190 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/update],methods=[POST]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.postUpdate(com.example.noticeboard.model.Notice,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 11:57:57.190 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/update/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getUpdateView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 11:57:57.190 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/delete/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getDelete(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 11:57:57.190 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/write],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getInsertView(javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 11:57:57.190 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/view/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getNoticeView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 11:57:57.190 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.example.web.controller.HomeController.getHomeView() 
+2018:07:12 11:57:57.190 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/payment],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.PaymentController.showLoginForm() 
+2018:07:12 11:57:57.190 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/write],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postInsert(com.example.travelboard.model.Travel,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 11:57:57.190 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.marketing.TravelController.getTravelView(int,int,int) 
+2018:07:12 11:57:57.190 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/view/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getTravelView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 11:57:57.190 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/update],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postUpdate(com.example.travelboard.model.Travel,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 11:57:57.190 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/write],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postInsertView(javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 11:57:57.190 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/update/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getUpdateView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 11:57:57.206 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/delete/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getDelete(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:12 11:57:57.206 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.showLoginForm() 
+2018:07:12 11:57:57.206 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/logout],methods=[GET]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.getLogout(javax.servlet.http.HttpSession) 
+2018:07:12 11:57:57.206 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[POST]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.postLogin(com.example.login.dto.Login,org.springframework.ui.Model,javax.servlet.http.HttpSession) 
+2018:07:12 11:57:57.206 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto public java.lang.Object com.example.web.controller.searchking.UserController.getUsersView() 
+2018:07:12 11:57:57.206 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users/enroll],methods=[POST]}" onto public java.lang.String com.example.web.controller.searchking.UserController.postUser(com.example.user.model.User,org.springframework.ui.Model,javax.servlet.http.HttpSession,org.springframework.web.servlet.mvc.support.RedirectAttributes) 
+2018:07:12 11:57:57.206 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest) 
+2018:07:12 11:57:57.206 INFO  --- [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) 
+2018:07:12 11:57:57.237 INFO  --- [main] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:12 11:57:57.237 INFO  --- [main] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:12 11:57:57.268 INFO  --- [main] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:12 11:57:57.487 INFO  --- [main] o.s.j.e.a.AnnotationMBeanExporter : Registering beans for JMX exposure on startup 
+2018:07:12 11:57:57.534 INFO  --- [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http) 
+2018:07:12 11:57:57.534 INFO  --- [main] com.example.Application : Started Application in 2.993 seconds (JVM running for 4.083) 
+2018:07:12 11:58:08.942 INFO  --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring FrameworkServlet 'dispatcherServlet' 
+2018:07:12 11:58:08.943 INFO  --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet : FrameworkServlet 'dispatcherServlet': initialization started 
+2018:07:12 11:58:08.960 INFO  --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet : FrameworkServlet 'dispatcherServlet': initialization completed in 17 ms 
+2018:07:12 11:58:15.179 INFO  --- [http-nio-8080-exec-1] jdbc.resultsettable : 
+|-----|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|rnum |travel_id |key |writer |title |content |reg_date              |hit_count |price |img_id |
+|-----|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|1    |4         |2   |W3     |T3    |C3      |2018-07-12 11:07:08.0 |0         |0     |3.img  |
+|2    |3         |2   |W2     |T2    |C2      |2018-07-12 11:07:08.0 |0         |0     |2.img  |
+|3    |2         |1   |W1     |T1    |C1      |2018-07-12 11:06:28.0 |0         |0     |1.img  |
+|4    |1         |1   |W0     |T0    |C0      |2018-07-12 11:06:35.0 |0         |0     |0.img  |
+|-----|----------|----|-------|------|--------|----------------------|----------|------|-------|
+ 
+2018:07:12 11:58:15.198 INFO  --- [http-nio-8080-exec-1] jdbc.resultsettable : 
+|---------|
+|count(*) |
+|---------|
+|4        |
+|---------|
+ 
+2018:07:12 11:58:15.205 INFO  --- [http-nio-8080-exec-1] jdbc.resultsettable : 
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|travel_id |key |writer |title |content |reg_date              |hit_count |price |img_id |
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|2         |1   |W1     |T1    |C1      |2018-07-12 11:06:28.0 |0         |0     |1.img  |
+|1         |1   |W0     |T0    |C0      |2018-07-12 11:06:35.0 |0         |0     |0.img  |
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+ 
+2018:07:12 11:58:15.212 INFO  --- [http-nio-8080-exec-1] jdbc.resultsettable : 
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|travel_id |key |writer |title |content |reg_date              |hit_count |price |img_id |
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|4         |2   |W3     |T3    |C3      |2018-07-12 11:07:08.0 |0         |0     |3.img  |
+|3         |2   |W2     |T2    |C2      |2018-07-12 11:07:08.0 |0         |0     |2.img  |
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+ 
+2018:07:12 11:58:18.324 INFO  --- [http-nio-8080-exec-2] jdbc.resultsettable : 
+|-----|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|rnum |travel_id |key |writer |title |content |reg_date              |hit_count |price |img_id |
+|-----|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|1    |4         |2   |W3     |T3    |C3      |2018-07-12 11:07:08.0 |0         |0     |3.img  |
+|2    |3         |2   |W2     |T2    |C2      |2018-07-12 11:07:08.0 |0         |0     |2.img  |
+|3    |2         |1   |W1     |T1    |C1      |2018-07-12 11:06:28.0 |0         |0     |1.img  |
+|4    |1         |1   |W0     |T0    |C0      |2018-07-12 11:06:35.0 |0         |0     |0.img  |
+|-----|----------|----|-------|------|--------|----------------------|----------|------|-------|
+ 
+2018:07:12 11:58:18.330 INFO  --- [http-nio-8080-exec-2] jdbc.resultsettable : 
+|---------|
+|count(*) |
+|---------|
+|4        |
+|---------|
+ 
+2018:07:12 11:58:18.336 INFO  --- [http-nio-8080-exec-2] jdbc.resultsettable : 
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|travel_id |key |writer |title |content |reg_date              |hit_count |price |img_id |
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|2         |1   |W1     |T1    |C1      |2018-07-12 11:06:28.0 |0         |0     |1.img  |
+|1         |1   |W0     |T0    |C0      |2018-07-12 11:06:35.0 |0         |0     |0.img  |
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+ 
+2018:07:12 11:58:18.349 INFO  --- [http-nio-8080-exec-2] jdbc.resultsettable : 
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|travel_id |key |writer |title |content |reg_date              |hit_count |price |img_id |
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|4         |2   |W3     |T3    |C3      |2018-07-12 11:07:08.0 |0         |0     |3.img  |
+|3         |2   |W2     |T2    |C2      |2018-07-12 11:07:08.0 |0         |0     |2.img  |
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+ 
+2018:07:12 11:58:20.470 INFO  --- [http-nio-8080-exec-7] jdbc.resultsettable : 
+|-----|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|rnum |travel_id |key |writer |title |content |reg_date              |hit_count |price |img_id |
+|-----|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|1    |4         |2   |W3     |T3    |C3      |2018-07-12 11:07:08.0 |0         |0     |3.img  |
+|2    |3         |2   |W2     |T2    |C2      |2018-07-12 11:07:08.0 |0         |0     |2.img  |
+|3    |2         |1   |W1     |T1    |C1      |2018-07-12 11:06:28.0 |0         |0     |1.img  |
+|4    |1         |1   |W0     |T0    |C0      |2018-07-12 11:06:35.0 |0         |0     |0.img  |
+|-----|----------|----|-------|------|--------|----------------------|----------|------|-------|
+ 
+2018:07:12 11:58:20.484 INFO  --- [http-nio-8080-exec-7] jdbc.resultsettable : 
+|---------|
+|count(*) |
+|---------|
+|4        |
+|---------|
+ 
+2018:07:12 11:58:20.497 INFO  --- [http-nio-8080-exec-7] jdbc.resultsettable : 
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|travel_id |key |writer |title |content |reg_date              |hit_count |price |img_id |
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|2         |1   |W1     |T1    |C1      |2018-07-12 11:06:28.0 |0         |0     |1.img  |
+|1         |1   |W0     |T0    |C0      |2018-07-12 11:06:35.0 |0         |0     |0.img  |
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+ 
+2018:07:12 11:58:20.513 INFO  --- [http-nio-8080-exec-7] jdbc.resultsettable : 
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|travel_id |key |writer |title |content |reg_date              |hit_count |price |img_id |
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|4         |2   |W3     |T3    |C3      |2018-07-12 11:07:08.0 |0         |0     |3.img  |
+|3         |2   |W2     |T2    |C2      |2018-07-12 11:07:08.0 |0         |0     |2.img  |
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+ 
+2018:07:12 11:58:21.116 INFO  --- [http-nio-8080-exec-4] jdbc.resultsettable : 
+|-----|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|rnum |travel_id |key |writer |title |content |reg_date              |hit_count |price |img_id |
+|-----|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|1    |4         |2   |W3     |T3    |C3      |2018-07-12 11:07:08.0 |0         |0     |3.img  |
+|2    |3         |2   |W2     |T2    |C2      |2018-07-12 11:07:08.0 |0         |0     |2.img  |
+|3    |2         |1   |W1     |T1    |C1      |2018-07-12 11:06:28.0 |0         |0     |1.img  |
+|4    |1         |1   |W0     |T0    |C0      |2018-07-12 11:06:35.0 |0         |0     |0.img  |
+|-----|----------|----|-------|------|--------|----------------------|----------|------|-------|
+ 
+2018:07:12 11:58:21.124 INFO  --- [http-nio-8080-exec-4] jdbc.resultsettable : 
+|---------|
+|count(*) |
+|---------|
+|4        |
+|---------|
+ 
+2018:07:12 11:58:21.132 INFO  --- [http-nio-8080-exec-4] jdbc.resultsettable : 
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|travel_id |key |writer |title |content |reg_date              |hit_count |price |img_id |
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|2         |1   |W1     |T1    |C1      |2018-07-12 11:06:28.0 |0         |0     |1.img  |
+|1         |1   |W0     |T0    |C0      |2018-07-12 11:06:35.0 |0         |0     |0.img  |
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+ 
+2018:07:12 11:58:21.140 INFO  --- [http-nio-8080-exec-4] jdbc.resultsettable : 
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|travel_id |key |writer |title |content |reg_date              |hit_count |price |img_id |
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+|4         |2   |W3     |T3    |C3      |2018-07-12 11:07:08.0 |0         |0     |3.img  |
+|3         |2   |W2     |T2    |C2      |2018-07-12 11:07:08.0 |0         |0     |2.img  |
+|----------|----|-------|------|--------|----------------------|----------|------|-------|
+ 

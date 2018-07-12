@@ -1,0 +1,150 @@
+create table CUSTOMER(
+user_id number(10,0) not null primary key,
+email VARCHAR2(100) not null,
+password varchar2(100) not null
+);
+
+CREATE SEQUENCE ID_USER
+START WITH 1
+INCREMENT BY 1;
+
+Create table TRAVEL_BOARD_DOMESTIC(
+TBD_id NUMBER(10,0) NOT NULL PRIMARY KEY,
+writer VARCHAR2(100) DEFAULT NULL,
+title VARCHAR2(255) DEFAULT NULL,
+content VARCHAR2(4000) DEFAULT NULL,
+reg_date DATE DEFAULT NULL,
+hit_count NUMBER(10,0) DEFAULT 0,
+price NUMBER(20,0) DEFAULT 0,
+IMG_id VARCHAR2(100) DEFAULT NULL
+);
+
+CREATE SEQUENCE ID_TBD
+START WITH 1
+INCREMENT BY 1;
+
+Create table TRAVEL_BOARD_FOREIGN(
+TBF_id NUMBER(10,0) NOT NULL PRIMARY KEY,
+writer VARCHAR2(100) DEFAULT NULL,
+title VARCHAR2(255) DEFAULT NULL,
+content VARCHAR2(4000) DEFAULT NULL,
+reg_date DATE DEFAULT NULL,
+hit_count NUMBER(10,0) DEFAULT 0,
+price NUMBER(20,0) DEFAULT 0,
+IMG_id VARCHAR2(100) DEFAULT NULL
+);
+
+CREATE SEQUENCE ID_TBF
+START WITH 1
+INCREMENT BY 1;
+
+Create table D_CART(
+TBD_id NUMBER(10,0) NOT NULL PRIMARY KEY,
+user_id NUMBER(10,0) NOT NULL
+);
+
+Create table F_CART(
+TBF_id NUMBER(10,0) NOT NULL PRIMARY KEY,
+user_id NUMBER(10,0) NOT NULL
+);
+
+Create table IMG(
+IMG_id NUMBER(10,0) NOT NULL PRIMARY KEY,
+URL  VARCHAR2(255) DEFAULT NULL
+);
+
+Create table NOTICE_BOARD(
+notice_id NUMBER(10,0) NOT NULL PRIMARY KEY,
+writer VARCHAR2(100) DEFAULT NULL,
+title VARCHAR2(255) DEFAULT NULL,
+content VARCHAR2(4000) DEFAULT NULL,
+reg_date DATE DEFAULT NULL,
+hit_count NUMBER(10,0) DEFAULT 0
+);
+
+CREATE SEQUENCE ID_NOTICE
+START WITH 1
+INCREMENT BY 1;
+
+Create table PAYMENT_BOARD(
+pay_id NUMBER(10,0) NOT NULL PRIMARY KEY,
+name VARCHAR2(20) NOT NULL,
+email VARCHAR2(30) NOT NULL,
+address VARCHAR2(30) NOT NULL,
+name_on_card VARCHAR2(20) NOT NULL,
+creditcard_number VARCHAR2(30) NOT NULL,
+exp_month NUMBER NOT NULL,
+exp_year NUMBER NOT NULL,
+cvc NUMBER NOT NULL,
+user_id NUMBER NOT NULL
+);
+
+CREATE SEQUENCE ID_PAYMENT
+START WITH 1
+INCREMENT BY 1;
+
+Create table YOLO_EMP(
+YOLO_id NUMBER(10,0) NOT NULL PRIMARY KEY,
+email VARCHAR2(30) NOT NULL,
+password VARCHAR2(30) NOT NULL
+);
+
+CREATE SEQUENCE ID_YOLO_EMP
+START WITH 1
+INCREMENT BY 1;
+
+
+INSERT INTO TRAVEL_BOARD_DOMESTIC(TBD_id, writer, title, content, reg_date, hit_count, price, IMG_id)
+VALUES(1, 'W0', 'T0', 'C0', SYSDATE, 0, 0, '0.img');
+INSERT INTO TRAVEL_BOARD_DOMESTIC(TBD_id, writer, title, content, reg_date, hit_count, price, IMG_id)
+VALUES(ID_TBD.NEXTVAL, 'W2', 'T2', 'C2', SYSDATE, 0, 0, '2.img');
+INSERT INTO TRAVEL_BOARD_DOMESTIC(TBD_id, writer, title, content, reg_date, hit_count, price, IMG_id)
+VALUES(ID_TBD.NEXTVAL, 'W3', 'T3', 'C3', SYSDATE, 0, 0, '3.img');
+INSERT INTO TRAVEL_BOARD_DOMESTIC(TBD_id, writer, title, content, reg_date, hit_count, price, IMG_id)
+VALUES(ID_TBD.NEXTVAL, 'W4', 'T4', 'C4', SYSDATE, 0, 0, '4.img');
+
+INSERT INTO TRAVEL_BOARD_FOREIGN(TBF_id, writer, title, content, reg_date, hit_count, price, IMG_id)
+VALUES(1, 'W0', 'T0', 'C0', SYSDATE, 0, 0, '0.img');
+INSERT INTO TRAVEL_BOARD_FOREIGN(TBF_id, writer, title, content, reg_date, hit_count, price, IMG_id)
+VALUES(ID_TBF.NEXTVAL, 'W2', 'T2', 'C2', SYSDATE, 0, 0, '2.img');
+INSERT INTO TRAVEL_BOARD_FOREIGN(TBF_id, writer, title, content, reg_date, hit_count, price, IMG_id)
+VALUES(ID_TBF.NEXTVAL, 'W3', 'T3', 'C3', SYSDATE, 0, 0, '3.img');
+INSERT INTO TRAVEL_BOARD_FOREIGN(TBF_id, writer, title, content, reg_date, hit_count, price, IMG_id)
+VALUES(ID_TBF.NEXTVAL, 'W4', 'T4', 'C4', SYSDATE, 0, 0, '4.img');
+
+insert into d_cart values (1,1,1);
+insert into d_cart values (ID_D.NEXTVAL,2,1);
+insert into d_cart values (ID_D.NEXTVAL,1,2);
+insert into d_cart values (ID_D.NEXTVAL,3,2);
+
+insert into f_cart values (1,1,1);
+insert into f_cart values (ID_F.NEXTVAL,2,1);
+insert into f_cart values (ID_F.NEXTVAL,1,2);
+insert into f_cart values (ID_F.NEXTVAL,3,2);
+
+insert into IMG values ('1.img','/weds/sdsds');
+insert into IMG values ('2.img','/weds/sdsds');
+insert into IMG values ('3.img','/weds/sdsds');
+
+INSERT INTO NOTICE_BOARD(notice_id, writer, title, content, reg_date, hit_count)
+VALUES(1, 'W0', 'T0', 'C0', SYSDATE, 0);
+INSERT INTO NOTICE_BOARD(notice_id, writer, title, content, reg_date, hit_count)
+VALUES(ID_NOTICE.NEXTVAL, 'W1', 'T1', 'C1', SYSDATE, 0);
+INSERT INTO NOTICE_BOARD(notice_id, writer, title, content, reg_date, hit_count)
+VALUES(ID_NOTICE.NEXTVAL, 'W2', 'T2', 'C2', SYSDATE, 0);
+INSERT INTO NOTICE_BOARD(notice_id, writer, title, content, reg_date, hit_count)
+VALUES(ID_NOTICE.NEXTVAL, 'W3', 'T3', 'C3', SYSDATE, 0);
+
+INSERT INTO PAYMENT_BOARD(pay_id, name, email, address, name_on_card, creditcard_number, exp_month, exp_year, cvc, user_id)
+VALUES(1, 'gahee', 'e1@naver.com', 'gimpo', 'gahee', '12345678974513', 8,22,232, 1);
+INSERT INTO PAYMENT_BOARD(pay_id, name, email, address, name_on_card, creditcard_number, exp_month, exp_year, cvc, user_id)
+VALUES(ID_PAYMENT.NEXTVAL, 'gahee', 'e1@naver.com', 'gimpo', 'gahee', '12345678974513', 8,22,232, 1);
+INSERT INTO PAYMENT_BOARD(pay_id, name, email, address, name_on_card, creditcard_number, exp_month, exp_year, cvc, user_id)
+VALUES(ID_PAYMENT.NEXTVAL, 'hyejin', 'e2@naver.com', 'ansan', 'hyejin', '1234852974513', 8,22,232, 2);
+INSERT INTO PAYMENT_BOARD(pay_id, name, email, address, name_on_card, creditcard_number, exp_month, exp_year, cvc, user_id)
+VALUES(ID_PAYMENT.NEXTVAL, 'yujeong', 'e3@naver.com', 'anseong', 'yujeong', '1278788974513', 8,22,232, 3);
+
+INSERT INTO YOLO_EMP(YOLO_id , email , password)
+VALUES(1, 'octo2917@gmail.com', '1234');
+
+
