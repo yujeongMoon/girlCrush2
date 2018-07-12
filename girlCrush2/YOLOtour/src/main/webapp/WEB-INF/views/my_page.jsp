@@ -58,23 +58,18 @@
 					<table class="table table-hover">
 						<thead>
 							<tr>
-								<th scope="col">No</th>
+								<th scope="col">     </th>
 								<th scope="col">Title</th>
 								<th scope="col">Writer</th>
-								<th scope="col">Date</th>
-								<th scope="col">Hits</th>
 								<th scope="col">Price</th>
 							</tr>
 						</thead>
 						<c:forEach items="#{mypageD }" var="mypaged">
 							<tr>
-								<td>${mypaged.travelId }</td>
+								<td><img src="/img/${mypaged.imgId }" witdh="100" height="100"></td>
 								<td><a
 									href="<c:url value='/travelboards/view/${mypaged.travelId }'/>">${mypaged.title }</a></td>
 								<td>${mypaged.writer }</td>
-								<td><fmt:formatDate pattern="MM-dd hh:mm"
-										value="${mypaged.regDate }" /></td>
-								<td>${mypaged.hitCount }</td>
 								<td>${mypaged.price }</td>
 							</tr>
 						</c:forEach>
@@ -126,23 +121,18 @@
 					<table class="table table-hover">
 						<thead>
 							<tr>
-								<th scope="col">No</th>
+								<th scope="col">     </th>
 								<th scope="col">Title</th>
 								<th scope="col">Writer</th>
-								<th scope="col">Date</th>
-								<th scope="col">Hits</th>
 								<th scope="col">Price</th>
 							</tr>
 						</thead>
 						<c:forEach items="#{mypageF }" var="mypagef">
 							<tr>
-								<td>${mypagef.travelId }</td>
+								<td><img src="/img/${mypagef.imgId }" witdh="100" height="100"></td>
 								<td><a
 									href="<c:url value='/travelboards/view/${mypagef.travelId }'/>">${mypagef.title }</a></td>
 								<td>${mypagef.writer }</td>
-								<td><fmt:formatDate pattern="MM-dd hh:mm"
-										value="${mypagef.regDate }" /></td>
-								<td>${mypagef.hitCount }</td>
 								<td>${mypagef.price }</td>
 							</tr>
 						</c:forEach>
