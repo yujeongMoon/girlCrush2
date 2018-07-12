@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -27,237 +27,236 @@
 	<!-- #header -->
 	<!-- start banner Area -->
 	<section class="about-banner relative">
-	<div class="overlay overlay-bg"></div>
-	<div class="container">
-		<div class="row d-flex align-items-center justify-content-center">
-			<div class="about-content col-lg-12">
-				<h1 class="text-white">My Page</h1>
-				<p class="text-white link-nav">
-					<a href="/">Home </a> <span class="lnr lnr-arrow-right"></span> <a
-						href="/mypage"> my page</a>
-				</p>
+		<div class="overlay overlay-bg"></div>
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<h1 class="text-white">My Page</h1>
+					<p class="text-white link-nav">
+						<a href="/">Home </a> <span class="lnr lnr-arrow-right"></span> <a
+							href="/mypage"> my page</a>
+					</p>
+				</div>
 			</div>
 		</div>
-	</div>
 	</section>
 
 	<!-- board -->
 	<section class="price-area section-gap">
-	<div class="container">
-		<div>
-			<div class="single-price">
-				<!-- 시작 -->
-				<div class="row d-flex justify-content-center">
-					<div class="menu-content pb-70 col-lg-8">
-						<div class="title text-center">
-							<h2 class="mb-10">Cart</h2>
+		<div class="container">
+			<div>
+				<div class="single-price">
+					<!-- 시작 -->
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-70 col-lg-8">
+							<div class="title text-center">
+								<h2 class="mb-10">Cart</h2>
+							</div>
+						</div>
+					</div>
+					<h4>국내</h4>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th scope="col">No</th>
+								<th scope="col">Title</th>
+								<th scope="col">Writer</th>
+								<th scope="col">Date</th>
+								<th scope="col">Hits</th>
+								<th scope="col">Price</th>
+							</tr>
+						</thead>
+						<c:forEach items="#{mypageD }" var="mypaged">
+							<tr>
+								<td>${mypaged.travelId }</td>
+								<td><a
+									href="<c:url value='/travelboards/view/${mypaged.travelId }'/>">${mypaged.title }</a></td>
+								<td>${mypaged.writer }</td>
+								<td><fmt:formatDate pattern="MM-dd hh:mm"
+										value="${mypaged.regDate }" /></td>
+								<td>${mypaged.hitCount }</td>
+								<td>${mypaged.price }</td>
+							</tr>
+						</c:forEach>
+					</table>
+
+					<div class="row">
+						<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+							<ul class="pagination">
+								<c:set var="target" value="mypage" />
+								<c:if test="${pagerD.rows==0 }">
+									<li class="active"><a href="#">1</a></li>
+								</c:if>
+								<c:if test="${pagerD.rows > 0 }">
+									<c:set var="common"
+										value="size=${pagerD.size }&bsize=${pagerD.bsize }" />
+									<c:if test="${pagerD.bspage > pagerD.bsize }">
+										<c:set var="home" value="page=1&${common }" />
+										<c:set var="prev" value="page=${pagerD.bspage-1 }&${common }" />
+										<li><a href="${target }?${home }">Home</a></li>
+										<li><a href='<c:url value="${target }?${prev }"/>'>&laquo;</a></li>
+									</c:if>
+									<c:forEach var="pno" begin="${pagerD.bspage }"
+										end="${pagerD.bepage }">
+										<c:if test="${pno==pagerD.page }">
+											<li class="active"><a href="#">${pno }</a></li>
+										</c:if>
+										<c:if test="${pno!=pagerD.page }">
+											<c:if test="${pno <= pagerD.pages }">
+												<c:set var="page" value="page=${pno }&${common }" />
+												<li><a href='<c:url value="${target }?${page }"/>'>${pno }</a></li>
+											</c:if>
+										</c:if>
+									</c:forEach>
+									<c:if test="${pagerD.bepage < pagerD.pages }">
+										<c:set var="next" value="page=${pagerD.bepage+1 }&${common }" />
+										<c:set var="last" value="page=${pagerD.pages }&${common }" />
+										<li><a href='<c:url value="${target }?${next }"/>'>&raquo;</a></li>
+										<li><a href="${target }?${last }">Last</a></li>
+									</c:if>
+								</c:if>
+							</ul>
 						</div>
 					</div>
 				</div>
-				<h4>국내</h4>
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th scope="col">No</th>
-							<th scope="col">Title</th>
-							<th scope="col">Writer</th>
-							<th scope="col">Date</th>
-							<th scope="col">Hits</th>
-							<th scope="col">Price</th>
-						</tr>
-					</thead>
-					<c:forEach items="#{mypageD }" var="mypaged">
-						<tr>
-							<td>${mypaged.id }</td>
-							<td><a
-								href="<c:url value='/travelboards/view/${mypaged.id }'/>">${mypaged.title }</a></td>
-							<td>${mypaged.writer }</td>
-							<td><fmt:formatDate pattern="MM-dd hh:mm"
-									value="${mypaged.regDate }" /></td>
-							<td>${mypaged.hitCount }</td>
-							<td>${mypaged.price }</td>
-						</tr>
-					</c:forEach>
-				</table>
+				<!-- 끝 -->
+				<div class="single-price">
+					<!-- 시작 -->
+					<h4>국외</h4>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th scope="col">No</th>
+								<th scope="col">Title</th>
+								<th scope="col">Writer</th>
+								<th scope="col">Date</th>
+								<th scope="col">Hits</th>
+								<th scope="col">Price</th>
+							</tr>
+						</thead>
+						<c:forEach items="#{mypageF }" var="mypagef">
+							<tr>
+								<td>${mypagef.travelId }</td>
+								<td><a
+									href="<c:url value='/travelboards/view/${mypagef.travelId }'/>">${mypagef.title }</a></td>
+								<td>${mypagef.writer }</td>
+								<td><fmt:formatDate pattern="MM-dd hh:mm"
+										value="${mypagef.regDate }" /></td>
+								<td>${mypagef.hitCount }</td>
+								<td>${mypagef.price }</td>
+							</tr>
+						</c:forEach>
+					</table>
 
-				<div class="row">
-					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-						<ul class="pagination">
-							<c:set var="target" value="mypage" />
-							<c:if test="${pagerD.rows==0 }">
-								<li class="active"><a href="#">1</a></li>
-							</c:if>
-							<c:if test="${pagerD.rows > 0 }">
-								<c:set var="common"
-									value="size=${pagerD.size }&bsize=${pagerD.bsize }" />
-								<c:if test="${pagerD.bspage > pagerD.bsize }">
-									<c:set var="home" value="page=1&${common }" />
-									<c:set var="prev" value="page=${pagerD.bspage-1 }&${common }" />
-									<li><a href="${target }?${home }">Home</a></li>
-									<li><a href='<c:url value="${target }?${prev }"/>'>&laquo;</a></li>
+					<div class="row">
+						<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+							<ul class="pagination">
+								<c:set var="target" value="mypage" />
+								<c:if test="${pagerF.rows==0 }">
+									<li class="active"><a href="#">1</a></li>
 								</c:if>
-								<c:forEach var="pno" begin="${pagerD.bspage }"
-									end="${pagerD.bepage }">
-									<c:if test="${pno==pagerD.page }">
-										<li class="active"><a href="#">${pno }</a></li>
+								<c:if test="${pagerF.rows > 0 }">
+									<c:set var="common"
+										value="size=${pagerF.size }&bsize=${pagerF.bsize }" />
+									<c:if test="${pagerF.bspage > pagerF.bsize }">
+										<c:set var="home" value="page=1&${common }" />
+										<c:set var="prev" value="page=${pagerF.bspage-1 }&${common }" />
+										<li><a href="${target }?${home }">Home</a></li>
+										<li><a href='<c:url value="${target }?${prev }"/>'>&laquo;</a></li>
 									</c:if>
-									<c:if test="${pno!=pagerD.page }">
-										<c:if test="${pno <= pagerD.pages }">
-											<c:set var="page" value="page=${pno }&${common }" />
-											<li><a href='<c:url value="${target }?${page }"/>'>${pno }</a></li>
+									<c:forEach var="pno" begin="${pagerF.bspage }"
+										end="${pagerF.bepage }">
+										<c:if test="${pno==pagerF.page }">
+											<li class="active"><a href="#">${pno }</a></li>
 										</c:if>
-									</c:if>
-								</c:forEach>
-								<c:if test="${pagerD.bepage < pagerD.pages }">
-									<c:set var="next" value="page=${pagerD.bepage+1 }&${common }" />
-									<c:set var="last" value="page=${pagerD.pages }&${common }" />
-									<li><a href='<c:url value="${target }?${next }"/>'>&raquo;</a></li>
-									<li><a href="${target }?${last }">Last</a></li>
-								</c:if>
-							</c:if>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- 끝 -->
-			<div class="single-price">
-				<!-- 시작 -->
-				<h4>국외</h4>
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th scope="col">No</th>
-							<th scope="col">Title</th>
-							<th scope="col">Writer</th>
-							<th scope="col">Date</th>
-							<th scope="col">Hits</th>
-							<th scope="col">Price</th>
-						</tr>
-					</thead>
-					<c:forEach items="#{mypageF }" var="mypagef">
-						<tr>
-							<td>${mypagef.id }</td>
-							<td><a
-								href="<c:url value='/travelboards/view/${mypagef.id }'/>">${mypagef.title }</a></td>
-							<td>${mypagef.writer }</td>
-							<td><fmt:formatDate pattern="MM-dd hh:mm"
-									value="${mypagef.regDate }" /></td>
-							<td>${mypagef.hitCount }</td>
-							<td>${mypagef.price }</td>
-						</tr>
-					</c:forEach>
-				</table>
-
-				<div class="row">
-					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-						<ul class="pagination">
-							<c:set var="target" value="mypage" />
-							<c:if test="${pagerF.rows==0 }">
-								<li class="active"><a href="#">1</a></li>
-							</c:if>
-							<c:if test="${pagerF.rows > 0 }">
-								<c:set var="common"
-									value="size=${pagerF.size }&bsize=${pagerF.bsize }" />
-								<c:if test="${pagerF.bspage > pagerF.bsize }">
-									<c:set var="home" value="page=1&${common }" />
-									<c:set var="prev" value="page=${pagerF.bspage-1 }&${common }" />
-									<li><a href="${target }?${home }">Home</a></li>
-									<li><a href='<c:url value="${target }?${prev }"/>'>&laquo;</a></li>
-								</c:if>
-								<c:forEach var="pno" begin="${pagerF.bspage }"
-									end="${pagerF.bepage }">
-									<c:if test="${pno==pagerF.page }">
-										<li class="active"><a href="#">${pno }</a></li>
-									</c:if>
-									<c:if test="${pno!=pagerF.page }">
-										<c:if test="${pno <= pagerF.pages }">
-											<c:set var="page" value="page=${pno }&${common }" />
-											<li><a href='<c:url value="${target }?${page }"/>'>${pno }</a></li>
+										<c:if test="${pno!=pagerF.page }">
+											<c:if test="${pno <= pagerF.pages }">
+												<c:set var="page" value="page=${pno }&${common }" />
+												<li><a href='<c:url value="${target }?${page }"/>'>${pno }</a></li>
+											</c:if>
 										</c:if>
+									</c:forEach>
+									<c:if test="${pagerF.bepage < pagerF.pages }">
+										<c:set var="next" value="page=${pagerF.bepage+1 }&${common }" />
+										<c:set var="last" value="page=${pagerF.pages }&${common }" />
+										<li><a href='<c:url value="${target }?${next }"/>'>&raquo;</a></li>
+										<li><a href="${target }?${last }">Last</a></li>
 									</c:if>
-								</c:forEach>
-								<c:if test="${pagerF.bepage < pagerF.pages }">
-									<c:set var="next" value="page=${pagerF.bepage+1 }&${common }" />
-									<c:set var="last" value="page=${pagerF.pages }&${common }" />
-									<li><a href='<c:url value="${target }?${next }"/>'>&raquo;</a></li>
-									<li><a href="${target }?${last }">Last</a></li>
 								</c:if>
-							</c:if>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- 끝 -->
-		</div>
-		<div>
-			<div class="single-price">
-				<!-- 시작 -->
-				<div class="row d-flex justify-content-center">
-					<div class="menu-content pb-70 col-lg-8">
-						<div class="title text-center">
-							<h2 class="mb-10">Payment</h2>
+							</ul>
 						</div>
 					</div>
 				</div>
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th scope="col">No</th>
-							<th scope="col">Name</th>
-							<th scope="col">Address</th>
-						</tr>
-					</thead>
-					<c:forEach items="#{payinfo }" var="payinfo">
-						<tr>
-							<td>${payinfo.payId }</td>
-							<td>${payinfo.name }</td>
-							<td>${payinfo.address }</td>
-						</tr>
-					</c:forEach>
-				</table>
+				<div class="single-price">
+					<!-- 시작 -->
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-70 col-lg-8">
+							<div class="title text-center">
+								<h2 class="mb-10">Payment</h2>
+							</div>
+						</div>
+					</div>
+					<h4>결제 확인</h4>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th scope="col">No</th>
+								<th scope="col">Name</th>
+								<th scope="col">Address</th>
+							</tr>
+						</thead>
+						<c:forEach items="#{payinfo }" var="payinfo">
+							<tr>
+								<%-- <td>${payinfo.payId }</td>
+								<td>${payinfo.name }</td>
+								<td>${payinfo.address }</td> --%>
+							</tr>
+						</c:forEach>
+					</table>
 
-				<div class="row">
-					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-						<ul class="pagination">
-							<c:set var="target" value="mypage" />
-							<c:if test="${pager.rows==0 }">
-								<li class="active"><a href="#">1</a></li>
-							</c:if>
-							<c:if test="${pager.rows > 0 }">
-								<c:set var="common"
-									value="size=${pager.size }&bsize=${pager.bsize }" />
-								<c:if test="${pager.bspage > pager.bsize }">
-									<c:set var="home" value="page=1&${common }" />
-									<c:set var="prev" value="page=${pager.bspage-1 }&${common }" />
-									<li><a href="${target }?${home }">Home</a></li>
-									<li><a href='<c:url value="${target }?${prev }"/>'>&laquo;</a></li>
+					<div class="row">
+						<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+							<ul class="pagination">
+								<c:set var="target" value="mypage" />
+								<c:if test="${pager.rows==0 }">
+									<li class="active"><a href="#">1</a></li>
 								</c:if>
-								<c:forEach var="pno" begin="${pager.bspage }"
-									end="${pager.bepage }">
-									<c:if test="${pno==pager.page }">
-										<li class="active"><a href="#">${pno }</a></li>
+								<c:if test="${pager.rows > 0 }">
+									<c:set var="common"
+										value="size=${pager.size }&bsize=${pager.bsize }" />
+									<c:if test="${pager.bspage > pager.bsize }">
+										<c:set var="home" value="page=1&${common }" />
+										<c:set var="prev" value="page=${pager.bspage-1 }&${common }" />
+										<li><a href="${target }?${home }">Home</a></li>
+										<li><a href='<c:url value="${target }?${prev }"/>'>&laquo;</a></li>
 									</c:if>
-									<c:if test="${pno!=pager.page }">
-										<c:if test="${pno <= pager.pages }">
-											<c:set var="page" value="page=${pno }&${common }" />
-											<li><a href='<c:url value="${target }?${page }"/>'>${pno }</a></li>
+									<c:forEach var="pno" begin="${pager.bspage }"
+										end="${pager.bepage }">
+										<c:if test="${pno==pager.page }">
+											<li class="active"><a href="#">${pno }</a></li>
 										</c:if>
+										<c:if test="${pno!=pager.page }">
+											<c:if test="${pno <= pager.pages }">
+												<c:set var="page" value="page=${pno }&${common }" />
+												<li><a href='<c:url value="${target }?${page }"/>'>${pno }</a></li>
+											</c:if>
+										</c:if>
+									</c:forEach>
+									<c:if test="${pager.bepage < pager.pages }">
+										<c:set var="next" value="page=${pager.bepage+1 }&${common }" />
+										<c:set var="last" value="page=${pager.pages }&${common }" />
+										<li><a href='<c:url value="${target }?${next }"/>'>&raquo;</a></li>
+										<li><a href="${target }?${last }">Last</a></li>
 									</c:if>
-								</c:forEach>
-								<c:if test="${pager.bepage < pager.pages }">
-									<c:set var="next" value="page=${pager.bepage+1 }&${common }" />
-									<c:set var="last" value="page=${pager.pages }&${common }" />
-									<li><a href='<c:url value="${target }?${next }"/>'>&raquo;</a></li>
-									<li><a href="${target }?${last }">Last</a></li>
 								</c:if>
-							</c:if>
-						</ul>
+							</ul>
+						</div>
 					</div>
 				</div>
+				<!-- 끝 -->
 			</div>
-			<!-- 끝 -->
+
 		</div>
-	</div>
 	</section>
 
 	<script
