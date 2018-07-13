@@ -1,4 +1,4 @@
-package com.example.web.controller.searchking;
+/*package com.example.web.controller.searchking;
 
 import java.util.List;
 
@@ -40,3 +40,4 @@ public class EmpController {
 		return "redirect:/login";
 	}
 }
+*/

@@ -1,5 +1,6 @@
 package com.example.web.controller.searchking;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,18 +34,19 @@ public class LoginController {
 	@PostMapping("/login")
 	public String postLogin(Login login, Model model, HttpSession session) {
 		loginService.authenticate(login);
-		
+
 		if (login.getError() != null) {
 			model.addAttribute("error", login.getError());
 			model.addAttribute("login", login);
 			return "login";
 		} else {
-			Emp emp = new Emp(login.getUserId(), login.getEmail(), login.getPassword());
+			/*Emp emp = new Emp(login.getUserId(), login.getEmail(), login.getPassword());*/
 			User user = new User(login.getUserId(), login.getEmail(), login.getPassword());
-			session.setAttribute("emp", emp);
+			/*session.setAttribute("emp", emp);*/
 			session.setAttribute("user", user);
 			return "redirect:/";
 		}
+
 	}
 
 	@GetMapping("/logout")
