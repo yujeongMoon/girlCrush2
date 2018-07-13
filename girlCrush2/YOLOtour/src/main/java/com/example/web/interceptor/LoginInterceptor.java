@@ -16,10 +16,13 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		HttpSession session = request.getSession();
+		String url = session.getServletContext().getContextPath();
+		
+		session.setAttribute("url", url);
+		
 		User user = (User) session.getAttribute("user");
-		if (user == null) {
-			String url = session.getServletContext().getContextPath() + "/login";
-			response.sendRedirect(url);
+		if (user == null) {			
+			response.sendRedirect(url+ "/login");
 			System.out.println("LoginInterceptor # preHandle() : NO PASS");
 			return false;
 		}

@@ -15,9 +15,6 @@ public class LoginService {
 	@Autowired
 	private UserMapper userMapper;
 
-	@Autowired
-	private EmpMapper empMapper;
-
 	public void authenticate(Login login) {
 
 		User user = userMapper.selectByEmail(login.getEmail());
@@ -30,7 +27,6 @@ public class LoginService {
 				login.setError(null);
 			}
 		}
-
 		
 			/*Emp emp = empMapper.selectByEmail(login.getEmail());
 			if (emp == null) {

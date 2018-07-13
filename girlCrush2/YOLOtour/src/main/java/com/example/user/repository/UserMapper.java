@@ -37,6 +37,7 @@ public interface UserMapper {
 	@Select("SELECT * FROM customer WHERE email = #{email}")
 	// 선언해 놓으면 다른 메소드에서 @ResultMap("userResultMap") 선언으로 이용할 수 있다.
 	@Results(id = "userResultMap", value = { 
+			@Result(property = "userId", column = "user_id"),
 			@Result(property = "email", column = "email"),
 			@Result(property = "password", column = "password") })
 	public User selectByEmail(String email);

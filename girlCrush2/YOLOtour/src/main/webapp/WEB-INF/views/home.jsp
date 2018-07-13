@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="css/animate.min.css">
 <link rel="stylesheet" href="css/owl.carousel.css">
 <link rel="stylesheet" href="css/main.css">
+
+
 </head>
 <body>
 	<c:import url="nav_top.jsp"></c:import>
