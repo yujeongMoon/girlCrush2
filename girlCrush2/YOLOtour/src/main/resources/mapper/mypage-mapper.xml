@@ -29,11 +29,15 @@
 	
 
 	<select id="select_travel_domestic" parameterType="string" resultMap="TravelResultMap">
-		select d.img_id, d.title, d.writer, d.price
+		SELECT * FROM (
+			SELECT ROWNUM AS rnum, e.* FROM (
+				select d.img_id, d.title, d.writer, d.price
 		from(select c.img_id, c.title, c.price, c.writer, c.key
 		from(select a.img_id, a.travel_id, a.key, a.title, a.writer, a.price, b.EMAIL
 		from travel_board a, travel_cart b where a.travel_id = b. travel_id) c
 		where c.EMAIL = #{email}) d where d.key = 1
+			) e
+		);
 	</select>
 	
 	<select id="select_travel_foreign" parameterType="string" resultMap="TravelResultMap">

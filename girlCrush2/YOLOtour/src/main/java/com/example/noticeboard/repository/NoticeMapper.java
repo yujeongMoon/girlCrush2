@@ -21,8 +21,6 @@ public interface NoticeMapper {
 	@Select("SELECT * FROM NOTICE_BOARD ORDER BY notice_id DESC")
 	public List<Notice> selectAll();
 	
-	@Select("SELECT * FROM YOLO_EMP")
-	public List<Emp> yolo_emp();
 
 	public Notice selectById(long noticeId);
 	public List<Notice> selectByLimit(@Param("page") int page, @Param("size") int size);
