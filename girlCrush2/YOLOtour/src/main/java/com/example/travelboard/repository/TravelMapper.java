@@ -24,7 +24,7 @@ public interface TravelMapper {
 	
 	public Travel selectById(long travelId);
 	public List<Travel> selectByLimit(@Param("page") int page, @Param("size") int size);
-	public int increment(@Param("travel_id") long travelId, @Param("requester") String requester); //hit count 증가
+	public int increment(@Param("travelId") long travelId, @Param("requester") String requester); //hit count 증가
 	
 	
 	@Select("SELECT * FROM TRAVEL_BOARD WHERE KEY=1 ORDER BY TRAVEL_ID DESC")
