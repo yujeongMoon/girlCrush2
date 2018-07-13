@@ -53,11 +53,8 @@ public class TravelController {
 	
 	@GetMapping("/view/{travelId}")
 	public String getDomesticTravelView(@PathVariable long travelId, HttpSession session, Model model) {
-		User user = (User) session.getAttribute("user");
-		if(user == null) {
-			return "redirect:/login"; // user가 null일때 login 페이지로 redirect
-		}
-		travelMapper.increment(travelId, user.getEmail());
+//		User user = (User) session.getAttribute("user");
+//		travelMapper.increment(travelId, user.getEmail());
 		model.addAttribute("board", travelMapper.selectById(travelId));
 		return "board_view";  
 	}
@@ -67,9 +64,6 @@ public class TravelController {
 	@GetMapping("/write")
 	public String postInsertView(HttpSession session, Model model) {
 		User user = (User) session.getAttribute("user");
-		if(user == null) {
-			return "redirect:/login";
-		}
 		model.addAttribute("user", user);
 		return "board_write";
 	}

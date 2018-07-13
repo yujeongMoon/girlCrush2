@@ -32,6 +32,71 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style type="text/css">
+
+/* The container */
+.radiobtn {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 22px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radiobtn input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #eee;
+	border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color  */
+.radiobtn:hover input ~ .checkmark {
+	background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radiobtn input:checked ~ .checkmark {
+	background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radiobtn input:checked ~ .checkmark:after {
+	display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radiobtn .checkmark:after {
+	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
 .bs-example {
 	margin-bottom: 20px;
 	margin-left: 20px;
@@ -56,7 +121,7 @@
 		<div class="row d-flex align-items-center justify-content-center">
 			<div class="about-content col-lg-12">
 				<h2 class="text-white" align="right">상품등록</h2>
-				
+
 			</div>
 		</div>
 	</div>
@@ -66,9 +131,7 @@
 	<section class="price-area section-gap">
 	<div class="container">
 		<div class="row d-flex justify-content-center">
-			<div class="menu-content pb-70 col-lg-8">
-			
-			</div>
+			<div class="menu-content pb-70 col-lg-8"></div>
 		</div>
 		<div>
 			<div class="single-price">
@@ -76,18 +139,33 @@
 				<div class="bs-example">
 					<form class="form-horizontal"
 						action="<c:url value='/notices/write'/>" method="post">
+
+
+						<label class="radiobtn">국내여행 <input type="radio"
+							checked="checked" name="radio" align="right"> <span class="checkmark"></span>
+						</label> 
+						<label class="radiobtn">해외여행 <input type="radio"
+							name="radio" align="right"> <span class="checkmark"></span>
+						</label>
+
+						<div class="form-group">
+							<label for="price" class="control-label col-xs-2">Price</label>
+							<div class="col-xs-10">
+								<input type="number" class="form-control" id="price" name="price"
+									placeholder="가격을 입력하세요" required>
+							</div>
 						<div class="form-group">
 							<label for="title" class="control-label col-xs-2">Title</label>
 							<div class="col-xs-10">
 								<input type="text" class="form-control" id="title" name="title"
-									placeholder="Title" required>
+									placeholder="제목을입력하세요" required>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="writer" class="control-label col-xs-2">Writer</label>
 							<div class="col-xs-10">
 								<input type="text" class="form-control" id="writer"
-									name="writer" placeholder="Writer" required
+									name="writer" required
 									value="${user.email }" readonly="readonly">
 							</div>
 						</div>
@@ -95,7 +173,7 @@
 							<label for="content" class="control-label col-xs-2">Content</label>
 							<div class="col-xs-10">
 								<textarea class="form-control" rows="20" id="content"
-									name="content" placeholder="Content" required></textarea>
+									name="content" placeholder="상품정보를 입력하세요" required></textarea>
 							</div>
 						</div>
 						<div class="form-group">
