@@ -11,12 +11,15 @@ import com.example.user.repository.UserMapper;
 
 @Service
 public class LoginService {
+
 	@Autowired
 	private UserMapper userMapper;
+
 	@Autowired
 	private EmpMapper empMapper;
 
 	public void authenticate(Login login) {
+
 		User user = userMapper.selectByEmail(login.getEmail());
 		if (user == null) {
 			login.setError("Email does not exist.");
@@ -27,18 +30,19 @@ public class LoginService {
 				login.setError(null);
 			}
 		}
+
 		
-		Emp emp = empMapper.selectByEmail(login.getEmail());
-		if (emp == null) {
-			login.setError("Email does not exist.");
-		} else {
-			if (!emp.getPassword().equals(login.getPassword())) {
-				login.setError("Password is not correct.");
+			/*Emp emp = empMapper.selectByEmail(login.getEmail());
+			if (emp == null) {
+				login.setError("Email does not exist.");
 			} else {
-				login.setError(null);
-			}
-		}
+				if (!emp.getPassword().equals(login.getPassword())) {
+					login.setError("Password is not correct.");
+				} else {
+					login.setError(null);
+				}
+			}*/
+		
 	}
-	
-	
+
 }
