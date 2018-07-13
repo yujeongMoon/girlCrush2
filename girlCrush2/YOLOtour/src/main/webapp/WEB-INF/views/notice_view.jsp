@@ -108,7 +108,7 @@
 							</div>
 							<div class="form-group">
 								<div class="col-xs-offset-2 col-xs-10">
-									<a href="<c:url value='/boards'/>" class="btn btn-primary">List</a>
+									<a href="<c:url value='/notices'/>" class="btn btn-primary">List</a>
 									<c:if test="${not empty user }">
 										<c:if test="${user.email == notice.writer }">
 											<a href="<c:url value='/notices/delete/${notice.noticeId }'/>"

@@ -27,13 +27,10 @@ public class MyPageController {
 		
 		User user = (User) session.getAttribute("user");
 
-		int userid = user.getUserId();
-		System.out.println("user_id = " + userid);
-
 		ModelAndView mav = new ModelAndView("my_page");
-		mav.addObject("mypageD", mypageMapper.select_travel_domestic(userid));
-		mav.addObject("mypageF", mypageMapper.select_travel_foreign(userid));
-		mav.addObject("payinfo", mypageMapper.select_payment());
+		mav.addObject("mypageD", mypageMapper.select_travel_domestic(user.getEmail()));
+		mav.addObject("mypageF", mypageMapper.select_travel_foreign(user.getEmail()));
+//		mav.addObject("payinfo", mypageMapper.select_payment());
 		mav.addObject("pagerD", new Pager(page, size, bsize, mypageMapper.count_domestic()));
 		mav.addObject("pagerF", new Pager(page, size, bsize, mypageMapper.count_foreign()));
 		return mav;

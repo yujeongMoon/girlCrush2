@@ -37,6 +37,8 @@ public class NoticeController {
 		
 		User user = (User) session.getAttribute("user");
 		model.addAttribute("user",user);
+		
+		System.out.println(user.getEmail());
 			
 		ModelAndView mav = new ModelAndView("notice_list");
 		mav.addObject("notices", noticeMapper.selectByLimit(page, size));
@@ -47,9 +49,6 @@ public class NoticeController {
 	@GetMapping("/view/{noticeId}")
 	public String getNoticeView(@PathVariable long noticeId, HttpSession session, Model model) {
 		User user = (User) session.getAttribute("user");
-		if(user == null) {
-			return "redirect:/login";
-		}
 		
 		noticeMapper.increment(noticeId, user.getEmail());
 		model.addAttribute("notice", noticeMapper.selectById(noticeId));
@@ -60,9 +59,6 @@ public class NoticeController {
 	public String getInsertView(HttpSession session, Model model) {
 		User user = (User) session.getAttribute("user");
 
-		if(user == null) {
-			return "redirect:/login";
-		}
 		model.addAttribute("user",user);
 		return "notice_write";
 	}
