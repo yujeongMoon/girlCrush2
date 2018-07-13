@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.Pager;
+import com.example.login.dto.Login;
 import com.example.myPage.repository.MyPageMapper;
 import com.example.user.model.User;
 
@@ -23,25 +24,19 @@ public class MyPageController {
 	public ModelAndView getMypageView(@RequestParam(name = "page", required = false, defaultValue = "1") int page,
 			@RequestParam(name = "size", required = false, defaultValue = "10") int size,
 			@RequestParam(name = "bsize", required = false, defaultValue = "5") int bsize, HttpSession session) {
+		
+		User user = (User) session.getAttribute("user");
 
-//		return_login(session);
+		int userid = user.getUserId();
+		System.out.println("user_id = " + userid);
 
 		ModelAndView mav = new ModelAndView("my_page");
-		mav.addObject("mypageD", mypageMapper.select_travel_domestic());
-		mav.addObject("mypageF", mypageMapper.select_travel_foreign());
+		mav.addObject("mypageD", mypageMapper.select_travel_domestic(userid));
+		mav.addObject("mypageF", mypageMapper.select_travel_foreign(userid));
 		mav.addObject("payinfo", mypageMapper.select_payment());
 		mav.addObject("pagerD", new Pager(page, size, bsize, mypageMapper.count_domestic()));
 		mav.addObject("pagerF", new Pager(page, size, bsize, mypageMapper.count_foreign()));
 		return mav;
 
 	}
-
-//	public String return_login(HttpSession session) {
-//		User user = (User) session.getAttribute("user");
-//		if (user == null) {
-//			return "redirect:/login";
-//		}
-//
-//		return "my_page";
-//	}
 }

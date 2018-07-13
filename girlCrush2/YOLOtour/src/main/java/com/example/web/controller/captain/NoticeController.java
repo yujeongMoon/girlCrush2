@@ -33,7 +33,11 @@ public class NoticeController {
 	public ModelAndView getNoticesView(
 			@RequestParam(name="page", required=false, defaultValue="1") int page,
 			@RequestParam(name="size", required=false, defaultValue="10") int size,
-			@RequestParam(name="bsize", required=false, defaultValue="5") int bsize) {
+			@RequestParam(name="bsize", required=false, defaultValue="5") int bsize, HttpSession session,Model model) {
+		
+		User user = (User) session.getAttribute("user");
+		model.addAttribute("user",user);
+			
 		ModelAndView mav = new ModelAndView("notice_list");
 		mav.addObject("notices", noticeMapper.selectByLimit(page, size));
 		mav.addObject("pager", new Pager(page, size, bsize, noticeMapper.count()));

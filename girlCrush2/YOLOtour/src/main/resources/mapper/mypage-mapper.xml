@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.myPage.repository.MyPageMapper">
+	
+	<!-- type="스프링이름" id="별명" -->
+	<!-- <result property="스프링" column="DB이름" /> -->
+	<resultMap type="com.example.user.model.User" id="UserResultMap">
+		<result property="userId" column="USER_ID" />
+		<result property="email" column="EMAIL" />
+		<result property="password" column="PASSWORD" />
+	</resultMap>
+	
+	<resultMap type="com.example.travelboard.model.Travel" id="TravelResultMap">
+		<result property="travelId" column="travel_id" />
+		<result property="key" column="key" />
+		<result property="writer" column="WRITER" />
+		<result property="title" column="TITLE" />
+		<result property="content" column="CONTENT" />
+		<result property="regDate" column="REG_DATE" />
+		<result property="hitCount" column="HIT_COUNT" />
+		<result property="price" column="PRICE" />
+		<result property="imgId" column="IMG_ID" />
+	</resultMap>
+	
+		
+	<!-- <delete id="delete" parameterType="long">
+		DELETE FROM NOTICE_BOARD WHERE notice_id=#{noticeId}
+	</delete> -->
+	
+
+	<select id="select_travel_domestic" parameterType="int" resultMap="UserResultMap">
+		select d.img_id, d.title, d.writer, d.price
+		from(select c.img_id, c.title, c.price, c.writer, c.key
+		from(select a.img_id, a.travel_id, a.key, a.title, a.writer, a.price, b.USER_ID
+		from travel_board a, travel_cart b where a.travel_id = b. travel_id) c
+		where c.USER_ID = #{userId}) d where d.key = 1
+	</select>
+
+	
+</mapper>

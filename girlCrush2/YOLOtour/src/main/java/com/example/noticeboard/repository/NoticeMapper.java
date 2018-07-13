@@ -6,8 +6,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
+import com.example.emp.model.Emp;
 import com.example.noticeboard.model.Notice;
-import com.example.travelboard.model.Travel;
 
 @Mapper
 public interface NoticeMapper {
@@ -20,6 +20,9 @@ public interface NoticeMapper {
 	
 	@Select("SELECT * FROM NOTICE_BOARD ORDER BY notice_id DESC")
 	public List<Notice> selectAll();
+	
+	@Select("SELECT * FROM YOLO_EMP")
+	public List<Emp> yolo_emp();
 
 	public Notice selectById(long noticeId);
 	public List<Notice> selectByLimit(@Param("page") int page, @Param("size") int size);
