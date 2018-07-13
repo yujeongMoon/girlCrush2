@@ -8,5 +8,7 @@
 </head>
 <body>
 
+		<p> board_update.jsp</p>
+
 </body>
 </html>

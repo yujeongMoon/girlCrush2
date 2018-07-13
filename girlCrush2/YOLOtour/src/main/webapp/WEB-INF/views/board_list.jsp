@@ -211,7 +211,9 @@ w3-panel {
 				</c:if>
 			</ul>
 		</div>
-		<c:if test="${user.email == 'admin@gmail.com' }" var="admin"><a href="/travelboards/write">상품등록</a></c:if>
+		<c:if test="${user.email == 'admin@gmail.com' }" var="admin">
+			<a href="/travelboards/write">상품등록</a>
+		</c:if>
 	</div>
 
 	<c:import url="footer.jsp"></c:import>

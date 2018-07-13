@@ -126,16 +126,7 @@
 									<h6>${board.title }</h6>
 								</a>
 								<!-- Ratings & Review -->
-								<div
-									class="ratings-review mb-15 d-flex align-items-center justify-content-between">
-									<div class="ratings">
-										<i class="fa fa-star" aria-hidden="true"></i> <i
-											class="fa fa-star" aria-hidden="true"></i> <i
-											class="fa fa-star" aria-hidden="true"></i> <i
-											class="fa fa-star" aria-hidden="true"></i> <i
-											class="fa fa-star" aria-hidden="true"></i>
-									</div>
-								</div>
+								
 							</div>
 
 							<div class="short_overview my-5">
@@ -147,7 +138,10 @@
 								<button type="submit" name="addtocart" value="5"
 									class="btn amado-btn">Add to cart</button>
 							</form>
-
+							
+							<c:if test="${user.email == 'admin@gmail.com' }" var="admin">
+								<a href="/travelboards/update/${board.travelId}">수정하기</a>
+							</c:if>
 						</div>
 					</div>
 				</div>
