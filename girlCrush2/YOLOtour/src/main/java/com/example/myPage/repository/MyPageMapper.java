@@ -10,10 +10,22 @@ import com.example.travelboard.model.Travel;
 @Mapper
 public interface MyPageMapper {
 	
-	@Select("SELECT * FROM travel_board where key = 1")
+	@Select("select d.img_id, d.title, d.writer, d.price\r\n" + 
+			"from(select c.img_id, c.title, c.price, c.writer, c.key\r\n" + 
+			"from(select a.img_id, a.travel_id, a.key, a.title, a.writer, a.price, b.user_id\r\n" + 
+			"from travel_board a, travel_cart b\r\n" + 
+			"where a.travel_id = b. travel_id) c\r\n" + 
+			"where c.user_id = 1) d\r\n" + 
+			"where d.key = 1")
 	public List<Travel> select_travel_domestic();
 	
-	@Select("SELECT * FROM travel_board where key = 2")
+	@Select("select d.img_id, d.title, d.writer, d.price\r\n" + 
+			"from(select c.img_id, c.title, c.price, c.writer, c.key\r\n" + 
+			"from(select a.img_id, a.travel_id, a.key, a.title, a.writer, a.price, b.user_id\r\n" + 
+			"from travel_board a, travel_cart b\r\n" + 
+			"where a.travel_id = b. travel_id) c\r\n" + 
+			"where c.user_id = 1) d\r\n" + 
+			"where d.key = 2")
 	public List<Travel> select_travel_foreign();
 	
 	@Select("SELECT COUNT(*) FROM travel_board where key = 1")
