@@ -28,11 +28,11 @@ public class LoginService {
 			}
 		}
 		
-		Emp emp =empMapper.selectByEmail(login.getEmail());
-		if (user == null) {
+		Emp emp = empMapper.selectByEmail(login.getEmail());
+		if (emp == null) {
 			login.setError("Email does not exist.");
 		} else {
-			if (!user.getPassword().equals(login.getPassword())) {
+			if (!emp.getPassword().equals(login.getPassword())) {
 				login.setError("Password is not correct.");
 			} else {
 				login.setError(null);
