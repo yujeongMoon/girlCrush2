@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
+import com.example.emp.model.Emp;
 import com.example.travelboard.model.Travel;
 
 // 마이바티스가 인터페이스 구현클래스를 만들어서 스프링에게 제공한다.
@@ -32,6 +33,9 @@ public interface TravelMapper {
 	
 	@Select("SELECT * FROM TRAVEL_BOARD WHERE KEY=2 ORDER BY TRAVEL_ID DESC")
 	public List<Travel> selectForeign();
+	
+	@Select("SELECT * FROM YOLO_EMP")
+	public List<Emp> selectEmp();
 	
 	
 }

@@ -211,6 +211,10 @@ w3-panel {
 				</c:if>
 			</ul>
 		</div>
+		<c:forEach items="#{emp }" var="emp">
+		<c:if test="${user.email == emp.email }" var="admin"><a href="/travelboards/write">상품등록</a></c:if>
+		</c:forEach>
+		
 	</div>
 
 	<c:import url="footer.jsp"></c:import>

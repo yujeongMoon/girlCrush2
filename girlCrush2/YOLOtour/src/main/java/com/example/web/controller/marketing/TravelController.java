@@ -38,12 +38,17 @@ public class TravelController {
 		// required : 해당파라미터가 반드시 필수인지 여부
 			@RequestParam(name="page", required=false, defaultValue="1") int page,
 			@RequestParam(name="size", required=false, defaultValue="10") int size,
-			@RequestParam(name="bsize", required=false, defaultValue="5") int bsize){
+			@RequestParam(name="bsize", required=false, defaultValue="5") int bsize, HttpSession session, Model model){
+		
+		User user = (User) session.getAttribute("user");
+		model.addAttribute("user", user);
+		
 		ModelAndView mav = new ModelAndView("board_list");
 		mav.addObject("boards", travelMapper.selectByLimit(page, size));
 		mav.addObject("pager", new Pager(page, size, bsize, travelMapper.count()));
 		mav.addObject("domestic", travelMapper.selectDomestic());
 		mav.addObject("foreign", travelMapper.selectForeign());
+		mav.addObject("emp", travelMapper.selectEmp());
 		return mav;
 	}
 	
