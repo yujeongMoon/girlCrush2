@@ -55,11 +55,8 @@
 	<div class="container">
 		<div class="row d-flex align-items-center justify-content-center">
 			<div class="about-content col-lg-12">
-				<h1 class="text-white">Notice</h1>
-				<p class="text-white link-nav">
-					<a href="/">Home </a> <span class="lnr lnr-arrow-right"></span> <a
-						href="/notices"> Notice</a>
-				</p>
+				<h2 class="text-white" align="right">상품등록</h2>
+				
 			</div>
 		</div>
 	</div>
@@ -70,14 +67,12 @@
 	<div class="container">
 		<div class="row d-flex justify-content-center">
 			<div class="menu-content pb-70 col-lg-8">
-				<div class="title text-center">
-					<h1 class="mb-10">Notice</h1>
-				</div>
+			
 			</div>
 		</div>
 		<div>
 			<div class="single-price">
-				<h4>Notice</h4>
+				<h4>상품등록</h4>
 				<div class="bs-example">
 					<form class="form-horizontal"
 						action="<c:url value='/notices/write'/>" method="post">

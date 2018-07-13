@@ -48,7 +48,6 @@ public class TravelController {
 		mav.addObject("pager", new Pager(page, size, bsize, travelMapper.count()));
 		mav.addObject("domestic", travelMapper.selectDomestic());
 		mav.addObject("foreign", travelMapper.selectForeign());
-		mav.addObject("emp", travelMapper.selectEmp());
 		return mav;
 	}
 	
