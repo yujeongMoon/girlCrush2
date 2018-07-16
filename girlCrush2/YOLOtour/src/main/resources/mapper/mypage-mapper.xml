@@ -22,6 +22,16 @@
 		<result property="imgId" column="IMG_ID" />
 	</resultMap>
 	
+	<resultMap type="com.example.payment.model.Payment" id="PaymentResultMap">
+		<result property="payId" column="pay_id" />
+		<result property="name" column="name" />
+		<result property="creditCardNumber" column="creditcard_number" />
+		<result property="expMonth" column="exp_month" />
+		<result property="expYear" column="exp_year" />
+		<result property="cvc" column="cvc" />
+		<result property="email" column="email" />
+	</resultMap>
+	
 		
 	<!-- <delete id="delete" parameterType="long">
 		DELETE FROM NOTICE_BOARD WHERE notice_id=#{noticeId}
@@ -29,24 +39,25 @@
 	
 
 	<select id="select_travel_domestic" parameterType="string" resultMap="TravelResultMap">
-		SELECT * FROM (
-			SELECT ROWNUM AS rnum, e.* FROM (
-				select d.img_id, d.title, d.writer, d.price
-		from(select c.img_id, c.title, c.price, c.writer, c.key
-		from(select a.img_id, a.travel_id, a.key, a.title, a.writer, a.price, b.EMAIL
-		from travel_board a, travel_cart b where a.travel_id = b. travel_id) c
-		where c.EMAIL = #{email}) d where d.key = 1
-			) e
-		);
+		select d.*
+		from (select c.travel_id, c.key, c.writer, c.title, c.content, c.reg_date, c.hit_count, c.price, c.img_id
+		from (select a.*, b.email
+        from travel_board a, travel_cart b where a.travel_id = b.travel_id) c where c.email = #{email}) d
+		where d.key = 1
 	</select>
 	
 	<select id="select_travel_foreign" parameterType="string" resultMap="TravelResultMap">
-		select d.img_id, d.title, d.writer, d.price
-		from(select c.img_id, c.title, c.price, c.writer, c.key
-		from(select a.img_id, a.travel_id, a.key, a.title, a.writer, a.price, b.EMAIL
-		from travel_board a, travel_cart b where a.travel_id = b. travel_id) c
-		where c.EMAIL = #{email}) d where d.key = 2
+		select d.*
+		from (select c.travel_id, c.key, c.writer, c.title, c.content, c.reg_date, c.hit_count, c.price, c.img_id
+		from (select a.*, b.email
+        from travel_board a, travel_cart b where a.travel_id = b.travel_id) c where c.email = #{email}) d
+		where d.key = 2
 	</select>
-
+	
+	<select id="select_payment" parameterType="string" resultMap="PaymentResultMap">
+		<bind name="email" value="@com.example.user.model.User@sendEmail(email)"/>
+		select * from payment_board where email = 'octopus37@naver.com' 
+		<!-- #{email}의 이메일은 로그인한 user의 이메일 -->
+	</select>
 	
 </mapper>

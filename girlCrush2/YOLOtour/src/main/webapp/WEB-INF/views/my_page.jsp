@@ -75,44 +75,6 @@
 						</c:forEach>
 					</table>
 
-					<div class="row">
-						<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-							<ul class="pagination">
-								<c:set var="target" value="mypage" />
-								<c:if test="${pagerD.rows==0 }">
-									<li class="active"><a href="#">1</a></li>
-								</c:if>
-								<c:if test="${pagerD.rows > 0 }">
-									<c:set var="common"
-										value="size=${pagerD.size }&bsize=${pagerD.bsize }" />
-									<c:if test="${pagerD.bspage > pagerD.bsize }">
-										<c:set var="home" value="page=1&${common }" />
-										<c:set var="prev" value="page=${pagerD.bspage-1 }&${common }" />
-										<li><a href="${target }?${home }">Home</a></li>
-										<li><a href='<c:url value="${target }?${prev }"/>'>&laquo;</a></li>
-									</c:if>
-									<c:forEach var="pno" begin="${pagerD.bspage }"
-										end="${pagerD.bepage }">
-										<c:if test="${pno==pagerD.page }">
-											<li class="active"><a href="#">${pno }</a></li>
-										</c:if>
-										<c:if test="${pno!=pagerD.page }">
-											<c:if test="${pno <= pagerD.pages }">
-												<c:set var="page" value="page=${pno }&${common }" />
-												<li><a href='<c:url value="${target }?${page }"/>'>${pno }</a></li>
-											</c:if>
-										</c:if>
-									</c:forEach>
-									<c:if test="${pagerD.bepage < pagerD.pages }">
-										<c:set var="next" value="page=${pagerD.bepage+1 }&${common }" />
-										<c:set var="last" value="page=${pagerD.pages }&${common }" />
-										<li><a href='<c:url value="${target }?${next }"/>'>&raquo;</a></li>
-										<li><a href="${target }?${last }">Last</a></li>
-									</c:if>
-								</c:if>
-							</ul>
-						</div>
-					</div>
 				</div>
 				<!-- 끝 -->
 				<div class="single-price">
@@ -138,44 +100,6 @@
 						</c:forEach>
 					</table>
 
-					<div class="row">
-						<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-							<ul class="pagination">
-								<c:set var="target" value="mypage" />
-								<c:if test="${pagerF.rows==0 }">
-									<li class="active"><a href="#">1</a></li>
-								</c:if>
-								<c:if test="${pagerF.rows > 0 }">
-									<c:set var="common"
-										value="size=${pagerF.size }&bsize=${pagerF.bsize }" />
-									<c:if test="${pagerF.bspage > pagerF.bsize }">
-										<c:set var="home" value="page=1&${common }" />
-										<c:set var="prev" value="page=${pagerF.bspage-1 }&${common }" />
-										<li><a href="${target }?${home }">Home</a></li>
-										<li><a href='<c:url value="${target }?${prev }"/>'>&laquo;</a></li>
-									</c:if>
-									<c:forEach var="pno" begin="${pagerF.bspage }"
-										end="${pagerF.bepage }">
-										<c:if test="${pno==pagerF.page }">
-											<li class="active"><a href="#">${pno }</a></li>
-										</c:if>
-										<c:if test="${pno!=pagerF.page }">
-											<c:if test="${pno <= pagerF.pages }">
-												<c:set var="page" value="page=${pno }&${common }" />
-												<li><a href='<c:url value="${target }?${page }"/>'>${pno }</a></li>
-											</c:if>
-										</c:if>
-									</c:forEach>
-									<c:if test="${pagerF.bepage < pagerF.pages }">
-										<c:set var="next" value="page=${pagerF.bepage+1 }&${common }" />
-										<c:set var="last" value="page=${pagerF.pages }&${common }" />
-										<li><a href='<c:url value="${target }?${next }"/>'>&raquo;</a></li>
-										<li><a href="${target }?${last }">Last</a></li>
-									</c:if>
-								</c:if>
-							</ul>
-						</div>
-					</div>
 				</div>
 				<div class="single-price">
 					<!-- 시작 -->
@@ -192,60 +116,20 @@
 							<tr>
 								<th scope="col">No</th>
 								<th scope="col">Name</th>
-								<th scope="col">Address</th>
+								<th scope="col">email</th>
 							</tr>
 						</thead>
-						<c:forEach items="#{payinfo }" var="payinfo">
+						<c:forEach items="#{payinfo }" var="pay">
 							<tr>
-								<%-- <td>${payinfo.payId }</td>
-								<td>${payinfo.name }</td>
-								<td>${payinfo.address }</td> --%>
+								<td>${pay.payId }</td>
+								<td>${pay.name }</td>
+								<td>${pay.email }</td>
 							</tr>
 						</c:forEach>
 					</table>
-
-					<div class="row">
-						<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-							<ul class="pagination">
-								<c:set var="target" value="mypage" />
-								<c:if test="${pager.rows==0 }">
-									<li class="active"><a href="#">1</a></li>
-								</c:if>
-								<c:if test="${pager.rows > 0 }">
-									<c:set var="common"
-										value="size=${pager.size }&bsize=${pager.bsize }" />
-									<c:if test="${pager.bspage > pager.bsize }">
-										<c:set var="home" value="page=1&${common }" />
-										<c:set var="prev" value="page=${pager.bspage-1 }&${common }" />
-										<li><a href="${target }?${home }">Home</a></li>
-										<li><a href='<c:url value="${target }?${prev }"/>'>&laquo;</a></li>
-									</c:if>
-									<c:forEach var="pno" begin="${pager.bspage }"
-										end="${pager.bepage }">
-										<c:if test="${pno==pager.page }">
-											<li class="active"><a href="#">${pno }</a></li>
-										</c:if>
-										<c:if test="${pno!=pager.page }">
-											<c:if test="${pno <= pager.pages }">
-												<c:set var="page" value="page=${pno }&${common }" />
-												<li><a href='<c:url value="${target }?${page }"/>'>${pno }</a></li>
-											</c:if>
-										</c:if>
-									</c:forEach>
-									<c:if test="${pager.bepage < pager.pages }">
-										<c:set var="next" value="page=${pager.bepage+1 }&${common }" />
-										<c:set var="last" value="page=${pager.pages }&${common }" />
-										<li><a href='<c:url value="${target }?${next }"/>'>&raquo;</a></li>
-										<li><a href="${target }?${last }">Last</a></li>
-									</c:if>
-								</c:if>
-							</ul>
-						</div>
-					</div>
-				</div>
+				</div>			
 				<!-- 끝 -->
 			</div>
-
 		</div>
 	</section>
 
