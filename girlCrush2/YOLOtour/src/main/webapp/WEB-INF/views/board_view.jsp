@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -121,16 +121,16 @@
 							<!-- Product Meta Data -->
 							<div class="product-meta-data">
 								<div class="line"></div>
-								<p class="product-price">${board.price }</p>
+								<p class="product-price">${travel.price }</p>
 								<a href="product-details.html">
-									<h6>${board.title }</h6>
+									<h6>${travel.title }</h6>
 								</a>
 								<!-- Ratings & Review -->
 								
 							</div>
 
 							<div class="short_overview my-5">
-								<p>${board.content }</p>
+								<p>${travel.content }</p>
 							</div>
 
 							<!-- Add to Cart Form -->
@@ -140,7 +140,10 @@
 							</form>
 							
 							<c:if test="${user.email == 'admin@gmail.com' }" var="admin">
-								<a href="/travelboards/update/${board.travelId}">수정하기</a>
+								<a href="/travelboards/update/${travel.travelId}">Update</a>
+							</c:if>
+							<c:if test="${user.email == 'admin@gmail.com' }" var="admin">
+								<a href="/travelboards/delete/${travel.travelId}">Delete</a>
 							</c:if>
 						</div>
 					</div>

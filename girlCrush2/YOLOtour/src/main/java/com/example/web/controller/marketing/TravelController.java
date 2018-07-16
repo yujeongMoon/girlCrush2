@@ -55,16 +55,19 @@ public class TravelController {
 	public String getDomesticTravelView(@PathVariable long travelId, HttpSession session, Model model) {
 //		User user = (User) session.getAttribute("user");
 //		travelMapper.increment(travelId, user.getEmail());
-		model.addAttribute("board", travelMapper.selectById(travelId));
+		model.addAttribute("travel", travelMapper.selectById(travelId));
 		return "board_view";  
 	}
 
 	
 	
+	
+	
 	@GetMapping("/write")
-	public String postInsertView(HttpSession session, Model model) {
+	public String getInsertView(HttpSession session, Model model) {
 		User user = (User) session.getAttribute("user");
-		model.addAttribute("user", user);
+
+		model.addAttribute("user",user);
 		return "board_write";
 	}
 	
@@ -79,6 +82,10 @@ public class TravelController {
 		}
 		return "redirect:/travelboards";
 	}
+	
+	
+	
+	
 	
 	@GetMapping("/update/{travelId}")
 	public String getUpdateView(@PathVariable long travelId, HttpSession session, Model model) {
@@ -101,6 +108,7 @@ public class TravelController {
 		if(user != null && travel != null) {
 			if (user.getEmail().equals(travel.getWriter())) {
 				travelMapper.update(travel);
+				
 				return "redirect:/travelboards/view/" + travel.getTravelId();
 			}
 		}

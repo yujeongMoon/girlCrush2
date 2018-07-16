@@ -138,48 +138,57 @@
 				<h4>상품등록</h4>
 				<div class="bs-example">
 					<form class="form-horizontal"
-						action="<c:url value='/notices/write'/>" method="post">
+						action="<c:url value='/travelboards/write'/>" method="post">
 
 
-						<label class="radiobtn">국내여행 <input type="radio"
-							checked="checked" name="radio" align="right"> <span class="checkmark"></span>
-						</label> 
-						<label class="radiobtn">해외여행 <input type="radio"
-							name="radio" align="right"> <span class="checkmark"></span>
+
+
+						<label class="radiobtn">Domestic <input type="radio"
+							checked="checked" id="key" name="key" align="right" value=1>
+							<span class="checkmark"></span>
+						</label> <label class="radiobtn">Foreign <input type="radio"
+							id="key" name="key" align="right" value=2> 
+							<span class="checkmark"></span>
 						</label>
+
+
+
+
 
 						<div class="form-group">
 							<label for="price" class="control-label col-xs-2">Price</label>
 							<div class="col-xs-10">
-								<input type="number" class="form-control" id="price" name="price"
-									placeholder="가격을 입력하세요" required>
+								<input type="text" class="form-control" id="price"
+									name="price" placeholder="가격을 입력하세요" required>
 							</div>
-						<div class="form-group">
-							<label for="title" class="control-label col-xs-2">Title</label>
-							<div class="col-xs-10">
-								<input type="text" class="form-control" id="title" name="title"
-									placeholder="제목을입력하세요" required>
+							<div class="form-group">
+								<label for="title" class="control-label col-xs-2">Title</label>
+								<div class="col-xs-10">
+									<input type="text" class="form-control" id="title" name="title"
+										placeholder="제목을입력하세요" required>
+								</div>
 							</div>
-						</div>
-						<div class="form-group">
-							<label for="writer" class="control-label col-xs-2">Writer</label>
-							<div class="col-xs-10">
-								<input type="text" class="form-control" id="writer"
-									name="writer" required
-									value="${user.email }" readonly="readonly">
+							<div class="form-group">
+								<label for="writer" class="control-label col-xs-2">Writer</label>
+								<div class="col-xs-10">
+									<input type="text" class="form-control" id="writer"
+										name="writer" required value="${user.email }"
+										readonly="readonly">
+								</div>
 							</div>
-						</div>
-						<div class="form-group">
-							<label for="content" class="control-label col-xs-2">Content</label>
-							<div class="col-xs-10">
-								<textarea class="form-control" rows="20" id="content"
-									name="content" placeholder="상품정보를 입력하세요" required></textarea>
+							<div class="form-group">
+								<label for="content" class="control-label col-xs-2">Content</label>
+								<div class="col-xs-10">
+									<textarea class="form-control" rows="20" id="content"
+										name="content" placeholder="상품정보를 입력하세요" required></textarea>
+								</div>
 							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-xs-offset-2 col-xs-10">
-								<a href="<c:url value='/travelboards'/>" class="btn btn-primary">List</a>
-								<button type="submit" class="btn btn-primary">Save</button>
+							<div class="form-group">
+								<div class="col-xs-offset-2 col-xs-10">
+									<a href="<c:url value='/travelboards'/>"
+										class="btn btn-primary">List</a>
+									<button type="submit" class="btn btn-primary">Save</button>
+								</div>
 							</div>
 						</div>
 					</form>
