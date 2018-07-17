@@ -1,12 +1,23 @@
+1.CUSTOMER
+
 create table CUSTOMER(
-user_id number(10,0) not null primary key,
-email VARCHAR2(100) not null,
+user_id number(10,0) not null,
+email VARCHAR2(100) not null primary key,
 password varchar2(100) not null
 );
 
 CREATE SEQUENCE ID_USER
 START WITH 1
 INCREMENT BY 1;
+
+insert into CUSTOMER values (1, 'octopus37@naver.com', '1234');
+insert into CUSTOMER values (ID_USER.NEXTVAL, 'octo2917@gmail.com', '1234');
+insert into CUSTOMER values (ID_USER.NEXTVAL, 'dullyshin@gmail.com', '1234');
+insert into CUSTOMER values (ID_USER.NEXTVAL, 'happylestar@gmail.com', '1234');
+insert into CUSTOMER values (ID_USER.NEXTVAL, 'admin@gmail.com', 'admin');
+
+
+2.TRAVEL_BOARD
 
 Create table TRAVEL_BOARD(
 travel_id NUMBER(10,0) NOT NULL PRIMARY KEY,
@@ -24,20 +35,43 @@ CREATE SEQUENCE ID_TRAVEL
 START WITH 1
 INCREMENT BY 1;
 
+INSERT INTO TRAVEL_BOARD(travel_id, key, writer, title, content, reg_date, hit_count, price, IMG_id)
+VALUES(1, 1, 'admin@gmail.com', 'T0', 'C0', SYSDATE, 0, 0, '0.jpg');
+INSERT INTO TRAVEL_BOARD(travel_id, key, writer, title, content, reg_date, hit_count, price, IMG_id)
+VALUES(ID_TRAVEL.NEXTVAL, 1, 'admin@gmail.com', 'T1', 'C1', SYSDATE, 0, 0, '1.jpg');
+INSERT INTO TRAVEL_BOARD(travel_id, key, writer, title, content, reg_date, hit_count, price, IMG_id)
+VALUES(ID_TRAVEL.NEXTVAL, 2, 'admin@gmail.com', 'T2', 'C2', SYSDATE, 0, 0, '2.jpg');
+INSERT INTO TRAVEL_BOARD(travel_id, key, writer, title, content, reg_date, hit_count, price, IMG_id)
+VALUES(ID_TRAVEL.NEXTVAL, 2, 'admin@gmail.com', 'T3', 'C3', SYSDATE, 0, 0, '3.jpg');
+
+
+
+3.TRAVEL_CART
+
 Create table TRAVEL_CART(
 cart_id number(10,0) not null PRIMARY KEY,
 travel_id NUMBER(10,0) NOT NULL,
-user_id NUMBER(10,0) NOT NULL
+email VARCHAR2(100) not null
 );
 
 create sequence ID_CART
 start with 1
 increment by 1;
 
-Create table IMG(
-IMG_id NUMBER(10,0) NOT NULL PRIMARY KEY,
-URL  VARCHAR2(255) DEFAULT NULL
-);
+insert into TRAVEL_CART values (1, 1, 'octopus37@naver.com');
+insert into TRAVEL_CART values (ID_CART.NEXTVAL, 2, 'octopus37@naver.com');
+insert into TRAVEL_CART values (ID_CART.NEXTVAL, 3, 'octopus37@naver.com');
+insert into TRAVEL_CART values (ID_CART.NEXTVAL, 4, 'octopus37@naver.com');
+
+insert into TRAVEL_CART values (ID_CART.NEXTVAL, 1, 'dullyshin@gmail.com');
+insert into TRAVEL_CART values (ID_CART.NEXTVAL, 2, 'dullyshin@gmail.com');
+insert into TRAVEL_CART values (ID_CART.NEXTVAL, 3, 'dullyshin@gmail.com');
+insert into TRAVEL_CART values (ID_CART.NEXTVAL, 4, 'dullyshin@gmail.com');
+
+
+
+
+4.NOTICE_BOARD
 
 Create table NOTICE_BOARD(
 notice_id NUMBER(10,0) NOT NULL PRIMARY KEY,
@@ -52,51 +86,6 @@ CREATE SEQUENCE ID_NOTICE
 START WITH 1
 INCREMENT BY 1;
 
-Create table PAYMENT_BOARD(
-pay_id NUMBER(10,0) NOT NULL PRIMARY KEY,
-name VARCHAR2(20) NOT NULL,
-email VARCHAR2(30) NOT NULL,
-address VARCHAR2(30) NOT NULL,
-name_on_card VARCHAR2(20) NOT NULL,
-creditcard_number VARCHAR2(30) NOT NULL,
-exp_month NUMBER NOT NULL,
-exp_year NUMBER NOT NULL,
-cvc NUMBER NOT NULL,
-user_id NUMBER NOT NULL
-);
-
-CREATE SEQUENCE ID_PAYMENT
-START WITH 1
-INCREMENT BY 1;
-
-Create table YOLO_EMP(
-YOLO_id NUMBER(10,0) NOT NULL PRIMARY KEY,
-email VARCHAR2(30) NOT NULL,
-password VARCHAR2(30) NOT NULL
-);
-
-CREATE SEQUENCE ID_YOLO_EMP
-START WITH 1
-INCREMENT BY 1;
-
-INSERT INTO TRAVEL_BOARD(travel_id, key, writer, title, content, reg_date, hit_count, price, IMG_id)
-VALUES(1, 1, 'W0', 'T0', 'C0', SYSDATE, 0, 0, '0.img');
-INSERT INTO TRAVEL_BOARD(travel_id, key, writer, title, content, reg_date, hit_count, price, IMG_id)
-VALUES(ID_TRAVEL.NEXTVAL, 1, 'W1', 'T1', 'C1', SYSDATE, 0, 0, '1.img');
-INSERT INTO TRAVEL_BOARD(travel_id, key, writer, title, content, reg_date, hit_count, price, IMG_id)
-VALUES(ID_TRAVEL.NEXTVAL, 2, 'W2', 'T2', 'C2', SYSDATE, 0, 0, '2.img');
-INSERT INTO TRAVEL_BOARD(travel_id, key, writer, title, content, reg_date, hit_count, price, IMG_id)
-VALUES(ID_TRAVEL.NEXTVAL, 2, 'W3', 'T3', 'C3', SYSDATE, 0, 0, '3.img');
-
-insert into TRAVEL_CART values (1,1,1);
-insert into TRAVEL_CART values (ID_CART.NEXTVAL,2,1);
-insert into TRAVEL_CART values (ID_CART.NEXTVAL,3,2);
-insert into TRAVEL_CART values (ID_CART.NEXTVAL,4,2);
-
-insert into IMG values ('1.img','/weds/sdsds');
-insert into IMG values ('2.img','/weds/sdsds');
-insert into IMG values ('3.img','/weds/sdsds');
-
 INSERT INTO NOTICE_BOARD(notice_id, writer, title, content, reg_date, hit_count)
 VALUES(1, 'W0', 'T0', 'C0', SYSDATE, 0);
 INSERT INTO NOTICE_BOARD(notice_id, writer, title, content, reg_date, hit_count)
@@ -105,15 +94,56 @@ INSERT INTO NOTICE_BOARD(notice_id, writer, title, content, reg_date, hit_count)
 VALUES(ID_NOTICE.NEXTVAL, 'W2', 'T2', 'C2', SYSDATE, 0);
 INSERT INTO NOTICE_BOARD(notice_id, writer, title, content, reg_date, hit_count)
 VALUES(ID_NOTICE.NEXTVAL, 'W3', 'T3', 'C3', SYSDATE, 0);
+INSERT INTO NOTICE_BOARD(notice_id, writer, title, content, reg_date, hit_count)
+VALUES(ID_NOTICE.NEXTVAL, 'W4', 'T4', 'C4', SYSDATE, 0);
 
-INSERT INTO PAYMENT_BOARD(pay_id, name, email, address, name_on_card, creditcard_number, exp_month, exp_year, cvc, user_id)
-VALUES(1, 'gahee', 'e1@naver.com', 'gimpo', 'gahee', '12345678974513', 8,22,232, 1);
-INSERT INTO PAYMENT_BOARD(pay_id, name, email, address, name_on_card, creditcard_number, exp_month, exp_year, cvc, user_id)
-VALUES(ID_PAYMENT.NEXTVAL, 'gahee', 'e1@naver.com', 'gimpo', 'gahee', '12345678974513', 8,22,232, 1);
-INSERT INTO PAYMENT_BOARD(pay_id, name, email, address, name_on_card, creditcard_number, exp_month, exp_year, cvc, user_id)
-VALUES(ID_PAYMENT.NEXTVAL, 'hyejin', 'e2@naver.com', 'ansan', 'hyejin', '1234852974513', 8,22,232, 2);
-INSERT INTO PAYMENT_BOARD(pay_id, name, email, address, name_on_card, creditcard_number, exp_month, exp_year, cvc, user_id)
-VALUES(ID_PAYMENT.NEXTVAL, 'yujeong', 'e3@naver.com', 'anseong', 'yujeong', '1278788974513', 8,22,232, 3);
 
-INSERT INTO YOLO_EMP(YOLO_id , email , password)
-VALUES(1, 'octo2917@gmail.com', '1234');
+
+
+5.PAYMENT_BOARD
+
+Create table PAYMENT_BOARD(
+pay_id NUMBER(10,0) NOT NULL PRIMARY KEY,
+name_on_card VARCHAR2(20) NOT NULL,
+creditcard_number VARCHAR2(30) NOT NULL,
+exp_month NUMBER NOT NULL,
+exp_year NUMBER NOT NULL,
+cvc NUMBER NOT NULL,
+email VARCHAR2(100) not null
+);
+
+CREATE SEQUENCE ID_PAYMENT
+START WITH 1
+INCREMENT BY 1;
+
+INSERT INTO PAYMENT_BOARD(pay_id, name_on_card, creditcard_number, exp_month, exp_year, cvc, email)
+VALUES(1, 'N1', '1234567890123', 8, 22, 232, 'octopus37@naver.com');
+INSERT INTO PAYMENT_BOARD(pay_id, name_on_card, creditcard_number, exp_month, exp_year, cvc, email)
+VALUES(ID_PAYMENT.NEXTVAL, 'N1', '2124413218411', 9, 21, 456, 'octopus37@naver.com');
+
+
+
+
+6.PAYMENT_CART
+
+Create table PAYMENT_CART(
+pay_cart_id number(10,0) not null PRIMARY KEY,
+travel_id NUMBER(10,0) NOT NULL,
+email VARCHAR2(100) not null
+);
+
+create sequence ID_PAY_CART
+start with 1
+increment by 1;
+
+insert into PAYMENT_CART values (1, 1, 'octopus37@naver.com');
+insert into PAYMENT_CART values (ID_PAY_CART.NEXTVAL, 2, 'octopus37@naver.com');
+insert into PAYMENT_CART values (ID_PAY_CART.NEXTVAL, 3, 'octopus37@naver.com');
+insert into PAYMENT_CART values (ID_PAY_CART.NEXTVAL, 4, 'octopus37@naver.com');
+
+insert into PAYMENT_CART values (ID_PAY_CART.NEXTVAL, 1, 'dullyshin@gmail.com');
+insert into PAYMENT_CART values (ID_PAY_CART.NEXTVAL, 2, 'dullyshin@gmail.com');
+insert into PAYMENT_CART values (ID_PAY_CART.NEXTVAL, 3, 'dullyshin@gmail.com');
+insert into PAYMENT_CART values (ID_PAY_CART.NEXTVAL, 4, 'dullyshin@gmail.com');
+
+
