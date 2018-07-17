@@ -65,16 +65,16 @@ public class TravelController {
 	
 	// file upload
 	
-	private static String UPLOADED_FOLDER = "D://temp//";  //사용자가 업로드한 폴더를 여기에 모아라.
+	private static String UPLOADED_FOLDER = "D://princess//girlCrush2//girlCrush2//YOLOtour//src//main//resources//static//img//test//";  //사용자가 업로드한 폴더를 여기에 모아라.
 	
 	
-	@PostMapping("/update/upload") // //new annotation since 4.3
-    public String singleFileUpload(@RequestParam("file") MultipartFile file,    
+	@PostMapping("/write/upload") // //new annotation since 4.3
+    public String FileNewUpload(@RequestParam("file") MultipartFile file,    
                                    RedirectAttributes redirectAttributes) {
 
         if (file.isEmpty()) {
             redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
-            return "redirect:/upload";
+            return "/travelboards/view/{travelId}";
         }
 
         try {
@@ -97,20 +97,42 @@ public class TravelController {
     }
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	@PostMapping("/update/upload/{travelId}") // //new annotation since 4.3
+    public String FileUpload(@RequestParam("file") MultipartFile file,    
+                              RedirectAttributes redirectAttributes,
+                              Travel travel, HttpSession session, Model model, @PathVariable long travelId) {
+
+        if (file.isEmpty()) {
+            redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
+            return "redirect:/travelboards/view/{travelId}";
+        }
+
+        try {
+
+            // Get the file and save it somewhere
+            byte[] bytes = file.getBytes();  //파일이 크면 잘라서 조금씩 보내겠다.
+            Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());// 사용자가 올린 이름 그대로 올리세요,, 단점은 이름이 같으면 덮어써짐.
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            Files.write(path, bytes);  // temp 폴더에 저장.
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+           
+            
+            redirectAttributes.addFlashAttribute("imgPath","/princess/girlCrush2/girlCrush2/YOLOtour/src/main/resources/static/img/" + file.getOriginalFilename());
+            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            System.out.println(file.getOriginalFilename());
+            	
+            	Travel travel_update = travelMapper.selectById(travelId);
+            	System.out.println(travel_update);
+            	travel_update.setImgId(file.getOriginalFilename());
+    			travelMapper.update_img(travel_update);
+            
+        } catch (IOException e) {
+            e.printStackTrace();  // 업로드가 안되었다면? 에러
+        }
+
+        return "redirect:/travelboards";  //포스트 리다이렉트 겟 패턴사용.
+    }
+
 	@GetMapping("/view/{travelId}")
 	public String getDomesticTravelView(@PathVariable long travelId, HttpSession session, Model model) {
 //		User user = (User) session.getAttribute("user");

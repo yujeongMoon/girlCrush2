@@ -6,9 +6,13 @@ package com.example.travelboard.model;
 
 import java.util.Date;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Travel {
 	private long travelId;  // travel_id
 	private int key;		// key

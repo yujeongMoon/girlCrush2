@@ -192,14 +192,14 @@
 					
 					
 					<form action="<c:url value='/travelboards/write/upload'/>" method="post" enctype="multipart/form-data">
-						<input type="file" name="imgupload">
+						<input type="file" name="file">
 						<div class="form-group">
 								<div class="col-xs-offset-2 col-xs-10">
 									<a href="<c:url value='/travelboards'/>"
 										class="btn btn-primary">List</a>
 									<button type="submit" class="btn btn-primary">Save</button>
 								</div>
-							</div>
+						</div>
 					</form>
 					
 					

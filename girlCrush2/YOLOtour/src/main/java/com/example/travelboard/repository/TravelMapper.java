@@ -15,6 +15,7 @@ import com.example.travelboard.model.TravelCart;
 public interface TravelMapper {
 	public int insert(Travel travel);
 	public int update(Travel travel);
+	public int update_img(Travel travel);
 	public int delete(long travelId);
 	public int addcart(TravelCart travelCart);
 	

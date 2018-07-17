@@ -12,6 +12,7 @@ public class MyFileConfig extends WebMvcConfigurerAdapter {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 //		registry.addResourceHandler("/temp/**").addResourceLocations("/resources/", "classpath:/other-resources/");
-		registry.addResourceHandler("/temp/**").addResourceLocations(new File("D:/temp").toURI().toString());
+		registry.addResourceHandler("/princess/girlCrush2/girlCrush2/YOLOtour/src/main/resources/static/img/**").addResourceLocations
+		(new File("D:/princess/girlCrush2/girlCrush2/YOLOtour/src/main/resources/static/img").toURI().toString());
 	}
 }

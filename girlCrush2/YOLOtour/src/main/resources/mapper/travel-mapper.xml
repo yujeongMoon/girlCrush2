@@ -29,8 +29,13 @@
 	</insert>
 	
 	<update id="update" parameterType="com.example.travelboard.model.Travel">
-		UPDATE travel_board SET title=#{title}, price=#{price}, key=#{key}, 
+		UPDATE travel_board SET title=#{title}, price=#{price}, key=#{key}, IMG_ID=#{imgId},
 		content=#{content} WHERE travel_id=#{travelId}
+	</update>
+	
+	<update id="update_img" parameterType="com.example.travelboard.model.Travel">
+		UPDATE travel_board SET IMG_ID=#{imgId}
+		WHERE travel_id=#{travelId}
 	</update>
 	
 	<delete id="delete" parameterType="long">

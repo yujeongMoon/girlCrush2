@@ -119,9 +119,9 @@
 						</form>
 
 
-						<form action="<c:url value='/travelboards/upload'/>" method="post"
+						<form action="<c:url value='/travelboards/update/upload/${travel.travelId }'/>" method="post"
 							enctype="multipart/form-data">
-							<input type="file" name="imgupload" value="${travel.imgId }">
+							<input type="file" name="file" value="${travel.imgId }" >
 							<div class="form-group">
 								<div class="col-xs-offset-2 col-xs-10">
 									<a href="<c:url value='/travelboards'/>"
