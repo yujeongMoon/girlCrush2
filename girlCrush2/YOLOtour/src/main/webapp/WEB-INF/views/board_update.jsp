@@ -90,7 +90,7 @@
 							<div class="form-group">
 								<label for="title" class="control-label col-xs-2">Price</label>
 								<div class="col-xs-10">
-									<input type="text" class="form-control" id="title" name="title"
+									<input type="text" class="form-control" id="price" name="price"
 										placeholder="Title" required value="${travel.price }">
 								</div>
 							</div>

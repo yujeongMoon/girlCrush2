@@ -158,8 +158,8 @@
 						<div class="form-group">
 							<label for="price" class="control-label col-xs-2">Price</label>
 							<div class="col-xs-10">
-								<input type="text" class="form-control" id="price"
-									name="price" placeholder="가격을 입력하세요" required>
+								<input type="text" class="form-control" id="price" name="price" 
+										placeholder="가격을 입력하세요" required>
 							</div>
 							<div class="form-group">
 								<label for="title" class="control-label col-xs-2">Title</label>
@@ -183,15 +183,29 @@
 										name="content" placeholder="상품정보를 입력하세요" required></textarea>
 								</div>
 							</div>
-							<div class="form-group">
+							
+						</div>
+					</form>
+					
+					
+					
+					
+					
+					<form action="<c:url value='/travelboards/upload'/>" method="post" enctype="multipart/form-data">
+						<input type="file" name="imgupload">
+						<div class="form-group">
 								<div class="col-xs-offset-2 col-xs-10">
 									<a href="<c:url value='/travelboards'/>"
 										class="btn btn-primary">List</a>
 									<button type="submit" class="btn btn-primary">Save</button>
 								</div>
 							</div>
-						</div>
 					</form>
+					
+					
+					
+					
+					
 				</div>
 			</div>
 		</div>

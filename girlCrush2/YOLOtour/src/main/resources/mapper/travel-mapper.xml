@@ -25,11 +25,11 @@
 	<!-- insert, update, delete 작업은 영향 받은 로우의 개수를 값을 자동으로 리턴한다. -->
 	<insert id="insert" parameterType="com.example.travelboard.model.Travel">
 		INSERT INTO travel_board(travel_id, key, writer, title, content, reg_date, hit_count, price, IMG_ID)
-		VALUES(ID_TRAVEL.NEXTVAL, #{key}, #{writer}, #{title}, #{content}, SYSDATE, 0, #{price}, 0)
+		VALUES(ID_TRAVEL.NEXTVAL, #{key}, #{writer}, #{title}, #{content}, SYSDATE, 0, #{price}, #{imgId})
 	</insert>
 	
 	<update id="update" parameterType="com.example.travelboard.model.Travel">
-		UPDATE travel_board SET title=#{title}, price=#{price}, key=#{key},
+		UPDATE travel_board SET title=#{title}, price=#{price}, key=#{key}, 
 		content=#{content} WHERE travel_id=#{travelId}
 	</update>
 	

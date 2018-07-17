@@ -142,7 +142,7 @@ w3-panel {
 					<c:forEach items="#{domestic }" var="domestic">
 						<div class="gallery">
 							<a target="_blank" href="/travelboards/view/${domestic.travelId }"> 
-							<img src="/img/${domestic.imgId }" alt="5Terre" width="1000" height="800">
+							<img src="/img/${domestic.imgId }" alt="5Terre" width="2000" height="1800">
 							</a>
 							<div class="desc">${domestic.title }</div>
 						</div>
@@ -157,7 +157,7 @@ w3-panel {
 					<c:forEach items="#{foreign }" var="foreign">
 						<div class="gallery">
 							<a target="_blank" href="/travelboards/view/${foreign.travelId }"> 
-							<img src="/img/${foreign.imgId }" alt="5Terre" width="1000" height="800">
+							<img src="/img/${foreign.imgId }" alt="5Terre" width="2000" height="1800">
 							</a>
 							<div class="desc">${foreign.title }</div>
 						</div>

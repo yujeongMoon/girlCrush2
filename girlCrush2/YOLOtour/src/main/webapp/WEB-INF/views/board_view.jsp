@@ -72,9 +72,10 @@
 								<ol class="carousel-indicators">
 									<li class="active" data-target="#product_details_slider"
 										data-slide-to="0"
-										style="background-image: url(board/img/product-img/pro-big-1.jpg);">
+										style="background-image: url(img/${travel.imgId});">
 									</li>
-									<li data-target="#product_details_slider" data-slide-to="1"
+									
+									<!-- <li data-target="#product_details_slider" data-slide-to="1"
 										style="background-image: url(board/img/product-img/pro-big-2.jpg);">
 									</li>
 									<li data-target="#product_details_slider" data-slide-to="2"
@@ -82,38 +83,20 @@
 									</li>
 									<li data-target="#product_details_slider" data-slide-to="3"
 										style="background-image: url(board/img/product-img/pro-big-4.jpg);">
-									</li>
+									</li> -->
+									
 								</ol>
-								<div class="carousel-inner">
+								
+								<!-- <div class="carousel-inner">
 									<div class="carousel-item active">
 										<a class="gallery_img"
-											href="board/img/product-img/pro-big-1.jpg"> <img
-											class="d-block w-100"
+											href="board/img/product-img/pro-big-1.jpg"> 
+											<img class="d-block w-100"
 											src="board/img/product-img/pro-big-1.jpg" alt="First slide">
 										</a>
 									</div>
-									<div class="carousel-item">
-										<a class="gallery_img"
-											href="board/img/product-img/pro-big-2.jpg"> <img
-											class="d-block w-100"
-											src="board/img/product-img/pro-big-2.jpg" alt="Second slide">
-										</a>
-									</div>
-									<div class="carousel-item">
-										<a class="gallery_img"
-											href="board/img/product-img/pro-big-3.jpg"> <img
-											class="d-block w-100"
-											src="board/img/product-img/pro-big-3.jpg" alt="Third slide">
-										</a>
-									</div>
-									<div class="carousel-item">
-										<a class="gallery_img"
-											href="board/img/product-img/pro-big-4.jpg"> <img
-											class="d-block w-100"
-											src="board/img/product-img/pro-big-4.jpg" alt="Fourth slide">
-										</a>
-									</div>
-								</div>
+								</div> -->
+								
 							</div>
 						</div>
 					</div>
@@ -123,11 +106,7 @@
 							<div class="product-meta-data">
 								<div class="line"></div>
 								<p class="product-price">${travel.price }</p>
-								<a href="product-details.html">
-									<h6>${travel.title }</h6>
-								</a>
-								<!-- Ratings & Review -->
-
+								<h6>${travel.title }</h6>
 							</div>
 
 							<div class="short_overview my-5">
@@ -138,13 +117,16 @@
 							<form class="cart clearfix" method="post">
 								<a href="/travelboards/view/addcart/${travel.travelId }"
 									type="submit" name="addcart" class="btn amado-btn">Add to cart</a>
+							
+								<a href="/payment/${travel.travelId }"
+									type="submit" name="paynow" class="btn amado-btn">Pay Now</a>
 							</form>
 
 
 
 							<c:if test="${user.email == 'admin@gmail.com' }" var="admin">
 								<a href="/travelboards/update/${travel.travelId}">Update</a>
-							</c:if>
+							</c:if> <br><br>
 							<c:if test="${user.email == 'admin@gmail.com' }" var="admin">
 								<a href="/travelboards/delete/${travel.travelId}">Delete</a>
 							</c:if>
