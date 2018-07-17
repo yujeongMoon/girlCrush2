@@ -16,6 +16,12 @@
 		<result property="imgId" column="IMG_ID" />
 	</resultMap>
 	
+	<resultMap type="com.example.travelboard.model.TravelCart" id="TravelCartResultMap">
+		<result property="cartId" column="CART_ID" />
+		<result property="travelCartId" column="TRAVEL_ID" />
+		<result property="email" column="EMAIL" />
+	</resultMap>
+	
 	<!-- insert, update, delete 작업은 영향 받은 로우의 개수를 값을 자동으로 리턴한다. -->
 	<insert id="insert" parameterType="com.example.travelboard.model.Travel">
 		INSERT INTO travel_board(travel_id, key, writer, title, content, reg_date, hit_count, price, IMG_ID)
@@ -51,5 +57,11 @@
 	<update id="increment">
 		UPDATE travel_board SET hit_count=hit_count+1 WHERE travel_id=#{travelId} and writer!=#{requester}
 	</update>
+	
+	<!-- 장바구니에 추가 -->
+	<insert id="addcart" parameterType="com.example.travelboard.model.TravelCart">
+		INSERT INTO TRAVEL_CART(CART_ID, TRAVEL_ID, EMAIL)
+		VALUES(ID_CART.NEXTVAL, #{travelCartId}, #{email})
+	</insert>
 	
 </mapper>

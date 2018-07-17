@@ -16,6 +16,7 @@ public interface TravelMapper {
 	public int insert(Travel travel);
 	public int update(Travel travel);
 	public int delete(long travelId);
+	public String addcart(long travelId, String email);
 	
 	@Select("SELECT COUNT(*) FROM travel_board")
 	public int count();

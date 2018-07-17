@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="css/main.css">
 
 <!--Core Style CSS -->
- <link rel="stylesheet" href="board/css/core-style.css">
+<link rel="stylesheet" href="board/css/core-style.css">
 <link rel="stylesheet" href="board/style.css">
 
 
@@ -33,14 +33,14 @@
 	<!-- #header -->
 	<!-- start banner Area -->
 	<section class="about-banner relative">
-	<div class="overlay overlay-bg"></div>
-	<div class="container">
-		<div class="row d-flex align-items-center justify-content-center">
-			<div class="about-content col-lg-12">
-				<h1 class="text-white">상품정보</h1>
+		<div class="overlay overlay-bg"></div>
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<h1 class="text-white">상품정보</h1>
+				</div>
 			</div>
 		</div>
-	</div>
 	</section>
 
 
@@ -51,7 +51,8 @@
 		<div class="mobile-nav">
 			<!-- Navbar Brand -->
 			<div class="amado-navbar-brand">
-				<a href="index.html"><img src="board/img/core-img/logo.png"	alt=""></a>
+				<a href="index.html"><img src="board/img/core-img/logo.png"
+					alt=""></a>
 			</div>
 			<!-- Navbar Toggler -->
 			<div class="amado-navbar-toggler">
@@ -126,7 +127,7 @@
 									<h6>${travel.title }</h6>
 								</a>
 								<!-- Ratings & Review -->
-								
+
 							</div>
 
 							<div class="short_overview my-5">
@@ -135,10 +136,12 @@
 
 							<!-- Add to Cart Form -->
 							<form class="cart clearfix" method="post">
-								<button type="submit" name="addtocart" value="5"
-									class="btn amado-btn">Add to cart</button>
+								<a href="/travelboards/view/addcart/${travel.travelId }"
+									type="submit" name="addcart" class="btn amado-btn">Add to cart</a>
 							</form>
-							
+
+
+
 							<c:if test="${user.email == 'admin@gmail.com' }" var="admin">
 								<a href="/travelboards/update/${travel.travelId}">Update</a>
 							</c:if>
@@ -151,7 +154,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<c:import url="footer.jsp"></c:import>
 
 	<!-- <script

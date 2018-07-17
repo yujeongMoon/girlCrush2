@@ -4,6 +4,7 @@
 package com.example.web.controller.marketing;
 
 import javax.servlet.http.HttpSession;
+import javax.swing.JOptionPane;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -127,6 +128,32 @@ public class TravelController {
 			}
 		}
 		return "redirect:/travelboards";
+	}
+	
+	
+	
+	@GetMapping("/view/addcart/{travelId}")
+	public String getAddCart(@PathVariable long travelId, HttpSession session, Model model) {
+		User user = (User) session.getAttribute("user");
+		Travel travel = travelMapper.selectById(travelId);
+		
+		if(user != null && travel != null) {
+			model.addAttribute("travel", travel);
+			return "redirect:/travelboards/view/addcart";
+		}
+		return "redirect:/login";
+	}
+
+	
+	
+	@PostMapping("/view/addcart")
+	public String postAddCart(@PathVariable long travelId, HttpSession session, Model model) {
+		User user = (User) session.getAttribute("user");
+		
+		if(user != null) {
+			travelMapper.addcart(travelId, user.getEmail());		
+		}
+		return "redirect:/travelbovards/view/" + travelId;
 	}
 	
 	
