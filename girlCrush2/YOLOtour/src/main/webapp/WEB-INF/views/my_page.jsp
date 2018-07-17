@@ -128,7 +128,6 @@
 						</c:forEach>
 						
 					</table>
-					<a href="/payment">결제</a>
 				</div>			
 				<!-- 끝 -->
 			</div>

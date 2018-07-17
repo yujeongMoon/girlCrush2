@@ -8,7 +8,7 @@ import lombok.Data;
 public class Payment {
 	private int payId;				// PAY_ID
 	private String name;			// NAME		
-	private long creditCardNumber;	// CREADITCARD_NUMBER
+	private String creditCardNumber;	// CREADITCARD_NUMBER
 	private int expMonth;			// EXP_MONTH
 	private int expYear;			// EXP_YEAR
 	private int cvc;				// CVC

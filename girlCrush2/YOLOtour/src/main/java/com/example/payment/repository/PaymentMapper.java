@@ -5,12 +5,12 @@ package com.example.payment.repository;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.example.payment.model.Payment;
+import com.example.payment.model.PaymentCart;
 
 
 @Mapper
 public interface PaymentMapper {
 	public int insert(Payment payment);
-	public int delete(long id);
-	
-	
+	public int insert_payCart(PaymentCart paymentCart);
+//	public int delete(long id);
 }

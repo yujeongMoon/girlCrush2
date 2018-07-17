@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.payment.repository.PaymentMapper">
+	
+	<!-- type="스프링이름" id="별명" -->
+	<!-- <result property="스프링" column="DB이름" /> -->
+	<resultMap type="com.example.payment.model.Payment" id="PaymentResultMap">
+		<result property="payId" column="PAY_ID" />
+		<result property="name" column="NAME_ON_CARD" />
+		<result property="creditCardNumber" column="CREDITCARD_NUMBER" />
+		<result property="expMonth" column="EXP_MONTH" />
+		<result property="expYear" column="EXP_YEAR" />
+		<result property="cvc" column="CVC" />
+		<result property="email" column="EMAIL" />
+	</resultMap>
+	
+	<resultMap type="com.example.payment.model.PaymentCart" id="PaymentCartResultMap">
+		<result property="paycartId" column="PAY_CART_ID" />
+		<result property="travelId" column="TRAVEL_ID" />
+		<result property="email" column="EMAIL" />
+	</resultMap>
+	
+	<!-- insert, update, delete 작업은 영향 받은 로우의 개수를 값을 자동으로 리턴한다. -->
+	<insert id="insert" parameterType="com.example.payment.model.Payment">
+		INSERT INTO PAYMENT_BOARD(PAY_ID, NAME_ON_CARD, CREDITCARD_NUMBER, EXP_MONTH, EXP_YEAR, CVC, EMAIL)
+		VALUES(ID_PAYMENT.NEXTVAL, #{name}, #{creditCardNumber}, #{expMonth}, #{expYear}, #{cvc}, #{email})
+	</insert>
+	
+	<insert id="insert_payCart" parameterType="com.example.payment.model.PaymentCart">
+		INSERT INTO PAYMENT_CART(PAY_CART_ID, TRAVEL_ID, EMAIL)
+		VALUES(ID_PAY_CART.NEXTVAL, #{travelId}, #{email})
+	</insert>
+	
+	<!-- <delete id="delete" parameterType="long">
+		DELETE FROM PAYMENT_BOARD WHERE PAY_ID=#{payId}
+	</delete> -->
+	
+</mapper>

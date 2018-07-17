@@ -6,6 +6,7 @@
 <head>
 <title>Payment</title>
 <meta charset="utf-8">
+<base href="/">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -37,7 +38,7 @@
 			<div class="block-heading">				
 				<p>자, 이제 마지막 대망의 결재만 진행하면 함께 떠나는거예요!</p>
 			</div>
-			<form>
+			<form action="<c:url value='/payment/${travelId }/addPaycart/${travelId }'/>" method="post">
 				<div class="products">
 					<h3 class="title">Checkout</h3>
 					
@@ -45,12 +46,7 @@
 						<span class="price">$200</span>
 						<p class="item-name">Product 1</p>
 					</div>
-					
-					<div class="item">
-						<span class="price">$120</span>
-						<p class="item-name">Product 2</p>
-					</div>
-					
+									
 					<div class="total">
 						Total<span class="price">$320</span>
 					</div>
@@ -60,33 +56,39 @@
 					<div class="row">
 						<div class="form-group col-sm-7">
 							<label for="card-holder">Card Holder</label> <input
-								id="card-holder" type="text" class="form-control"
-								placeholder="Card Holder" aria-label="Card Holder"
+								name="name" type="text" class="form-control"
+								placeholder="name" aria-label="Card Holder"
 								aria-describedby="basic-addon1">
 						</div>
 						<div class="form-group col-sm-5">
 							<label for="">Expiration Date</label>
 							<div class="input-group expiration-date">
-								<input type="text" class="form-control" placeholder="MM"
+								<input type="text" class="form-control" placeholder="expMonth" name="expMonth"
 									aria-label="MM" aria-describedby="basic-addon1"> <span
-									class="date-separator">/</span> <input type="text"
-									class="form-control" placeholder="YY" aria-label="YY"
-									aria-describedby="basic-addon1">
+									class="date-separator" id ="expMonth">/</span> <input type="text"
+									class="form-control" placeholder="expYear" aria-label="YY"
+									aria-describedby="basic-addon1" id ="expYear">
 							</div>
 						</div>
 						<div class="form-group col-sm-8">
 							<label for="card-number">Card Number</label> <input
-								id="card-number" type="text" class="form-control"
-								placeholder="Card Number" aria-label="Card Holder"
+								name="creditCardNumber" type="text" class="form-control"
+								placeholder="creditCardNumber" aria-label="Card Holder"
 								aria-describedby="basic-addon1">
 						</div>
 						<div class="form-group col-sm-4">
-							<label for="cvc">CVC</label> <input id="cvc" type="text"
-								class="form-control" placeholder="CVC" aria-label="Card Holder"
+							<label for="cvc">CVC</label> <input name="cvc" type="text"
+								class="form-control" placeholder="cvc" aria-label="Card Holder"
+								aria-describedby="basic-addon1">
+						</div>
+						<div class="form-group col-sm-8">
+							<label for="cvc">email</label> <input name="email" type="text"
+								class="form-control" placeholder="email" aria-label="Card Holder" value="${user.email }"
 								aria-describedby="basic-addon1">
 						</div>
 						<div class="form-group col-sm-12">
-							<button type="button" class="btn btn-primary btn-block">Proceed</button>
+							<button type="submit" class="btn btn-primary btn-block" 
+							onclick="alert('결제가 완료되었습니다!!')">Proceed</button>
 						</div>
 					</div>
 				</div>
