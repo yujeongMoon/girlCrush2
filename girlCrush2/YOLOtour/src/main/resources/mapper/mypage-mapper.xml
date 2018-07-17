@@ -54,9 +54,13 @@
 		where d.key = 2
 	</select>
 	
-	<select id="select_payment" parameterType="string" resultMap="PaymentResultMap">
+	<select id="select_payment" parameterType="string" resultMap="TravelResultMap">
 		<bind name="email" value="@com.example.user.model.User@sendEmail(email)"/>
-		select * from payment_board where email = 'octopus37@naver.com' 
+		select c.*
+		from (select a.travel_id, a.title, a.price, b.email
+		from travel_board a, payment_cart b
+		where a.travel_id = b.travel_id) c
+		where c.email = #{email}
 		<!-- #{email}의 이메일은 로그인한 user의 이메일 -->
 	</select>
 	

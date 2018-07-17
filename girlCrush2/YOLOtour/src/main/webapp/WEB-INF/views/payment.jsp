@@ -40,16 +40,17 @@
 			<form>
 				<div class="products">
 					<h3 class="title">Checkout</h3>
+					
 					<div class="item">
 						<span class="price">$200</span>
 						<p class="item-name">Product 1</p>
-						<p class="item-description">Lorem ipsum dolor sit amet</p>
 					</div>
+					
 					<div class="item">
 						<span class="price">$120</span>
 						<p class="item-name">Product 2</p>
-						<p class="item-description">Lorem ipsum dolor sit amet</p>
 					</div>
+					
 					<div class="total">
 						Total<span class="price">$320</span>
 					</div>

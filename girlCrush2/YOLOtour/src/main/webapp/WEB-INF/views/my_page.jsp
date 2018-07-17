@@ -115,18 +115,20 @@
 						<thead>
 							<tr>
 								<th scope="col">No</th>
-								<th scope="col">Name</th>
-								<th scope="col">email</th>
+								<th scope="col">Title</th>
+								<th scope="col">Price</th>
 							</tr>
 						</thead>
 						<c:forEach items="#{payinfo }" var="pay">
 							<tr>
-								<td>${pay.payId }</td>
-								<td>${pay.name }</td>
-								<td>${pay.email }</td>
+								<td>${pay.travelId }</td>
+								<td>${pay.title }</td>
+								<td>${pay.price }</td>
 							</tr>
 						</c:forEach>
+						
 					</table>
+					<a href="/payment">결제</a>
 				</div>			
 				<!-- 끝 -->
 			</div>

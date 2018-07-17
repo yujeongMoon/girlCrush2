@@ -11,6 +11,6 @@ import com.example.payment.model.Payment;
 public interface PaymentMapper {
 	public int insert(Payment payment);
 	public int delete(long id);
-
+	
 	
 }
