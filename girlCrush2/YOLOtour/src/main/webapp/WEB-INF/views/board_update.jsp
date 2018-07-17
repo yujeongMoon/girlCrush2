@@ -69,23 +69,23 @@
 					<div class="bs-example">
 						<form class="form-horizontal"
 							action="<c:url value='/travelboards/update'/>" method="post">
-							
+
 							<input type="hidden" name="travelId" value="${travel.travelId }">
 
 
 
 
 							<label class="radiobtn">Domestic <input type="radio"
-								 id="key" name="key" align="right" value="1">
-								<span class="checkmark"></span>
+								id="key" name="key" align="right" value="1"> <span
+								class="checkmark"></span>
 							</label> <label class="radiobtn">Foreign <input type="radio"
-								 id="key" name="key" align="right" value="2"> 
-								<span class="checkmark"></span>
+								id="key" name="key" align="right" value="2"> <span
+								class="checkmark"></span>
 							</label>
-							
-							
-							
-							
+
+
+
+
 
 							<div class="form-group">
 								<label for="title" class="control-label col-xs-2">Price</label>
@@ -116,15 +116,21 @@
 										name="content" placeholder="Content" required>${travel.content }</textarea>
 								</div>
 							</div>
+						</form>
 
+
+						<form action="<c:url value='/travelboards/upload'/>" method="post"
+							enctype="multipart/form-data">
+							<input type="file" name="imgupload" value="${travel.imgId }">
 							<div class="form-group">
 								<div class="col-xs-offset-2 col-xs-10">
 									<a href="<c:url value='/travelboards'/>"
 										class="btn btn-primary">List</a>
-									<button type="submit" class="btn btn-primary">Update</button>
+									<button type="submit" class="btn btn-primary">Save</button>
 								</div>
 							</div>
 						</form>
+
 					</div>
 				</div>
 			</div>

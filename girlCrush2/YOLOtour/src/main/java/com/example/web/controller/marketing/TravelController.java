@@ -68,8 +68,8 @@ public class TravelController {
 	private static String UPLOADED_FOLDER = "D://temp//";  //사용자가 업로드한 폴더를 여기에 모아라.
 	
 	
-	@PostMapping("/upload") // //new annotation since 4.3
-    public String singleFileUpload(@RequestParam("file") MultipartFile file,    // 
+	@PostMapping("/update/upload") // //new annotation since 4.3
+    public String singleFileUpload(@RequestParam("file") MultipartFile file,    
                                    RedirectAttributes redirectAttributes) {
 
         if (file.isEmpty()) {
