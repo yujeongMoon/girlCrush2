@@ -47,11 +47,14 @@ public class LoginController {
 			session.setAttribute("user", user);
 			
 			String url = (String)session.getAttribute("url");
+			System.out.println("login url = "+url);
 			
 			if(url == null) {
+				System.out.println("if url = "+ url);
 				return "redirect:/";
 			} else {
-				session.removeAttribute("url");
+				System.out.println("else url = "+url);
+				//session.removeAttribute("url");
 				return "redirect:" + url;
 			}
 			
