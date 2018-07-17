@@ -26,6 +26,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.Pager;
 import com.example.travelboard.model.Travel;
+import com.example.travelboard.model.TravelCart;
 import com.example.travelboard.repository.TravelMapper;
 import com.example.user.model.User;
 
@@ -162,6 +163,7 @@ public class TravelController {
 	public String postUpdate(Travel travel, HttpSession session, Model model) {
 		User user = (User) session.getAttribute("user");
 		
+		
 		if(user != null && travel != null) {
 			if (user.getEmail().equals(travel.getWriter())) {
 				travelMapper.update(travel);
@@ -193,6 +195,9 @@ public class TravelController {
 		User user = (User) session.getAttribute("user");
 		Travel travel = travelMapper.selectById(travelId);
 		
+		System.out.println("??????");
+		System.out.println(travel);
+		
 		if(user != null && travel != null) {
 			model.addAttribute("travel", travel);
 			return "redirect:/travelboards/view/addcart";
@@ -202,14 +207,16 @@ public class TravelController {
 
 	
 	
-	@PostMapping("/view/addcart")
+	@PostMapping("/view/addcart/{travelId}")
 	public String postAddCart(@PathVariable long travelId, HttpSession session, Model model) {
 		User user = (User) session.getAttribute("user");
+		TravelCart travelCart = new TravelCart(0, travelId, user.getEmail());
 		
+		System.out.println("post!!!!!!!!");
 		if(user != null) {
-			travelMapper.addcart(travelId, user.getEmail());		
+			travelMapper.addcart(travelCart);		
 		}
-		return "redirect:/travelboards/view/" + travelId;
+		return "redirect:/travelboards/view/" + (long)travelId;
 	}
 	
 	

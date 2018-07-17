@@ -72,9 +72,8 @@
 								<ol class="carousel-indicators">
 									<li class="active" data-target="#product_details_slider"
 										data-slide-to="0"
-										style="background-image: url(img/${travel.imgId});">
-									</li>
-									
+										style="background-image: url(img/${travel.imgId});"></li>
+
 									<!-- <li data-target="#product_details_slider" data-slide-to="1"
 										style="background-image: url(board/img/product-img/pro-big-2.jpg);">
 									</li>
@@ -84,9 +83,9 @@
 									<li data-target="#product_details_slider" data-slide-to="3"
 										style="background-image: url(board/img/product-img/pro-big-4.jpg);">
 									</li> -->
-									
+
 								</ol>
-								
+
 								<!-- <div class="carousel-inner">
 									<div class="carousel-item active">
 										<a class="gallery_img"
@@ -96,7 +95,7 @@
 										</a>
 									</div>
 								</div> -->
-								
+
 							</div>
 						</div>
 					</div>
@@ -114,19 +113,24 @@
 							</div>
 
 							<!-- Add to Cart Form -->
+							<form class="cart clearfix" method="post" 
+							action="<c:url value='/travelboards/view/addcart/${travel.travelId }'/>">
+								<button type="submit" name="travelCart" class="btn amado-btn"
+								  onclick="alert('장바구니에 등록되었습니다')">Add to cart</button>
+							</form>
+							<br>
 							<form class="cart clearfix" method="post">
-								<a href="/travelboards/view/addcart/${travel.travelId }"
-									type="submit" name="addcart" class="btn amado-btn">Add to cart</a>
-							
-								<a href="/payment/${travel.travelId }"
-									type="submit" name="paynow" class="btn amado-btn">Pay Now</a>
+								<a href="/payment/${travel.travelId }" type="submit"
+									name="payment" class="btn amado-btn">Pay Now</a>
 							</form>
 
 
 
 							<c:if test="${user.email == 'admin@gmail.com' }" var="admin">
 								<a href="/travelboards/update/${travel.travelId}">Update</a>
-							</c:if> <br><br>
+							</c:if>
+							<br>
+							<br>
 							<c:if test="${user.email == 'admin@gmail.com' }" var="admin">
 								<a href="/travelboards/delete/${travel.travelId}">Delete</a>
 							</c:if>

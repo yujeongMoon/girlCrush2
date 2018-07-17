@@ -7,8 +7,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
-import com.example.emp.model.Emp;
 import com.example.travelboard.model.Travel;
+import com.example.travelboard.model.TravelCart;
 
 // 마이바티스가 인터페이스 구현클래스를 만들어서 스프링에게 제공한다.
 @Mapper
@@ -16,7 +16,7 @@ public interface TravelMapper {
 	public int insert(Travel travel);
 	public int update(Travel travel);
 	public int delete(long travelId);
-	public String addcart(long travelId, String email);
+	public int addcart(TravelCart travelCart);
 	
 	@Select("SELECT COUNT(*) FROM travel_board")
 	public int count();

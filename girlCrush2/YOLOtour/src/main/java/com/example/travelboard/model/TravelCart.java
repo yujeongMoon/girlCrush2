@@ -1,8 +1,13 @@
 package com.example.travelboard.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class TravelCart {
 	private int cartId;       // CART_ID
 	private long travelCartId;	  // TRAVEL_ID
