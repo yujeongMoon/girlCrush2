@@ -95,6 +95,7 @@
 			</form>
 		</div>
 	</section>
+	
 	</main>
 	<!-- start footer Area -->
 	<c:import url="footer.jsp"></c:import>
