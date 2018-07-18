@@ -62,6 +62,7 @@
 								<th scope="col">Title</th>
 								<th scope="col">Writer</th>
 								<th scope="col">Price</th>
+								<th scope="col">     </th>
 							</tr>
 						</thead>
 						<c:forEach items="#{mypageD }" var="mypaged">
@@ -71,6 +72,9 @@
 									href="<c:url value='/travelboards/view/${mypaged.travelId }'/>">${mypaged.title }</a></td>
 								<td>${mypaged.writer }</td>
 								<td>${mypaged.price }</td>
+								<td><a href="<c:url value='/mypage/delete/${mypaged.travelId }'/>"
+												class="btn btn-primary">Delete</a></td>
+								<!-- 삭제버튼 : travel_cart에서 해당 튜플 지우기 -->
 							</tr>
 						</c:forEach>
 					</table>
@@ -87,6 +91,7 @@
 								<th scope="col">Title</th>
 								<th scope="col">Writer</th>
 								<th scope="col">Price</th>
+								<th scope="col">     </th>
 							</tr>
 						</thead>
 						<c:forEach items="#{mypageF }" var="mypagef">
@@ -96,6 +101,8 @@
 									href="<c:url value='/travelboards/view/${mypagef.travelId }'/>">${mypagef.title }</a></td>
 								<td>${mypagef.writer }</td>
 								<td>${mypagef.price }</td>
+								<td><a href="<c:url value='/mypage/delete/${mypagef.travelId }'/>"
+												class="btn btn-primary">Delete</a></td>
 							</tr>
 						</c:forEach>
 					</table>

@@ -32,6 +32,12 @@
 		<result property="email" column="email" />
 	</resultMap>
 	
+	<resultMap type="com.example.travelboard.model.TravelCart" id="TravelCartResultMap">
+		<result property="cartId" column="cart_id" />
+		<result property="travelCartId" column="travel_id" />
+		<result property="email" column="email" />
+	</resultMap>
+	
 		
 	<!-- <delete id="delete" parameterType="long">
 		DELETE FROM NOTICE_BOARD WHERE notice_id=#{noticeId}
@@ -62,6 +68,14 @@
 		where a.travel_id = b.travel_id) c
 		where c.email = #{email}
 		<!-- #{email}의 이메일은 로그인한 user의 이메일 -->
+	</select>
+	
+	<delete id="delete" parameterType="com.example.travelboard.model.TravelCart">
+		DELETE FROM TRAVEL_CART WHERE travel_id=#{travelCartId} AND email = #{email}
+	</delete>
+	
+	<select id="selectById" parameterType="com.example.travelboard.model.TravelCart" resultMap="TravelCartResultMap">
+		SELECT * FROM TRAVEL_CART WHERE travel_id=#{travelCartId} AND email = #{email}
 	</select>
 	
 </mapper>

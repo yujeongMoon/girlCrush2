@@ -36,6 +36,13 @@
 	margin-right: 40px;
 	margin-top: 20px;
 }
+input[type="text"]{
+	font-size : 16px;
+}
+textarea{
+	font-size : 16px;
+}
+
 </style>
 </head>
 <body>
@@ -92,7 +99,7 @@
 							<div class="form-group">
 								<label for="content" class="control-label col-xs-2">Content</label>
 								<div class="col-xs-10">
-									<textarea class="form-control" rows="20" id="content"
+									<textarea style="font-size: 16px" class="form-control" rows="20" id="content"
 										name="content" placeholder="Content" required
 										readonly="readonly">${notice.content }</textarea>
 								</div>
@@ -108,13 +115,13 @@
 							</div>
 							<div class="form-group">
 								<div class="col-xs-offset-2 col-xs-10">
-									<a href="<c:url value='/notices'/>" class="btn btn-primary">List</a>
+									<a href="<c:url value='/notices'/>" style="font-size: 16px" class="btn btn-primary">List</a>
 									<c:if test="${not empty user }">
 										<c:if test="${user.email == notice.writer }">
 											<a href="<c:url value='/notices/delete/${notice.noticeId }'/>"
-												class="btn btn-primary">Delete</a>
+												class="btn btn-primary" style="font-size: 16px">Delete</a>
 											<a href="<c:url value='/notices/update/${notice.noticeId }'/>"
-												class="btn btn-primary">Update</a>
+												class="btn btn-primary" style="font-size: 16px">Update</a>
 										</c:if>
 									</c:if>
 								</div>

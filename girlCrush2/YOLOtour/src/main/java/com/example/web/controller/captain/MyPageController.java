@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.Pager;
 import com.example.myPage.repository.MyPageMapper;
+import com.example.noticeboard.model.Notice;
+import com.example.travelboard.model.TravelCart;
 import com.example.user.model.User;
 
 @Controller
@@ -38,5 +40,21 @@ public class MyPageController {
 		mav.addObject("payinfo", mypageMapper.select_payment(email));
 		return mav;
 
+	}
+	
+	
+	@GetMapping("/delete/{travelId}")
+	public String getDelete(@PathVariable long travelId, HttpSession session, Model model) {
+		User user = (User) session.getAttribute("user");
+		
+		if(user != null) {
+			TravelCart travelCart = new TravelCart();
+			travelCart.setTravelCartId(travelId);
+			travelCart.setEmail(user.getEmail());
+			travelCart = mypageMapper.selectById(travelCart);
+			mypageMapper.delete(travelCart);
+		}
+		
+		return "redirect:/mypage";
 	}
 }

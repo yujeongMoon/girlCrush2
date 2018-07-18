@@ -4,9 +4,10 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
 
+import com.example.noticeboard.model.Notice;
 import com.example.travelboard.model.Travel;
+import com.example.travelboard.model.TravelCart;
 
 @Mapper
 public interface MyPageMapper {
@@ -16,4 +17,8 @@ public interface MyPageMapper {
 	public List<Travel> select_travel_foreign(String email);
 
 	public List<Travel> select_payment(@Param("email") String email);
+	
+	public TravelCart selectById(TravelCart travelCart);
+	
+	public int delete(TravelCart travelCart);
 }
