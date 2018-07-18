@@ -65,7 +65,7 @@ public class TravelController {
 	
 	// file upload
 	
-	private static String UPLOADED_FOLDER = "D://princess//girlCrush2//girlCrush2//YOLOtour//src//main//resources//static//img//test//";  //사용자가 업로드한 폴더를 여기에 모아라.
+	private static String UPLOADED_FOLDER = "D://princess//girlCrush2//girlCrush2//YOLOtour//src//main//resources//static//img//";  //사용자가 업로드한 폴더를 여기에 모아라.
 	
 	
 	@PostMapping("/write/upload") // //new annotation since 4.3
@@ -84,10 +84,8 @@ public class TravelController {
             Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());// 사용자가 올린 이름 그대로 올리세요,, 단점은 이름이 같으면 덮어써짐.
             Files.write(path, bytes);  // temp 폴더에 저장.
 
-            redirectAttributes.addFlashAttribute("message",
-                    "You successfully uploaded '" + file.getOriginalFilename() + "'"); // 업로드가 잘 되면 성공메세지를 보여준다. 
             
-            redirectAttributes.addFlashAttribute("imgPath","/temp/" + file.getOriginalFilename());
+            redirectAttributes.addFlashAttribute("imgPath","/princess/girlCrush2/girlCrush2/YOLOtour/src/main/resources/static/img/" + file.getOriginalFilename());
 
         } catch (IOException e) {
             e.printStackTrace();  // 업로드가 안되었다면? 에러
@@ -112,15 +110,11 @@ public class TravelController {
             // Get the file and save it somewhere
             byte[] bytes = file.getBytes();  //파일이 크면 잘라서 조금씩 보내겠다.
             Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());// 사용자가 올린 이름 그대로 올리세요,, 단점은 이름이 같으면 덮어써짐.
-            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            
             Files.write(path, bytes);  // temp 폴더에 저장.
-            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-           
             
             redirectAttributes.addFlashAttribute("imgPath","/princess/girlCrush2/girlCrush2/YOLOtour/src/main/resources/static/img/" + file.getOriginalFilename());
-            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            System.out.println(file.getOriginalFilename());
-            	
+            
             	Travel travel_update = travelMapper.selectById(travelId);
             	System.out.println(travel_update);
             	travel_update.setImgId(file.getOriginalFilename());

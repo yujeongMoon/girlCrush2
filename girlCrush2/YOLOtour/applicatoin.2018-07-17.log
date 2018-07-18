@@ -15246,3 +15246,622 @@ java.sql.SQLException: 부적합한 열 유형: 1111
 2018:07:17 21:04:52.810 INFO  --- [restartedMain] com.example.Application : Started Application in 1.242 seconds (JVM running for 180.178) 
 2018:07:17 21:05:16.997 INFO  --- [Thread-11] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@15701e5e: startup date [Tue Jul 17 21:04:51 KST 2018]; root of context hierarchy 
 2018:07:17 21:05:17.005 INFO  --- [Thread-11] o.s.j.e.a.AnnotationMBeanExporter : Unregistering JMX-exposed beans on shutdown 
+2018:07:17 21:05:17.690 INFO  --- [restartedMain] com.example.Application : Starting Application on DESKTOP-HLQF9U2 with PID 14724 (D:\princess\girlCrush2\girlCrush2\YOLOtour\target\classes started by TopCreduD6 in D:\princess\girlCrush2\girlCrush2\YOLOtour) 
+2018:07:17 21:05:17.690 INFO  --- [restartedMain] com.example.Application : No active profile set, falling back to default profiles: default 
+2018:07:17 21:05:17.690 INFO  --- [restartedMain] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4e79f384: startup date [Tue Jul 17 21:05:17 KST 2018]; root of context hierarchy 
+2018:07:17 21:05:18.165 INFO  --- [restartedMain] o.s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http) 
+2018:07:17 21:05:18.175 INFO  --- [restartedMain] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2018:07:17 21:05:18.176 INFO  --- [restartedMain] o.a.catalina.core.StandardEngine : Starting Servlet Engine: Apache Tomcat/8.5.31 
+2018:07:17 21:05:18.271 INFO  --- [localhost-startStop-1] o.apache.jasper.servlet.TldScanner : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time. 
+2018:07:17 21:05:18.287 INFO  --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2018:07:17 21:05:18.287 INFO  --- [localhost-startStop-1] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 597 ms 
+2018:07:17 21:05:18.318 INFO  --- [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean : Mapping servlet: 'dispatcherServlet' to [/] 
+2018:07:17 21:05:18.318 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'characterEncodingFilter' to: [/*] 
+2018:07:17 21:05:18.318 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'hiddenHttpMethodFilter' to: [/*] 
+2018:07:17 21:05:18.318 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'httpPutFormContentFilter' to: [/*] 
+2018:07:17 21:05:18.318 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'requestContextFilter' to: [/*] 
+2018:07:17 21:05:18.537 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4e79f384: startup date [Tue Jul 17 21:05:17 KST 2018]; root of context hierarchy 
+2018:07:17 21:05:18.552 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mypage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.captain.MyPageController.getMypageView(int,int,int,java.lang.String,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:05:18.552 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.captain.NoticeController.getNoticesView(int,int,int) 
+2018:07:17 21:05:18.552 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/write],methods=[POST]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.postInsert(com.example.noticeboard.model.Notice,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:05:18.552 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/view/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getNoticeView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:05:18.552 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/update/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getUpdateView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:05:18.552 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/delete/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getDelete(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:05:18.552 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/write],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getInsertView(javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:05:18.552 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/update],methods=[POST]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.postUpdate(com.example.noticeboard.model.Notice,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:05:18.552 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.example.web.controller.HomeController.getHomeView() 
+2018:07:17 21:05:18.552 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/payment/{travelId}],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.marketing.PaymentController.getMypageView(long,java.lang.String,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:05:18.552 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/payment/{travelId}/addPaycart/{travelId}],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.PaymentController.postInsert(long,com.example.payment.model.Payment,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:05:18.552 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/payment/{travelId}/addPaycart/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.PaymentController.getInsertView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:05:18.568 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/write],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postInsert(com.example.travelboard.model.Travel,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:05:18.568 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/update/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getUpdateView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:05:18.568 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/delete/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getDelete(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:05:18.568 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/write],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getInsertView(javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:05:18.568 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/write/upload],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.FileNewUpload(org.springframework.web.multipart.MultipartFile,org.springframework.web.servlet.mvc.support.RedirectAttributes) 
+2018:07:17 21:05:18.568 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/view/addcart/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getAddCart(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:05:18.568 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/update/upload/{travelId}],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.FileUpload(org.springframework.web.multipart.MultipartFile,org.springframework.web.servlet.mvc.support.RedirectAttributes,com.example.travelboard.model.Travel,javax.servlet.http.HttpSession,org.springframework.ui.Model,long) 
+2018:07:17 21:05:18.568 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/update],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postUpdate(com.example.travelboard.model.Travel,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:05:18.568 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.marketing.TravelController.getTravelView(int,int,int,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:05:18.568 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/view/addcart/{travelId}],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postAddCart(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:05:18.568 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/view/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getDomesticTravelView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:05:18.568 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/logout],methods=[GET]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.getLogout(javax.servlet.http.HttpSession) 
+2018:07:17 21:05:18.568 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[POST]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.postLogin(com.example.login.dto.Login,org.springframework.ui.Model,javax.servlet.http.HttpSession) 
+2018:07:17 21:05:18.568 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.showLoginForm() 
+2018:07:17 21:05:18.568 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto public java.lang.Object com.example.web.controller.searchking.UserController.getUsersView() 
+2018:07:17 21:05:18.568 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users/enroll],methods=[POST]}" onto public java.lang.String com.example.web.controller.searchking.UserController.postUser(com.example.user.model.User,org.springframework.ui.Model,javax.servlet.http.HttpSession,org.springframework.web.servlet.mvc.support.RedirectAttributes) 
+2018:07:17 21:05:18.568 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest) 
+2018:07:17 21:05:18.568 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) 
+2018:07:17 21:05:18.568 INFO  --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/princess/girlCrush2/girlCrush2/YOLOtour/src/main/resources/static/img/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:17 21:05:18.568 INFO  --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:17 21:05:18.568 INFO  --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:17 21:05:18.583 INFO  --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:17 21:05:18.713 INFO  --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729 
+2018:07:17 21:05:18.760 INFO  --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter : Registering beans for JMX exposure on startup 
+2018:07:17 21:05:18.776 INFO  --- [restartedMain] o.s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http) 
+2018:07:17 21:05:18.776 INFO  --- [restartedMain] com.example.Application : Started Application in 1.149 seconds (JVM running for 206.152) 
+2018:07:17 21:05:58.762 INFO  --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring FrameworkServlet 'dispatcherServlet' 
+2018:07:17 21:05:58.762 INFO  --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet : FrameworkServlet 'dispatcherServlet': initialization started 
+2018:07:17 21:05:58.767 INFO  --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet : FrameworkServlet 'dispatcherServlet': initialization completed in 4 ms 
+2018:07:17 21:05:59.340 INFO  --- [http-nio-8080-exec-1] jdbc.resultsettable : 
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+|rnum |travel_id |key |writer          |title          |content                      |reg_date              |hit_count |price   |img_id   |
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+|1    |24        |1   |admin@gmail.com |제주도            |떠나요 제주도~                     |2018-07-16 18:46:42.0 |0         |1000000 |Jeju.jpg |
+|2    |23        |2   |admin@gmail.com |뉴질랜드           |dd                           |2018-07-16 18:45:09.0 |0         |600000  |0        |
+|3    |21        |0   |admin@gmail.com |1000000,제주도 특가 |ppaaaaaaaaaaaaaaaaaaaaaaaaaa |2018-07-16 18:29:51.0 |0         |0       |0        |
+|4    |4         |2   |admin@gmail.com |T3             |C3                           |2018-07-13 16:48:04.0 |0         |0       |3.jpg    |
+|5    |3         |2   |admin@gmail.com |T2             |C2                           |2018-07-13 16:48:04.0 |0         |0       |2.jpg    |
+|6    |2         |1   |admin@gmail.com |하와이            |훌라훌라                         |2018-07-13 16:48:04.0 |0         |500000  |1.jpg    |
+|7    |1         |1   |admin@gmail.com |히말라야           |엄홍길과 함께 떠나는 히말라야             |2018-07-13 16:48:07.0 |0         |300000  |0.jpg    |
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:05:59.343 INFO  --- [http-nio-8080-exec-1] jdbc.resultsettable : 
+|---------|
+|count(*) |
+|---------|
+|7        |
+|---------|
+ 
+2018:07:17 21:05:59.348 INFO  --- [http-nio-8080-exec-1] jdbc.resultsettable : 
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+|travel_id |key |writer          |title |content          |reg_date              |hit_count |price   |img_id   |
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+|24        |1   |admin@gmail.com |제주도   |떠나요 제주도~         |2018-07-16 18:46:42.0 |0         |1000000 |Jeju.jpg |
+|2         |1   |admin@gmail.com |하와이   |훌라훌라             |2018-07-13 16:48:04.0 |0         |500000  |1.jpg    |
+|1         |1   |admin@gmail.com |히말라야  |엄홍길과 함께 떠나는 히말라야 |2018-07-13 16:48:07.0 |0         |300000  |0.jpg    |
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:05:59.352 INFO  --- [http-nio-8080-exec-1] jdbc.resultsettable : 
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+|travel_id |key |writer          |title |content |reg_date              |hit_count |price  |img_id |
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+|23        |2   |admin@gmail.com |뉴질랜드  |dd      |2018-07-16 18:45:09.0 |0         |600000 |0      |
+|4         |2   |admin@gmail.com |T3    |C3      |2018-07-13 16:48:04.0 |0         |0      |3.jpg  |
+|3         |2   |admin@gmail.com |T2    |C2      |2018-07-13 16:48:04.0 |0         |0      |2.jpg  |
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+ 
+2018:07:17 21:06:10.496 INFO  --- [http-nio-8080-exec-6] jdbc.resultsettable : 
+|--------|----------------|---------|
+|user_id |email           |password |
+|--------|----------------|---------|
+|5       |admin@gmail.com |admin    |
+|--------|----------------|---------|
+ 
+2018:07:17 21:06:11.790 INFO  --- [http-nio-8080-exec-9] jdbc.resultsettable : 
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+|rnum |travel_id |key |writer          |title          |content                      |reg_date              |hit_count |price   |img_id   |
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+|1    |24        |1   |admin@gmail.com |제주도            |떠나요 제주도~                     |2018-07-16 18:46:42.0 |0         |1000000 |Jeju.jpg |
+|2    |23        |2   |admin@gmail.com |뉴질랜드           |dd                           |2018-07-16 18:45:09.0 |0         |600000  |0        |
+|3    |21        |0   |admin@gmail.com |1000000,제주도 특가 |ppaaaaaaaaaaaaaaaaaaaaaaaaaa |2018-07-16 18:29:51.0 |0         |0       |0        |
+|4    |4         |2   |admin@gmail.com |T3             |C3                           |2018-07-13 16:48:04.0 |0         |0       |3.jpg    |
+|5    |3         |2   |admin@gmail.com |T2             |C2                           |2018-07-13 16:48:04.0 |0         |0       |2.jpg    |
+|6    |2         |1   |admin@gmail.com |하와이            |훌라훌라                         |2018-07-13 16:48:04.0 |0         |500000  |1.jpg    |
+|7    |1         |1   |admin@gmail.com |히말라야           |엄홍길과 함께 떠나는 히말라야             |2018-07-13 16:48:07.0 |0         |300000  |0.jpg    |
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:06:11.793 INFO  --- [http-nio-8080-exec-9] jdbc.resultsettable : 
+|---------|
+|count(*) |
+|---------|
+|7        |
+|---------|
+ 
+2018:07:17 21:06:11.797 INFO  --- [http-nio-8080-exec-9] jdbc.resultsettable : 
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+|travel_id |key |writer          |title |content          |reg_date              |hit_count |price   |img_id   |
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+|24        |1   |admin@gmail.com |제주도   |떠나요 제주도~         |2018-07-16 18:46:42.0 |0         |1000000 |Jeju.jpg |
+|2         |1   |admin@gmail.com |하와이   |훌라훌라             |2018-07-13 16:48:04.0 |0         |500000  |1.jpg    |
+|1         |1   |admin@gmail.com |히말라야  |엄홍길과 함께 떠나는 히말라야 |2018-07-13 16:48:07.0 |0         |300000  |0.jpg    |
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:06:11.801 INFO  --- [http-nio-8080-exec-9] jdbc.resultsettable : 
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+|travel_id |key |writer          |title |content |reg_date              |hit_count |price  |img_id |
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+|23        |2   |admin@gmail.com |뉴질랜드  |dd      |2018-07-16 18:45:09.0 |0         |600000 |0      |
+|4         |2   |admin@gmail.com |T3    |C3      |2018-07-13 16:48:04.0 |0         |0      |3.jpg  |
+|3         |2   |admin@gmail.com |T2    |C2      |2018-07-13 16:48:04.0 |0         |0      |2.jpg  |
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+ 
+2018:07:17 21:06:13.028 INFO  --- [http-nio-8080-exec-3] jdbc.resultsettable : 
+|----------|----|----------------|------|---------|----------------------|----------|--------|---------|
+|travel_id |key |writer          |title |content  |reg_date              |hit_count |price   |img_id   |
+|----------|----|----------------|------|---------|----------------------|----------|--------|---------|
+|24        |1   |admin@gmail.com |제주도   |떠나요 제주도~ |2018-07-16 18:46:42.0 |0         |1000000 |Jeju.jpg |
+|----------|----|----------------|------|---------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:06:14.916 INFO  --- [http-nio-8080-exec-7] jdbc.resultsettable : 
+|----------|----|----------------|------|---------|----------------------|----------|--------|---------|
+|travel_id |key |writer          |title |content  |reg_date              |hit_count |price   |img_id   |
+|----------|----|----------------|------|---------|----------------------|----------|--------|---------|
+|24        |1   |admin@gmail.com |제주도   |떠나요 제주도~ |2018-07-16 18:46:42.0 |0         |1000000 |Jeju.jpg |
+|----------|----|----------------|------|---------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:06:51.839 INFO  --- [http-nio-8080-exec-10] jdbc.resultsettable : 
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+|rnum |travel_id |key |writer          |title          |content                      |reg_date              |hit_count |price   |img_id   |
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+|1    |24        |1   |admin@gmail.com |제주도            |떠나요 제주도~                     |2018-07-16 18:46:42.0 |0         |1000000 |Jeju.jpg |
+|2    |23        |2   |admin@gmail.com |뉴질랜드           |dd                           |2018-07-16 18:45:09.0 |0         |600000  |0        |
+|3    |21        |0   |admin@gmail.com |1000000,제주도 특가 |ppaaaaaaaaaaaaaaaaaaaaaaaaaa |2018-07-16 18:29:51.0 |0         |0       |0        |
+|4    |4         |2   |admin@gmail.com |T3             |C3                           |2018-07-13 16:48:04.0 |0         |0       |3.jpg    |
+|5    |3         |2   |admin@gmail.com |T2             |C2                           |2018-07-13 16:48:04.0 |0         |0       |2.jpg    |
+|6    |2         |1   |admin@gmail.com |하와이            |훌라훌라                         |2018-07-13 16:48:04.0 |0         |500000  |1.jpg    |
+|7    |1         |1   |admin@gmail.com |히말라야           |엄홍길과 함께 떠나는 히말라야             |2018-07-13 16:48:07.0 |0         |300000  |0.jpg    |
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:06:51.842 INFO  --- [http-nio-8080-exec-10] jdbc.resultsettable : 
+|---------|
+|count(*) |
+|---------|
+|7        |
+|---------|
+ 
+2018:07:17 21:06:51.847 INFO  --- [http-nio-8080-exec-10] jdbc.resultsettable : 
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+|travel_id |key |writer          |title |content          |reg_date              |hit_count |price   |img_id   |
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+|24        |1   |admin@gmail.com |제주도   |떠나요 제주도~         |2018-07-16 18:46:42.0 |0         |1000000 |Jeju.jpg |
+|2         |1   |admin@gmail.com |하와이   |훌라훌라             |2018-07-13 16:48:04.0 |0         |500000  |1.jpg    |
+|1         |1   |admin@gmail.com |히말라야  |엄홍길과 함께 떠나는 히말라야 |2018-07-13 16:48:07.0 |0         |300000  |0.jpg    |
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:06:51.851 INFO  --- [http-nio-8080-exec-10] jdbc.resultsettable : 
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+|travel_id |key |writer          |title |content |reg_date              |hit_count |price  |img_id |
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+|23        |2   |admin@gmail.com |뉴질랜드  |dd      |2018-07-16 18:45:09.0 |0         |600000 |0      |
+|4         |2   |admin@gmail.com |T3    |C3      |2018-07-13 16:48:04.0 |0         |0      |3.jpg  |
+|3         |2   |admin@gmail.com |T2    |C2      |2018-07-13 16:48:04.0 |0         |0      |2.jpg  |
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+ 
+2018:07:17 21:06:55.152 INFO  --- [http-nio-8080-exec-5] jdbc.resultsettable : 
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+|rnum |travel_id |key |writer          |title          |content                      |reg_date              |hit_count |price   |img_id   |
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+|1    |24        |1   |admin@gmail.com |제주도            |떠나요 제주도~                     |2018-07-16 18:46:42.0 |0         |1000000 |Jeju.jpg |
+|2    |23        |2   |admin@gmail.com |뉴질랜드           |dd                           |2018-07-16 18:45:09.0 |0         |600000  |0        |
+|3    |21        |0   |admin@gmail.com |1000000,제주도 특가 |ppaaaaaaaaaaaaaaaaaaaaaaaaaa |2018-07-16 18:29:51.0 |0         |0       |0        |
+|4    |4         |2   |admin@gmail.com |T3             |C3                           |2018-07-13 16:48:04.0 |0         |0       |3.jpg    |
+|5    |3         |2   |admin@gmail.com |T2             |C2                           |2018-07-13 16:48:04.0 |0         |0       |2.jpg    |
+|6    |2         |1   |admin@gmail.com |하와이            |훌라훌라                         |2018-07-13 16:48:04.0 |0         |500000  |1.jpg    |
+|7    |1         |1   |admin@gmail.com |히말라야           |엄홍길과 함께 떠나는 히말라야             |2018-07-13 16:48:07.0 |0         |300000  |0.jpg    |
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:06:55.155 INFO  --- [http-nio-8080-exec-5] jdbc.resultsettable : 
+|---------|
+|count(*) |
+|---------|
+|7        |
+|---------|
+ 
+2018:07:17 21:06:55.159 INFO  --- [http-nio-8080-exec-5] jdbc.resultsettable : 
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+|travel_id |key |writer          |title |content          |reg_date              |hit_count |price   |img_id   |
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+|24        |1   |admin@gmail.com |제주도   |떠나요 제주도~         |2018-07-16 18:46:42.0 |0         |1000000 |Jeju.jpg |
+|2         |1   |admin@gmail.com |하와이   |훌라훌라             |2018-07-13 16:48:04.0 |0         |500000  |1.jpg    |
+|1         |1   |admin@gmail.com |히말라야  |엄홍길과 함께 떠나는 히말라야 |2018-07-13 16:48:07.0 |0         |300000  |0.jpg    |
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:06:55.163 INFO  --- [http-nio-8080-exec-5] jdbc.resultsettable : 
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+|travel_id |key |writer          |title |content |reg_date              |hit_count |price  |img_id |
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+|23        |2   |admin@gmail.com |뉴질랜드  |dd      |2018-07-16 18:45:09.0 |0         |600000 |0      |
+|4         |2   |admin@gmail.com |T3    |C3      |2018-07-13 16:48:04.0 |0         |0      |3.jpg  |
+|3         |2   |admin@gmail.com |T2    |C2      |2018-07-13 16:48:04.0 |0         |0      |2.jpg  |
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+ 
+2018:07:17 21:06:56.206 INFO  --- [http-nio-8080-exec-7] jdbc.resultsettable : 
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+|rnum |travel_id |key |writer          |title          |content                      |reg_date              |hit_count |price   |img_id   |
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+|1    |24        |1   |admin@gmail.com |제주도            |떠나요 제주도~                     |2018-07-16 18:46:42.0 |0         |1000000 |Jeju.jpg |
+|2    |23        |2   |admin@gmail.com |뉴질랜드           |dd                           |2018-07-16 18:45:09.0 |0         |600000  |0        |
+|3    |21        |0   |admin@gmail.com |1000000,제주도 특가 |ppaaaaaaaaaaaaaaaaaaaaaaaaaa |2018-07-16 18:29:51.0 |0         |0       |0        |
+|4    |4         |2   |admin@gmail.com |T3             |C3                           |2018-07-13 16:48:04.0 |0         |0       |3.jpg    |
+|5    |3         |2   |admin@gmail.com |T2             |C2                           |2018-07-13 16:48:04.0 |0         |0       |2.jpg    |
+|6    |2         |1   |admin@gmail.com |하와이            |훌라훌라                         |2018-07-13 16:48:04.0 |0         |500000  |1.jpg    |
+|7    |1         |1   |admin@gmail.com |히말라야           |엄홍길과 함께 떠나는 히말라야             |2018-07-13 16:48:07.0 |0         |300000  |0.jpg    |
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:06:56.209 INFO  --- [http-nio-8080-exec-7] jdbc.resultsettable : 
+|---------|
+|count(*) |
+|---------|
+|7        |
+|---------|
+ 
+2018:07:17 21:06:56.213 INFO  --- [http-nio-8080-exec-7] jdbc.resultsettable : 
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+|travel_id |key |writer          |title |content          |reg_date              |hit_count |price   |img_id   |
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+|24        |1   |admin@gmail.com |제주도   |떠나요 제주도~         |2018-07-16 18:46:42.0 |0         |1000000 |Jeju.jpg |
+|2         |1   |admin@gmail.com |하와이   |훌라훌라             |2018-07-13 16:48:04.0 |0         |500000  |1.jpg    |
+|1         |1   |admin@gmail.com |히말라야  |엄홍길과 함께 떠나는 히말라야 |2018-07-13 16:48:07.0 |0         |300000  |0.jpg    |
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:06:56.217 INFO  --- [http-nio-8080-exec-7] jdbc.resultsettable : 
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+|travel_id |key |writer          |title |content |reg_date              |hit_count |price  |img_id |
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+|23        |2   |admin@gmail.com |뉴질랜드  |dd      |2018-07-16 18:45:09.0 |0         |600000 |0      |
+|4         |2   |admin@gmail.com |T3    |C3      |2018-07-13 16:48:04.0 |0         |0      |3.jpg  |
+|3         |2   |admin@gmail.com |T2    |C2      |2018-07-13 16:48:04.0 |0         |0      |2.jpg  |
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+ 
+2018:07:17 21:06:56.392 INFO  --- [http-nio-8080-exec-2] jdbc.resultsettable : 
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+|rnum |travel_id |key |writer          |title          |content                      |reg_date              |hit_count |price   |img_id   |
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+|1    |24        |1   |admin@gmail.com |제주도            |떠나요 제주도~                     |2018-07-16 18:46:42.0 |0         |1000000 |Jeju.jpg |
+|2    |23        |2   |admin@gmail.com |뉴질랜드           |dd                           |2018-07-16 18:45:09.0 |0         |600000  |0        |
+|3    |21        |0   |admin@gmail.com |1000000,제주도 특가 |ppaaaaaaaaaaaaaaaaaaaaaaaaaa |2018-07-16 18:29:51.0 |0         |0       |0        |
+|4    |4         |2   |admin@gmail.com |T3             |C3                           |2018-07-13 16:48:04.0 |0         |0       |3.jpg    |
+|5    |3         |2   |admin@gmail.com |T2             |C2                           |2018-07-13 16:48:04.0 |0         |0       |2.jpg    |
+|6    |2         |1   |admin@gmail.com |하와이            |훌라훌라                         |2018-07-13 16:48:04.0 |0         |500000  |1.jpg    |
+|7    |1         |1   |admin@gmail.com |히말라야           |엄홍길과 함께 떠나는 히말라야             |2018-07-13 16:48:07.0 |0         |300000  |0.jpg    |
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:06:56.395 INFO  --- [http-nio-8080-exec-2] jdbc.resultsettable : 
+|---------|
+|count(*) |
+|---------|
+|7        |
+|---------|
+ 
+2018:07:17 21:06:56.400 INFO  --- [http-nio-8080-exec-2] jdbc.resultsettable : 
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+|travel_id |key |writer          |title |content          |reg_date              |hit_count |price   |img_id   |
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+|24        |1   |admin@gmail.com |제주도   |떠나요 제주도~         |2018-07-16 18:46:42.0 |0         |1000000 |Jeju.jpg |
+|2         |1   |admin@gmail.com |하와이   |훌라훌라             |2018-07-13 16:48:04.0 |0         |500000  |1.jpg    |
+|1         |1   |admin@gmail.com |히말라야  |엄홍길과 함께 떠나는 히말라야 |2018-07-13 16:48:07.0 |0         |300000  |0.jpg    |
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:06:56.405 INFO  --- [http-nio-8080-exec-2] jdbc.resultsettable : 
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+|travel_id |key |writer          |title |content |reg_date              |hit_count |price  |img_id |
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+|23        |2   |admin@gmail.com |뉴질랜드  |dd      |2018-07-16 18:45:09.0 |0         |600000 |0      |
+|4         |2   |admin@gmail.com |T3    |C3      |2018-07-13 16:48:04.0 |0         |0      |3.jpg  |
+|3         |2   |admin@gmail.com |T2    |C2      |2018-07-13 16:48:04.0 |0         |0      |2.jpg  |
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+ 
+2018:07:17 21:06:56.580 INFO  --- [http-nio-8080-exec-9] jdbc.resultsettable : 
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+|rnum |travel_id |key |writer          |title          |content                      |reg_date              |hit_count |price   |img_id   |
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+|1    |24        |1   |admin@gmail.com |제주도            |떠나요 제주도~                     |2018-07-16 18:46:42.0 |0         |1000000 |Jeju.jpg |
+|2    |23        |2   |admin@gmail.com |뉴질랜드           |dd                           |2018-07-16 18:45:09.0 |0         |600000  |0        |
+|3    |21        |0   |admin@gmail.com |1000000,제주도 특가 |ppaaaaaaaaaaaaaaaaaaaaaaaaaa |2018-07-16 18:29:51.0 |0         |0       |0        |
+|4    |4         |2   |admin@gmail.com |T3             |C3                           |2018-07-13 16:48:04.0 |0         |0       |3.jpg    |
+|5    |3         |2   |admin@gmail.com |T2             |C2                           |2018-07-13 16:48:04.0 |0         |0       |2.jpg    |
+|6    |2         |1   |admin@gmail.com |하와이            |훌라훌라                         |2018-07-13 16:48:04.0 |0         |500000  |1.jpg    |
+|7    |1         |1   |admin@gmail.com |히말라야           |엄홍길과 함께 떠나는 히말라야             |2018-07-13 16:48:07.0 |0         |300000  |0.jpg    |
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:06:56.583 INFO  --- [http-nio-8080-exec-9] jdbc.resultsettable : 
+|---------|
+|count(*) |
+|---------|
+|7        |
+|---------|
+ 
+2018:07:17 21:06:56.587 INFO  --- [http-nio-8080-exec-9] jdbc.resultsettable : 
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+|travel_id |key |writer          |title |content          |reg_date              |hit_count |price   |img_id   |
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+|24        |1   |admin@gmail.com |제주도   |떠나요 제주도~         |2018-07-16 18:46:42.0 |0         |1000000 |Jeju.jpg |
+|2         |1   |admin@gmail.com |하와이   |훌라훌라             |2018-07-13 16:48:04.0 |0         |500000  |1.jpg    |
+|1         |1   |admin@gmail.com |히말라야  |엄홍길과 함께 떠나는 히말라야 |2018-07-13 16:48:07.0 |0         |300000  |0.jpg    |
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:06:56.593 INFO  --- [http-nio-8080-exec-9] jdbc.resultsettable : 
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+|travel_id |key |writer          |title |content |reg_date              |hit_count |price  |img_id |
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+|23        |2   |admin@gmail.com |뉴질랜드  |dd      |2018-07-16 18:45:09.0 |0         |600000 |0      |
+|4         |2   |admin@gmail.com |T3    |C3      |2018-07-13 16:48:04.0 |0         |0      |3.jpg  |
+|3         |2   |admin@gmail.com |T2    |C2      |2018-07-13 16:48:04.0 |0         |0      |2.jpg  |
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+ 
+2018:07:17 21:09:38.279 INFO  --- [Thread-17] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4e79f384: startup date [Tue Jul 17 21:05:17 KST 2018]; root of context hierarchy 
+2018:07:17 21:09:38.287 INFO  --- [Thread-17] o.s.j.e.a.AnnotationMBeanExporter : Unregistering JMX-exposed beans on shutdown 
+2018:07:17 21:09:39.085 INFO  --- [restartedMain] com.example.Application : Starting Application on DESKTOP-HLQF9U2 with PID 14724 (D:\princess\girlCrush2\girlCrush2\YOLOtour\target\classes started by TopCreduD6 in D:\princess\girlCrush2\girlCrush2\YOLOtour) 
+2018:07:17 21:09:39.085 INFO  --- [restartedMain] com.example.Application : No active profile set, falling back to default profiles: default 
+2018:07:17 21:09:39.085 INFO  --- [restartedMain] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2e1538d4: startup date [Tue Jul 17 21:09:39 KST 2018]; root of context hierarchy 
+2018:07:17 21:09:39.569 INFO  --- [restartedMain] o.s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http) 
+2018:07:17 21:09:39.571 INFO  --- [restartedMain] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2018:07:17 21:09:39.571 INFO  --- [restartedMain] o.a.catalina.core.StandardEngine : Starting Servlet Engine: Apache Tomcat/8.5.31 
+2018:07:17 21:09:39.666 INFO  --- [localhost-startStop-1] o.apache.jasper.servlet.TldScanner : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time. 
+2018:07:17 21:09:39.682 INFO  --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2018:07:17 21:09:39.682 INFO  --- [localhost-startStop-1] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 597 ms 
+2018:07:17 21:09:39.708 INFO  --- [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean : Mapping servlet: 'dispatcherServlet' to [/] 
+2018:07:17 21:09:39.708 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'characterEncodingFilter' to: [/*] 
+2018:07:17 21:09:39.708 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'hiddenHttpMethodFilter' to: [/*] 
+2018:07:17 21:09:39.708 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'httpPutFormContentFilter' to: [/*] 
+2018:07:17 21:09:39.708 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'requestContextFilter' to: [/*] 
+2018:07:17 21:09:39.927 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2e1538d4: startup date [Tue Jul 17 21:09:39 KST 2018]; root of context hierarchy 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mypage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.captain.MyPageController.getMypageView(int,int,int,java.lang.String,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.captain.NoticeController.getNoticesView(int,int,int) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/write],methods=[POST]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.postInsert(com.example.noticeboard.model.Notice,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/view/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getNoticeView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/update/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getUpdateView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/delete/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getDelete(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/write],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getInsertView(javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/update],methods=[POST]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.postUpdate(com.example.noticeboard.model.Notice,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.example.web.controller.HomeController.getHomeView() 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/payment/{travelId}],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.marketing.PaymentController.getMypageView(long,java.lang.String,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/payment/{travelId}/addPaycart/{travelId}],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.PaymentController.postInsert(long,com.example.payment.model.Payment,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/payment/{travelId}/addPaycart/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.PaymentController.getInsertView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/write],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postInsert(com.example.travelboard.model.Travel,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/update/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getUpdateView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/delete/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getDelete(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/write],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getInsertView(javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/write/upload],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.FileNewUpload(org.springframework.web.multipart.MultipartFile,org.springframework.web.servlet.mvc.support.RedirectAttributes) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/view/addcart/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getAddCart(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/update/upload/{travelId}],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.FileUpload(org.springframework.web.multipart.MultipartFile,org.springframework.web.servlet.mvc.support.RedirectAttributes,com.example.travelboard.model.Travel,javax.servlet.http.HttpSession,org.springframework.ui.Model,long) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/update],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postUpdate(com.example.travelboard.model.Travel,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.marketing.TravelController.getTravelView(int,int,int,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/view/addcart/{travelId}],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postAddCart(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/view/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getDomesticTravelView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/logout],methods=[GET]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.getLogout(javax.servlet.http.HttpSession) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[POST]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.postLogin(com.example.login.dto.Login,org.springframework.ui.Model,javax.servlet.http.HttpSession) 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.showLoginForm() 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto public java.lang.Object com.example.web.controller.searchking.UserController.getUsersView() 
+2018:07:17 21:09:39.942 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users/enroll],methods=[POST]}" onto public java.lang.String com.example.web.controller.searchking.UserController.postUser(com.example.user.model.User,org.springframework.ui.Model,javax.servlet.http.HttpSession,org.springframework.web.servlet.mvc.support.RedirectAttributes) 
+2018:07:17 21:09:39.958 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest) 
+2018:07:17 21:09:39.958 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) 
+2018:07:17 21:09:39.958 INFO  --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/princess/girlCrush2/girlCrush2/YOLOtour/src/main/resources/static/img/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:17 21:09:39.958 INFO  --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:17 21:09:39.958 INFO  --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:17 21:09:39.974 INFO  --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:17 21:09:40.083 INFO  --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729 
+2018:07:17 21:09:40.146 INFO  --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter : Registering beans for JMX exposure on startup 
+2018:07:17 21:09:40.161 INFO  --- [restartedMain] o.s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http) 
+2018:07:17 21:09:40.161 INFO  --- [restartedMain] com.example.Application : Started Application in 1.139 seconds (JVM running for 467.535) 
+2018:07:17 21:13:12.334 INFO  --- [Thread-24] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2e1538d4: startup date [Tue Jul 17 21:09:39 KST 2018]; root of context hierarchy 
+2018:07:17 21:13:12.342 INFO  --- [Thread-24] o.s.j.e.a.AnnotationMBeanExporter : Unregistering JMX-exposed beans on shutdown 
+2018:07:17 21:13:13.022 INFO  --- [restartedMain] com.example.Application : Starting Application on DESKTOP-HLQF9U2 with PID 14724 (D:\princess\girlCrush2\girlCrush2\YOLOtour\target\classes started by TopCreduD6 in D:\princess\girlCrush2\girlCrush2\YOLOtour) 
+2018:07:17 21:13:13.022 INFO  --- [restartedMain] com.example.Application : No active profile set, falling back to default profiles: default 
+2018:07:17 21:13:13.022 INFO  --- [restartedMain] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@34bf4955: startup date [Tue Jul 17 21:13:13 KST 2018]; root of context hierarchy 
+2018:07:17 21:13:13.491 INFO  --- [restartedMain] o.s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http) 
+2018:07:17 21:13:13.505 INFO  --- [restartedMain] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2018:07:17 21:13:13.506 INFO  --- [restartedMain] o.a.catalina.core.StandardEngine : Starting Servlet Engine: Apache Tomcat/8.5.31 
+2018:07:17 21:13:13.601 INFO  --- [localhost-startStop-1] o.apache.jasper.servlet.TldScanner : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time. 
+2018:07:17 21:13:13.601 INFO  --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2018:07:17 21:13:13.617 INFO  --- [localhost-startStop-1] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 595 ms 
+2018:07:17 21:13:13.648 INFO  --- [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean : Mapping servlet: 'dispatcherServlet' to [/] 
+2018:07:17 21:13:13.648 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'characterEncodingFilter' to: [/*] 
+2018:07:17 21:13:13.648 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'hiddenHttpMethodFilter' to: [/*] 
+2018:07:17 21:13:13.648 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'httpPutFormContentFilter' to: [/*] 
+2018:07:17 21:13:13.648 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'requestContextFilter' to: [/*] 
+2018:07:17 21:13:13.863 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@34bf4955: startup date [Tue Jul 17 21:13:13 KST 2018]; root of context hierarchy 
+2018:07:17 21:13:13.863 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mypage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.captain.MyPageController.getMypageView(int,int,int,java.lang.String,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:13:13.863 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.captain.NoticeController.getNoticesView(int,int,int) 
+2018:07:17 21:13:13.863 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/write],methods=[POST]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.postInsert(com.example.noticeboard.model.Notice,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:13:13.863 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/view/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getNoticeView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:13:13.863 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/update/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getUpdateView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:13:13.863 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/delete/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getDelete(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:13:13.863 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/write],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getInsertView(javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:13:13.863 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/update],methods=[POST]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.postUpdate(com.example.noticeboard.model.Notice,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:13:13.863 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.example.web.controller.HomeController.getHomeView() 
+2018:07:17 21:13:13.863 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/payment/{travelId}],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.marketing.PaymentController.getMypageView(long,java.lang.String,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:13:13.863 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/payment/{travelId}/addPaycart/{travelId}],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.PaymentController.postInsert(long,com.example.payment.model.Payment,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:13:13.863 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/payment/{travelId}/addPaycart/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.PaymentController.getInsertView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:13:13.878 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/write],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postInsert(com.example.travelboard.model.Travel,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:13:13.878 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/update/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getUpdateView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:13:13.878 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/delete/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getDelete(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:13:13.878 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/write],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getInsertView(javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:13:13.878 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/write/upload],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.FileNewUpload(org.springframework.web.multipart.MultipartFile,org.springframework.web.servlet.mvc.support.RedirectAttributes) 
+2018:07:17 21:13:13.878 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/view/addcart/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getAddCart(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:13:13.878 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/update/upload/{travelId}],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.FileUpload(org.springframework.web.multipart.MultipartFile,org.springframework.web.servlet.mvc.support.RedirectAttributes,com.example.travelboard.model.Travel,javax.servlet.http.HttpSession,org.springframework.ui.Model,long) 
+2018:07:17 21:13:13.878 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/update],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postUpdate(com.example.travelboard.model.Travel,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:13:13.878 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.marketing.TravelController.getTravelView(int,int,int,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:13:13.878 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/view/addcart/{travelId}],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postAddCart(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:13:13.878 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/view/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getDomesticTravelView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:13:13.878 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/logout],methods=[GET]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.getLogout(javax.servlet.http.HttpSession) 
+2018:07:17 21:13:13.878 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[POST]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.postLogin(com.example.login.dto.Login,org.springframework.ui.Model,javax.servlet.http.HttpSession) 
+2018:07:17 21:13:13.878 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.showLoginForm() 
+2018:07:17 21:13:13.878 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto public java.lang.Object com.example.web.controller.searchking.UserController.getUsersView() 
+2018:07:17 21:13:13.878 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users/enroll],methods=[POST]}" onto public java.lang.String com.example.web.controller.searchking.UserController.postUser(com.example.user.model.User,org.springframework.ui.Model,javax.servlet.http.HttpSession,org.springframework.web.servlet.mvc.support.RedirectAttributes) 
+2018:07:17 21:13:13.878 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest) 
+2018:07:17 21:13:13.878 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) 
+2018:07:17 21:13:13.894 INFO  --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/princess/girlCrush2/girlCrush2/YOLOtour/src/main/resources/static/img/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:17 21:13:13.894 INFO  --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:17 21:13:13.894 INFO  --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:17 21:13:13.894 INFO  --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:17 21:13:14.019 INFO  --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729 
+2018:07:17 21:13:14.066 INFO  --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter : Registering beans for JMX exposure on startup 
+2018:07:17 21:13:14.097 INFO  --- [restartedMain] o.s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http) 
+2018:07:17 21:13:14.097 INFO  --- [restartedMain] com.example.Application : Started Application in 1.122 seconds (JVM running for 681.463) 
+2018:07:17 21:15:35.091 INFO  --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested. 
+2018:07:17 21:15:35.102 INFO  --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@34bf4955: startup date [Tue Jul 17 21:13:13 KST 2018]; root of context hierarchy 
+2018:07:17 21:15:35.103 INFO  --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter : Unregistering JMX-exposed beans on shutdown 
+2018:07:17 21:15:43.572 INFO  --- [restartedMain] com.example.Application : Starting Application on DESKTOP-HLQF9U2 with PID 12480 (D:\princess\girlCrush2\girlCrush2\YOLOtour\target\classes started by TopCreduD6 in D:\princess\girlCrush2\girlCrush2\YOLOtour) 
+2018:07:17 21:15:43.572 INFO  --- [restartedMain] com.example.Application : No active profile set, falling back to default profiles: default 
+2018:07:17 21:15:43.619 INFO  --- [restartedMain] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@aeee0f6: startup date [Tue Jul 17 21:15:43 KST 2018]; root of context hierarchy 
+2018:07:17 21:15:45.005 INFO  --- [restartedMain] o.s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http) 
+2018:07:17 21:15:45.029 INFO  --- [restartedMain] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2018:07:17 21:15:45.029 INFO  --- [restartedMain] o.a.catalina.core.StandardEngine : Starting Servlet Engine: Apache Tomcat/8.5.31 
+2018:07:17 21:15:45.308 INFO  --- [localhost-startStop-1] o.apache.jasper.servlet.TldScanner : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time. 
+2018:07:17 21:15:45.308 INFO  --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2018:07:17 21:15:45.308 INFO  --- [localhost-startStop-1] o.s.web.context.ContextLoader : Root WebApplicationContext: initialization completed in 1689 ms 
+2018:07:17 21:15:45.449 INFO  --- [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean : Mapping servlet: 'dispatcherServlet' to [/] 
+2018:07:17 21:15:45.465 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'characterEncodingFilter' to: [/*] 
+2018:07:17 21:15:45.465 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'hiddenHttpMethodFilter' to: [/*] 
+2018:07:17 21:15:45.465 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'httpPutFormContentFilter' to: [/*] 
+2018:07:17 21:15:45.465 INFO  --- [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean : Mapping filter: 'requestContextFilter' to: [/*] 
+2018:07:17 21:15:46.180 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@aeee0f6: startup date [Tue Jul 17 21:15:43 KST 2018]; root of context hierarchy 
+2018:07:17 21:15:46.244 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/mypage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.captain.MyPageController.getMypageView(int,int,int,java.lang.String,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:15:46.244 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/write],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getInsertView(javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:15:46.244 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/update],methods=[POST]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.postUpdate(com.example.noticeboard.model.Notice,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:15:46.244 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/view/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getNoticeView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:15:46.244 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.captain.NoticeController.getNoticesView(int,int,int) 
+2018:07:17 21:15:46.244 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/write],methods=[POST]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.postInsert(com.example.noticeboard.model.Notice,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:15:46.244 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/update/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getUpdateView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:15:46.244 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/notices/delete/{noticeId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.captain.NoticeController.getDelete(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:15:46.244 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String com.example.web.controller.HomeController.getHomeView() 
+2018:07:17 21:15:46.244 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/payment/{travelId}],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.marketing.PaymentController.getMypageView(long,java.lang.String,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:15:46.244 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/payment/{travelId}/addPaycart/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.PaymentController.getInsertView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:15:46.244 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/payment/{travelId}/addPaycart/{travelId}],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.PaymentController.postInsert(long,com.example.payment.model.Payment,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:15:46.259 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/view/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getDomesticTravelView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:15:46.259 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/write],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getInsertView(javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:15:46.259 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/update],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postUpdate(com.example.travelboard.model.Travel,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:15:46.259 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/write/upload],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.FileNewUpload(org.springframework.web.multipart.MultipartFile,org.springframework.web.servlet.mvc.support.RedirectAttributes) 
+2018:07:17 21:15:46.259 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/update/upload/{travelId}],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.FileUpload(org.springframework.web.multipart.MultipartFile,org.springframework.web.servlet.mvc.support.RedirectAttributes,com.example.travelboard.model.Travel,javax.servlet.http.HttpSession,org.springframework.ui.Model,long) 
+2018:07:17 21:15:46.259 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/write],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postInsert(com.example.travelboard.model.Travel,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:15:46.259 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/update/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getUpdateView(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:15:46.259 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.example.web.controller.marketing.TravelController.getTravelView(int,int,int,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:15:46.259 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/delete/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getDelete(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:15:46.259 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/view/addcart/{travelId}],methods=[POST]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.postAddCart(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:15:46.259 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/travelboards/view/addcart/{travelId}],methods=[GET]}" onto public java.lang.String com.example.web.controller.marketing.TravelController.getAddCart(long,javax.servlet.http.HttpSession,org.springframework.ui.Model) 
+2018:07:17 21:15:46.259 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[POST]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.postLogin(com.example.login.dto.Login,org.springframework.ui.Model,javax.servlet.http.HttpSession) 
+2018:07:17 21:15:46.259 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/logout],methods=[GET]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.getLogout(javax.servlet.http.HttpSession) 
+2018:07:17 21:15:46.259 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login],methods=[GET]}" onto public java.lang.String com.example.web.controller.searchking.LoginController.showLoginForm() 
+2018:07:17 21:15:46.259 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users/enroll],methods=[POST]}" onto public java.lang.String com.example.web.controller.searchking.UserController.postUser(com.example.user.model.User,org.springframework.ui.Model,javax.servlet.http.HttpSession,org.springframework.web.servlet.mvc.support.RedirectAttributes) 
+2018:07:17 21:15:46.259 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[GET]}" onto public java.lang.Object com.example.web.controller.searchking.UserController.getUsersView() 
+2018:07:17 21:15:46.259 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest) 
+2018:07:17 21:15:46.259 INFO  --- [restartedMain] o.s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) 
+2018:07:17 21:15:46.290 INFO  --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/princess/girlCrush2/girlCrush2/YOLOtour/src/main/resources/static/img/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:17 21:15:46.290 INFO  --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:17 21:15:46.290 INFO  --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:17 21:15:46.337 INFO  --- [restartedMain] o.s.w.s.h.SimpleUrlHandlerMapping : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler] 
+2018:07:17 21:15:46.619 INFO  --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer : LiveReload server is running on port 35729 
+2018:07:17 21:15:46.705 INFO  --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter : Registering beans for JMX exposure on startup 
+2018:07:17 21:15:46.754 INFO  --- [restartedMain] o.s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http) 
+2018:07:17 21:15:46.770 INFO  --- [restartedMain] com.example.Application : Started Application in 3.511 seconds (JVM running for 4.669) 
+2018:07:17 21:15:58.513 INFO  --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring FrameworkServlet 'dispatcherServlet' 
+2018:07:17 21:15:58.513 INFO  --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet : FrameworkServlet 'dispatcherServlet': initialization started 
+2018:07:17 21:15:58.533 INFO  --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet : FrameworkServlet 'dispatcherServlet': initialization completed in 19 ms 
+2018:07:17 21:16:05.746 INFO  --- [http-nio-8080-exec-2] jdbc.resultsettable : 
+|--------|----------------|---------|
+|user_id |email           |password |
+|--------|----------------|---------|
+|5       |admin@gmail.com |admin    |
+|--------|----------------|---------|
+ 
+2018:07:17 21:16:07.027 INFO  --- [http-nio-8080-exec-3] jdbc.resultsettable : 
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+|rnum |travel_id |key |writer          |title          |content                      |reg_date              |hit_count |price   |img_id   |
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+|1    |24        |1   |admin@gmail.com |제주도            |떠나요 제주도~                     |2018-07-16 18:46:42.0 |0         |1000000 |Jeju.jpg |
+|2    |23        |2   |admin@gmail.com |뉴질랜드           |dd                           |2018-07-16 18:45:09.0 |0         |600000  |0        |
+|3    |21        |0   |admin@gmail.com |1000000,제주도 특가 |ppaaaaaaaaaaaaaaaaaaaaaaaaaa |2018-07-16 18:29:51.0 |0         |0       |0        |
+|4    |4         |2   |admin@gmail.com |T3             |C3                           |2018-07-13 16:48:04.0 |0         |0       |3.jpg    |
+|5    |3         |2   |admin@gmail.com |T2             |C2                           |2018-07-13 16:48:04.0 |0         |0       |2.jpg    |
+|6    |2         |1   |admin@gmail.com |하와이            |훌라훌라                         |2018-07-13 16:48:04.0 |0         |500000  |1.jpg    |
+|7    |1         |1   |admin@gmail.com |히말라야           |엄홍길과 함께 떠나는 히말라야             |2018-07-13 16:48:07.0 |0         |300000  |0.jpg    |
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:16:07.032 INFO  --- [http-nio-8080-exec-3] jdbc.resultsettable : 
+|---------|
+|count(*) |
+|---------|
+|7        |
+|---------|
+ 
+2018:07:17 21:16:07.038 INFO  --- [http-nio-8080-exec-3] jdbc.resultsettable : 
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+|travel_id |key |writer          |title |content          |reg_date              |hit_count |price   |img_id   |
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+|24        |1   |admin@gmail.com |제주도   |떠나요 제주도~         |2018-07-16 18:46:42.0 |0         |1000000 |Jeju.jpg |
+|2         |1   |admin@gmail.com |하와이   |훌라훌라             |2018-07-13 16:48:04.0 |0         |500000  |1.jpg    |
+|1         |1   |admin@gmail.com |히말라야  |엄홍길과 함께 떠나는 히말라야 |2018-07-13 16:48:07.0 |0         |300000  |0.jpg    |
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:16:07.044 INFO  --- [http-nio-8080-exec-3] jdbc.resultsettable : 
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+|travel_id |key |writer          |title |content |reg_date              |hit_count |price  |img_id |
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+|23        |2   |admin@gmail.com |뉴질랜드  |dd      |2018-07-16 18:45:09.0 |0         |600000 |0      |
+|4         |2   |admin@gmail.com |T3    |C3      |2018-07-13 16:48:04.0 |0         |0      |3.jpg  |
+|3         |2   |admin@gmail.com |T2    |C2      |2018-07-13 16:48:04.0 |0         |0      |2.jpg  |
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+ 
+2018:07:17 21:16:08.658 INFO  --- [http-nio-8080-exec-9] jdbc.resultsettable : 
+|----------|----|----------------|------|---------|----------------------|----------|--------|---------|
+|travel_id |key |writer          |title |content  |reg_date              |hit_count |price   |img_id   |
+|----------|----|----------------|------|---------|----------------------|----------|--------|---------|
+|24        |1   |admin@gmail.com |제주도   |떠나요 제주도~ |2018-07-16 18:46:42.0 |0         |1000000 |Jeju.jpg |
+|----------|----|----------------|------|---------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:16:10.245 INFO  --- [http-nio-8080-exec-6] jdbc.resultsettable : 
+|----------|----|----------------|------|---------|----------------------|----------|--------|---------|
+|travel_id |key |writer          |title |content  |reg_date              |hit_count |price   |img_id   |
+|----------|----|----------------|------|---------|----------------------|----------|--------|---------|
+|24        |1   |admin@gmail.com |제주도   |떠나요 제주도~ |2018-07-16 18:46:42.0 |0         |1000000 |Jeju.jpg |
+|----------|----|----------------|------|---------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:16:22.996 INFO  --- [http-nio-8080-exec-9] jdbc.resultsettable : 
+|----------|----|----------------|------|---------|----------------------|----------|--------|---------|
+|travel_id |key |writer          |title |content  |reg_date              |hit_count |price   |img_id   |
+|----------|----|----------------|------|---------|----------------------|----------|--------|---------|
+|24        |1   |admin@gmail.com |제주도   |떠나요 제주도~ |2018-07-16 18:46:42.0 |0         |1000000 |Jeju.jpg |
+|----------|----|----------------|------|---------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:16:23.016 INFO  --- [http-nio-8080-exec-6] jdbc.resultsettable : 
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+|rnum |travel_id |key |writer          |title          |content                      |reg_date              |hit_count |price   |img_id   |
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+|1    |24        |1   |admin@gmail.com |제주도            |떠나요 제주도~                     |2018-07-16 18:46:42.0 |0         |1000000 |dddd.jpg |
+|2    |23        |2   |admin@gmail.com |뉴질랜드           |dd                           |2018-07-16 18:45:09.0 |0         |600000  |0        |
+|3    |21        |0   |admin@gmail.com |1000000,제주도 특가 |ppaaaaaaaaaaaaaaaaaaaaaaaaaa |2018-07-16 18:29:51.0 |0         |0       |0        |
+|4    |4         |2   |admin@gmail.com |T3             |C3                           |2018-07-13 16:48:04.0 |0         |0       |3.jpg    |
+|5    |3         |2   |admin@gmail.com |T2             |C2                           |2018-07-13 16:48:04.0 |0         |0       |2.jpg    |
+|6    |2         |1   |admin@gmail.com |하와이            |훌라훌라                         |2018-07-13 16:48:04.0 |0         |500000  |1.jpg    |
+|7    |1         |1   |admin@gmail.com |히말라야           |엄홍길과 함께 떠나는 히말라야             |2018-07-13 16:48:07.0 |0         |300000  |0.jpg    |
+|-----|----------|----|----------------|---------------|-----------------------------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:16:23.019 INFO  --- [http-nio-8080-exec-6] jdbc.resultsettable : 
+|---------|
+|count(*) |
+|---------|
+|7        |
+|---------|
+ 
+2018:07:17 21:16:23.024 INFO  --- [http-nio-8080-exec-6] jdbc.resultsettable : 
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+|travel_id |key |writer          |title |content          |reg_date              |hit_count |price   |img_id   |
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+|24        |1   |admin@gmail.com |제주도   |떠나요 제주도~         |2018-07-16 18:46:42.0 |0         |1000000 |dddd.jpg |
+|2         |1   |admin@gmail.com |하와이   |훌라훌라             |2018-07-13 16:48:04.0 |0         |500000  |1.jpg    |
+|1         |1   |admin@gmail.com |히말라야  |엄홍길과 함께 떠나는 히말라야 |2018-07-13 16:48:07.0 |0         |300000  |0.jpg    |
+|----------|----|----------------|------|-----------------|----------------------|----------|--------|---------|
+ 
+2018:07:17 21:16:23.028 INFO  --- [http-nio-8080-exec-6] jdbc.resultsettable : 
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+|travel_id |key |writer          |title |content |reg_date              |hit_count |price  |img_id |
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+|23        |2   |admin@gmail.com |뉴질랜드  |dd      |2018-07-16 18:45:09.0 |0         |600000 |0      |
+|4         |2   |admin@gmail.com |T3    |C3      |2018-07-13 16:48:04.0 |0         |0      |3.jpg  |
+|3         |2   |admin@gmail.com |T2    |C2      |2018-07-13 16:48:04.0 |0         |0      |2.jpg  |
+|----------|----|----------------|------|--------|----------------------|----------|-------|-------|
+ 
+2018:07:17 21:16:38.010 INFO  --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested. 
+2018:07:17 21:16:38.020 INFO  --- [RMI TCP Connection(2)-127.0.0.1] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@aeee0f6: startup date [Tue Jul 17 21:15:43 KST 2018]; root of context hierarchy 
+2018:07:17 21:16:38.022 INFO  --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter : Unregistering JMX-exposed beans on shutdown 

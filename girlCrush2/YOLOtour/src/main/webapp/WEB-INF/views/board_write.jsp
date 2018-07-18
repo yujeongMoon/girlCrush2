@@ -191,7 +191,8 @@
 					
 					
 					
-					<form action="<c:url value='/travelboards/write/upload'/>" method="post" enctype="multipart/form-data">
+					<form action="<c:url value='/travelboards/write/upload'/>" method="post" 
+						enctype="multipart/form-data">
 						<input type="file" name="file">
 						<div class="form-group">
 								<div class="col-xs-offset-2 col-xs-10">
