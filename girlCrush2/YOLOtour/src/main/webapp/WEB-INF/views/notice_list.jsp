@@ -6,6 +6,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Favicon-->
+<link rel="shortcut icon" href="img/fav.png">
+<!-- Author Meta -->
+<meta name="author" content="colorlib">
+<!-- Meta Description -->
+<meta name="description" content="">
+<!-- Meta Keyword -->
+<meta name="keywords" content="">
 <title>Notice</title>
 <link rel="stylesheet" href="css/linearicons.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -21,62 +31,117 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700"
+	rel="stylesheet">
+<style>
+div.gallery {
+	margin: 5px;
+	border: 1px solid #ccc;
+	float: left;
+	width: 180px;
+}
+
+div.gallery:hover {
+	border: 1px solid #777;
+}
+
+div.gallery img {
+	width: 100%;
+	height: auto;
+}
+
+div.desc {
+	padding: 15px;
+	text-align: center;
+}
+
+form {
+	margin: 5px;
+	width: 100%;
+	height: 100%;
+}
+
+form.box {
+	overflow: hidden;
+}
+
+button.w3-yellow {
+	width: 40%;
+	color: white;
+}
+
+w3-panel {
+	align: center;
+}
+
+.container {
+	padding: 30px;
+}
+</style>
 </head>
 <body>
 	<c:import url="nav_top.jsp"></c:import>
 	<!-- #header -->
 	<!-- start banner Area -->
- 	<section class="about-banner relative">
-	<div class="overlay overlay-bg"></div>
-	<div class="container">
-		<div class="row d-flex align-items-center justify-content-center">
-			<div class="about-content col-lg-12">
-				<h1 class="text-white">Notice</h1>
-				<p class="text-white link-nav">
-					<a href="/">Home </a> <span class="lnr lnr-arrow-right"></span> <a
-						href="/notices"> Notice</a>
-				</p>
+	<section class="about-banner relative">
+		<div class="overlay overlay-bg"></div>
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<h1 class="text-white">Notice</h1>
+					<p class="text-white link-nav">
+						<a href="/">Home </a> <span class="lnr lnr-arrow-right"></span> <a
+							href="/notices"> Notice</a>
+					</p>
+				</div>
 			</div>
 		</div>
-	</div>
 	</section>
 
 	<!-- board -->
 	<section class="price-area section-gap">
-	<div class="container">
-		<div class="row d-flex justify-content-center">
-			<div class="menu-content pb-70 col-lg-8">
-				<div class="title text-center">
-					<h1 class="mb-10">Notice</h1>
+		<div class="container">
+			<div class="row d-flex justify-content-center">
+				<div class="menu-content pb-70 col-lg-8">
+					<div class="title text-center">
+						<h1 class="mb-10">Notice</h1>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div>
-			<div class="single-price">
-				<h4>Notice</h4>
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th scope="col">No</th>
-							<th scope="col">Title</th>
-							<th scope="col">Writer</th>
-							<th scope="col">Date</th>
-							<th scope="col">Hits</th>
-						</tr>
-					</thead>
-					<c:forEach items="#{notices }" var="notice">
-						<tr>
-							<td>${notice.noticeId }</td>
-							<td><a
-								href="<c:url value='/notices/view/${notice.noticeId }'/>">${notice.title }</a></td>
-							<td>${notice.writer }</td>
-							<td><fmt:formatDate pattern="MM-dd hh:mm"
-									value="${notice.regDate }" /></td>
-							<td>${notice.hitCount }</td>
-						</tr>
-					</c:forEach>
-				</table>
+			<div>
+				<div class="single-price">
+					<h4>Notice</h4>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th scope="col">No</th>
+								<th scope="col">Title</th>
+								<th scope="col">Writer</th>
+								<th scope="col">Date</th>
+								<th scope="col">Hits</th>
+							</tr>
+						</thead>
+						<c:forEach items="#{notices }" var="notice">
+							<tr>
+								<td>${notice.noticeId }</td>
+								<td><a
+									href="<c:url value='/notices/view/${notice.noticeId }'/>">${notice.title }</a></td>
+								<td>${notice.writer }</td>
+								<td><fmt:formatDate pattern="MM-dd hh:mm"
+										value="${notice.regDate }" /></td>
+								<td>${notice.hitCount }</td>
+							</tr>
+						</c:forEach>
+					</table>
 
+					<c:if test="${user.email == 'admin@gmail.com'}">
+						<a href="<c:url value='/notices/write'/>" class="btn btn-primary">write</a>
+					</c:if>
+
+				</div>
 				<div class="row">
 					<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
 						<ul class="pagination">
@@ -115,14 +180,9 @@
 						</ul>
 					</div>
 				</div>
-				
-				<c:if test="${user.email == 'admin@gmail.com'}">
-				<a href="<c:url value='/notices/write'/>" class="btn btn-primary">write</a>
-				</c:if>
-			
 			</div>
+
 		</div>
-	</div>
 	</section>
 
 	<script
@@ -130,7 +190,7 @@
 		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 		crossorigin="anonymous"></script>
 	<c:import url="footer.jsp"></c:import>
-	
+
 	<script src="js/vendor/jquery-2.2.4.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/vendor/bootstrap.min.js"></script>
