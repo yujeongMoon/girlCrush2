@@ -129,7 +129,8 @@
 						<c:forEach items="#{payinfo }" var="pay">
 							<tr>
 								<td>${pay.travelId }</td>
-								<td>${pay.title }</td>
+								<td><a
+									href="<c:url value='/travelboards/view/${pay.travelId }'/>">${pay.title }</a></td>
 								<td>${pay.price }</td>
 							</tr>
 						</c:forEach>

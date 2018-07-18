@@ -85,8 +85,6 @@ public class NoticeController {
 	}
 	
 	@PostMapping("/update")
-	
-	
 	public String postUpdate(Notice notice, HttpSession session, Model model) {
 		User user = (User) session.getAttribute("user");
 		

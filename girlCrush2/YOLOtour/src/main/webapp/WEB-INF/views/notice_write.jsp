@@ -99,8 +99,8 @@ input[type="text"]{
 							</div>
 							<div class="form-group">
 								<div class="col-xs-offset-2 col-xs-10">
-									<a href="<c:url value='/notices'/>" class="btn btn-primary">List</a>
-									<button type="submit" class="btn btn-primary">Save</button>
+									<a href="<c:url value='/notices'/>" class="btn btn-primary" style="font-size: 16px">List</a>
+									<button type="submit" class="btn btn-primary" style="font-size: 16px">Save</button>
 								</div>
 							</div>
 						</form>

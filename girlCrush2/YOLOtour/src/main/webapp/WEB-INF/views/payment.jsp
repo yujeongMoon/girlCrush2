@@ -38,17 +38,13 @@
 			<div class="block-heading">				
 				<p>자, 이제 마지막 대망의 결재만 진행하면 함께 떠나는거예요!</p>
 			</div>
-			<form action="<c:url value='/payment/${travelId }/addPaycart/${travelId }'/>" method="post">
+			<form action="<c:url value='/payment/${travelId }/addPaycart'/>" method="post">
 				<div class="products">
 					<h3 class="title">Checkout</h3>
 					
 					<div class="item">
-						<span class="price">$200</span>
-						<p class="item-name">Product 1</p>
-					</div>
-									
-					<div class="total">
-						Total<span class="price">$320</span>
+						<span class="price">${travelInfo.price }</span>
+						<p class="item-name">${travelInfo.title }</p>
 					</div>
 				</div>
 				<div class="card-details">

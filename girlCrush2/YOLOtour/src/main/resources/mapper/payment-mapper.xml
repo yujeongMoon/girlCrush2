@@ -31,8 +31,4 @@
 		VALUES(ID_PAY_CART.NEXTVAL, #{travelId}, #{email})
 	</insert>
 	
-	<!-- <delete id="delete" parameterType="long">
-		DELETE FROM PAYMENT_BOARD WHERE PAY_ID=#{payId}
-	</delete> -->
-	
 </mapper>

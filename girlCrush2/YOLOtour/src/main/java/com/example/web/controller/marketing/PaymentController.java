@@ -16,6 +16,7 @@ import com.example.myPage.repository.MyPageMapper;
 import com.example.payment.model.Payment;
 import com.example.payment.model.PaymentCart;
 import com.example.payment.repository.PaymentMapper;
+import com.example.travelboard.repository.TravelMapper;
 import com.example.user.model.User;
 
 @Controller
@@ -28,6 +29,9 @@ public class PaymentController {
 	@Autowired
 	private PaymentMapper paymentMapper;
 	
+	@Autowired
+	private TravelMapper travelMapper;
+	
 	@GetMapping()
 	public ModelAndView getMypageView(
 			@PathVariable long travelId,
@@ -37,6 +41,7 @@ public class PaymentController {
 		User user = (User) session.getAttribute("user");
 		model.addAttribute("user", user);
 		model.addAttribute("travelId", travelId);
+		model.addAttribute("travelInfo", travelMapper.selectById(travelId));
 		email = user.getEmail();
 		
 		ModelAndView mav = new ModelAndView("payment");
@@ -44,25 +49,22 @@ public class PaymentController {
 		return mav;
 	}
 	
-	@GetMapping("/addPaycart/{travelId}")
+	@GetMapping("/addPaycart")
 	public String getInsertView(@PathVariable long travelId, HttpSession session, Model model) {
 		User user = (User) session.getAttribute("user");
 		
-		System.out.println("addcart!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 		model.addAttribute("user",user);
 		return "payment";
 	}
 	
-	@PostMapping("/addPaycart/{travelId}")
+	@PostMapping("/addPaycart")
 	public String postInsert(@PathVariable long travelId, Payment payment, HttpSession session, Model model) {
 		User user = (User) session.getAttribute("user");
 		PaymentCart paymentCart = new PaymentCart(0,travelId, user.getEmail());
 
 		if(user != null && payment != null) {
-			System.out.println("Addcart!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 			paymentMapper.insert(payment);
 			paymentMapper.insert_payCart(paymentCart);
-			System.out.println("결제가 완료되었습니당");
 		}
 		return "redirect:/mypage";
 	}
