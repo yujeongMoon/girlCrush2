@@ -123,6 +123,7 @@
 								<a href="/payment/${travel.travelId }" type="submit"
 									name="payment" class="btn amado-btn">Pay Now</a>
 							</form>
+							<a href="/travelboards">List</a>
 
 
 

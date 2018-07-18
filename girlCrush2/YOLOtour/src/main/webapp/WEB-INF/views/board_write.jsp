@@ -137,11 +137,12 @@
 			<div class="single-price">
 				<h4>상품등록</h4>
 				<div class="bs-example">
+				
+				
 					<form class="form-horizontal"
-						action="<c:url value='/travelboards/write'/>" method="post">
-
-
-
+						action="<c:url value='/travelboards/write'/>" 
+						method="post" enctype="multipart/form-data">
+						
 
 						<label class="radiobtn">Domestic <input type="radio"
 							checked="checked" id="key" name="key" align="right" value=1>
@@ -185,14 +186,7 @@
 							</div>
 							
 						</div>
-					</form>
 					
-					
-					
-					
-					
-					<form action="<c:url value='/travelboards/write/upload'/>" method="post" 
-						enctype="multipart/form-data">
 						<input type="file" name="file">
 						<div class="form-group">
 								<div class="col-xs-offset-2 col-xs-10">
@@ -201,12 +195,7 @@
 									<button type="submit" class="btn btn-primary">Save</button>
 								</div>
 						</div>
-					</form>
-					
-					
-					
-					
-					
+					</form>	
 				</div>
 			</div>
 		</div>

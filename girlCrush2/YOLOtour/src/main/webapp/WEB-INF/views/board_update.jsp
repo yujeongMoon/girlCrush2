@@ -74,8 +74,6 @@
 							<input type="hidden" name="travelId" value="${travel.travelId }">
 
 
-
-
 							<label class="radiobtn">Domestic <input type="radio"
 								id="key" name="key" align="right" value="1" checked="checked">
 								<span class="checkmark"></span>
@@ -83,9 +81,6 @@
 								id="key" name="key" align="right" value="2"> <span
 								class="checkmark"></span>
 							</label>
-
-
-
 
 
 							<div class="form-group">
