@@ -23,6 +23,7 @@ public class Travel {
 	private long hitCount;  // HIT_COUNT
 	private long price;		// PRICE
 	private String imgId;	// IMG_ID
+	
 }
 
 

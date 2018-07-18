@@ -68,7 +68,8 @@
 					<h4>Update</h4>
 					<div class="bs-example">
 						<form class="form-horizontal"
-							action="<c:url value='/travelboards/update'/>" method="post">
+							action="<c:url value='/travelboards/update/${travel.travelId }'/>"
+							method="post" enctype="multipart/form-data">
 
 							<input type="hidden" name="travelId" value="${travel.travelId }">
 
@@ -76,8 +77,8 @@
 
 
 							<label class="radiobtn">Domestic <input type="radio"
-								id="key" name="key" align="right" value="1"> <span
-								class="checkmark"></span>
+								id="key" name="key" align="right" value="1" checked="checked">
+								<span class="checkmark"></span>
 							</label> <label class="radiobtn">Foreign <input type="radio"
 								id="key" name="key" align="right" value="2"> <span
 								class="checkmark"></span>
@@ -88,10 +89,10 @@
 
 
 							<div class="form-group">
-								<label for="title" class="control-label col-xs-2">Price</label>
+								<label for="price" class="control-label col-xs-2">Price</label>
 								<div class="col-xs-10">
 									<input type="text" class="form-control" id="price" name="price"
-										placeholder="Title" required value="${travel.price }">
+										placeholder="Price" required value="${travel.price }">
 								</div>
 							</div>
 							<div class="form-group">
@@ -116,12 +117,7 @@
 										name="content" placeholder="Content" required>${travel.content }</textarea>
 								</div>
 							</div>
-						</form>
-
-
-						<form action="<c:url value='/travelboards/update/upload/${travel.travelId }'/>" method="post"
-							enctype="multipart/form-data">
-							<input type="file" name="file" value="${travel.imgId }" >
+							<input type="file" name="file" value="${travel.imgId }">
 							<div class="form-group">
 								<div class="col-xs-offset-2 col-xs-10">
 									<a href="<c:url value='/travelboards'/>"

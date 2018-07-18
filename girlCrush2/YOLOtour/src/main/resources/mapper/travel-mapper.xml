@@ -38,6 +38,7 @@
 		WHERE travel_id=#{travelId}
 	</update>
 	
+	
 	<delete id="delete" parameterType="long">
 		DELETE FROM travel_board WHERE travel_id=#{travelId}
 	</delete>
