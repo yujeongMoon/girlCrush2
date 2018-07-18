@@ -34,6 +34,9 @@ public class MyPageController {
 		model.addAttribute("user", user);
 		email = user.getEmail();
 		
+		int count = 0;
+		model.addAttribute("count", count);
+
 		ModelAndView mav = new ModelAndView("my_page");
 		mav.addObject("mypageD", mypageMapper.select_travel_domestic(user.getEmail()));
 		mav.addObject("mypageF", mypageMapper.select_travel_foreign(user.getEmail()));

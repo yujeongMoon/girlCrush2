@@ -58,7 +58,7 @@
 					<table class="table table-hover">
 						<thead>
 							<tr>
-								<th scope="col">     </th>
+								<th scope="col">Product</th>
 								<th scope="col">Title</th>
 								<th scope="col">Writer</th>
 								<th scope="col">Price</th>
@@ -67,7 +67,7 @@
 						</thead>
 						<c:forEach items="#{mypageD }" var="mypaged">
 							<tr>
-								<td><img src="/img/${mypaged.imgId }" witdh="100" height="100"></td>
+								<td><img src="/img/${mypaged.imgId }" witdh="72px" height="72px"></td>
 								<td><a
 									href="<c:url value='/travelboards/view/${mypaged.travelId }'/>">${mypaged.title }</a></td>
 								<td>${mypaged.writer }</td>
@@ -87,7 +87,7 @@
 					<table class="table table-hover">
 						<thead>
 							<tr>
-								<th scope="col">     </th>
+								<th scope="col">Product</th>
 								<th scope="col">Title</th>
 								<th scope="col">Writer</th>
 								<th scope="col">Price</th>
@@ -96,7 +96,7 @@
 						</thead>
 						<c:forEach items="#{mypageF }" var="mypagef">
 							<tr>
-								<td><img src="/img/${mypagef.imgId }" witdh="100" height="100"></td>
+								<td><img src="/img/${mypagef.imgId }" witdh="72px" height="72px"></td>
 								<td><a
 									href="<c:url value='/travelboards/view/${mypagef.travelId }'/>">${mypagef.title }</a></td>
 								<td>${mypagef.writer }</td>
@@ -128,7 +128,7 @@
 						</thead>
 						<c:forEach items="#{payinfo }" var="pay">
 							<tr>
-								<td>${pay.travelId }</td>
+								<td>${count = count + 1}</td>
 								<td><a
 									href="<c:url value='/travelboards/view/${pay.travelId }'/>">${pay.title }</a></td>
 								<td>${pay.price }</td>

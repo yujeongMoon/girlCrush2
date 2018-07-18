@@ -12,5 +12,4 @@ import com.example.payment.model.PaymentCart;
 public interface PaymentMapper {
 	public int insert(Payment payment);
 	public int insert_payCart(PaymentCart paymentCart);
-
 }
