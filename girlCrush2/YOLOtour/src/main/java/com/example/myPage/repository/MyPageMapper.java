@@ -18,7 +18,7 @@ public interface MyPageMapper {
 
 	public List<Travel> select_payment(@Param("email") String email);
 	
-	public TravelCart selectById(TravelCart travelCart);
+	public TravelCart selectById(int cartID);
 	
-	public int delete(TravelCart travelCart);
+	public int delete(int cartID);
 }
