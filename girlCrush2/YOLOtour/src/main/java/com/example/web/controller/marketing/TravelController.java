@@ -59,21 +59,11 @@ public class TravelController {
 		mav.addObject("foreign", travelMapper.selectForeign());
 		return mav;
 	}
-	
-	
-	
-	
+		
 	// file upload
 	
 	private static String UPLOADED_FOLDER = "D://princess//girlCrush2//girlCrush2//YOLOtour//src//main//resources//static//img//";  //사용자가 업로드한 폴더를 여기에 모아라.
 	
-	
-	
-
-	
-	
-	
-
 	@GetMapping("/view/{travelId}")
 	public String getDomesticTravelView(@PathVariable long travelId, HttpSession session, Model model) {
 //		User user = (User) session.getAttribute("user");

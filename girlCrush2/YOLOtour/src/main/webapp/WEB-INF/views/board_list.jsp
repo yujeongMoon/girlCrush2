@@ -76,7 +76,7 @@ div.gallery:hover {
 div.gallery img {
 	width: 100%;
 	height: auto;
-} 
+}
 
 div.desc {
 	padding: 15px;
@@ -90,6 +90,10 @@ form {
 }
 
 form.box {
+	overflow: hidden;
+}
+
+.card {
 	overflow: hidden;
 }
 
@@ -107,9 +111,8 @@ w3-panel {
 	padding-bottom: 20px;
 	padding-right: 20px;
 	padding-left: 20px;
-	width : 840px;
+	width: 840px;
 }
-
 </style>
 
 
@@ -130,96 +133,72 @@ w3-panel {
 	</section>
 
 
-	<div class="container" style="
-	width : 800px; height : 440px;">
-		
-
-		<ul class="nav nav-tabs">
-			<li class="active"><a data-toggle="tab" href="#domestic">국내여행</a></li>
-			<li><a data-toggle="tab" href="#foreign">해외여행</a></li>
-		</ul>
-
-		<div class="tab-content">
-			<div id="domestic" class="tab-pane fade in active">
-				
-				<div class="single-price">
-
-					<c:forEach items="#{domestic }" var="domestic">
-						<div class="gallery">
-							<a target="_blank" href="/travelboards/view/${domestic.travelId }"> 
-							<img src="/img/${domestic.imgId }" alt="5Terre" width="2000" height="1800">
-							</a>
-							<div class="desc">${domestic.title }</div>
-						</div>
-					</c:forEach>
-				</div>
-			</div>
-			
-			
-			<div id="foreign" class="tab-pane fade">
-				<div class="single-price">
-
-					<c:forEach items="#{foreign }" var="foreign">
-						<div class="gallery">
-							<a target="_blank" href="/travelboards/view/${foreign.travelId }"> 
-							<img src="/img/${foreign.imgId }" alt="5Terre" width="2000" height="1800">
-							</a>
-							<div class="desc">${foreign.title }</div>
-						</div>
-					</c:forEach>
+	<section class="price-area section-gap">
+	<div class="container">
+		<div class="row d-flex justify-content-center">
+			<div class="menu-content pb-70 col-lg-8">
+				<div class="title text-center">
+					<h1 class="mb-10">Travel</h1>
 				</div>
 			</div>
 		</div>
-	</div>
 
+		<div class="single-price">
+			<h4>국내</h4>
+			<div class="row">
+				<c:forEach items="#{domestic}" var="domestic">
+					<div class="card col-sm-6 col-md-4 col-lg-3 mt-4">
+						<img src="/img/${domestic.imgId }" width="200px" height="100px">
+						<div class="card-title">
+							<a
+								href="<c:url value='/travelboards/view/${domestic.travelId }'/>"
+								class="toggle-info btn"> <span class="left"></span> <span
+								class="right"></span> ${domestic.title }
+							</a>
 
-
-
-
-
-	
-
-	<div class="row">
-		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-			<ul class="pagination">
-				<c:set var="target" value="boards" />
-				<c:if test="${pager.rows==0 }">
-					<li class="active"><a href="#">1</a></li>
-				</c:if>
-				<c:if test="${pager.rows > 0 }">
-					<c:set var="common"
-						value="size=${pager.size }&bsize=${pager.bsize }" />
-					<c:if test="${pager.bspage > pager.bsize }">
-						<c:set var="home" value="page=1&${common }" />
-						<c:set var="prev" value="page=${pager.bspage-1 }&${common }" />
-						<li><a href="${target }?${home }">Home</a></li>
-						<li><a href='<c:url value="${target }?${prev }"/>'>&laquo;</a></li>
-					</c:if>
-					<c:forEach var="pno" begin="${pager.bspage }"
-						end="${pager.bepage }">
-						<c:if test="${pno==pager.page }">
-							<li class="active"><a href="#">${pno }</a></li>
-						</c:if>
-						<c:if test="${pno!=pager.page }">
-							<c:if test="${pno <= pager.pages }">
-								<c:set var="page" value="page=${pno }&${common }" />
-								<li><a href='<c:url value="${target }?${page }"/>'>${pno }</a></li>
-							</c:if>
-						</c:if>
-					</c:forEach>
-					<c:if test="${pager.bepage < pager.pages }">
-						<c:set var="next" value="page=${pager.bepage+1 }&${common }" />
-						<c:set var="last" value="page=${pager.pages }&${common }" />
-						<li><a href='<c:url value="${target }?${next }"/>'>&raquo;</a></li>
-						<li><a href="${target }?${last }">Last</a></li>
-					</c:if>
-				</c:if>
-			</ul>
+						</div>
+					</div>
+				</c:forEach>
+			</div>
 		</div>
-		<c:if test="${user.email == 'admin@gmail.com' }" var="admin">
-			<a href="/travelboards/write">상품등록</a>
+
+		<c:if test="${user.email == 'admin@gmail.com'}">
+			<a href="<c:url value='/travelboards/write'/>"
+				class="btn btn-primary">write</a>
 		</c:if>
+
+
+
+
+		<div class="single-price">
+			<h4>국외</h4>
+			<div class="row">
+				<c:forEach items="#{foreign}" var="foreign">
+					<div class="card col-sm-6 col-md-4 col-lg-3 mt-4">
+						<img src="/img/${foreign.imgId }" width="200px" height="100px">
+						<div class="card-title">
+							<a
+								href="<c:url value='/travelboards/view/${foreign.travelId }'/>"
+								class="toggle-info btn"> <span class="left"></span> <span
+								class="right"></span> ${foreign.title }
+							</a>
+
+						</div>
+					</div>
+				</c:forEach>
+			</div>
+		</div>
+		<c:if test="${user.email == 'admin@gmail.com'}">
+			<a href="<c:url value='/travelboards/write'/>"
+				class="btn btn-primary">write</a>
+		</c:if>
+
 	</div>
+
+
+	</section>
+
+
 
 	<c:import url="footer.jsp"></c:import>
 
