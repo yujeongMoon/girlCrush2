@@ -61,8 +61,8 @@ public class TravelController {
 	}
 		
 	// file upload
-	
-	private static String UPLOADED_FOLDER = "D://princess//girlCrush2//girlCrush2//YOLOtour//src//main//resources//static//img//";  //사용자가 업로드한 폴더를 여기에 모아라.
+	// D:\project3\girlCrush3\girlCrush2\YOLOtour\src\main\resources\static\img
+	private static String UPLOADED_FOLDER = "D://project3//girlCrush3//girlCrush2//YOLOtour//src//main//resources//static//img//";  //사용자가 업로드한 폴더를 여기에 모아라.
 	
 	@GetMapping("/view/{travelId}")
 	public String getDomesticTravelView(@PathVariable long travelId, HttpSession session, Model model) {
@@ -108,9 +108,9 @@ public class TravelController {
 					Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
 					
 					Files.write(path, bytes); // 약속된 폴더에 저장
-					
+					// D:\project3\girlCrush3\girlCrush2\YOLOtour\src\main\resources\static\img
 					redirectAttributes.addFlashAttribute("imgPath",
-								"/princess/girlCrush2/girlCrush2/YOLOtour/src/main/resources/static/img"
+								"/project3/girlCrush3/girlCrush2/YOLOtour/src/main/resources/static/img"
 							    + file.getOriginalFilename());
 					
 				} catch(IOException e) { 
@@ -167,7 +167,7 @@ public class TravelController {
 					Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
 					Files.write(path, bytes);
 					redirectAttributes.addFlashAttribute("imgPath",
-								"/princess/girlCrush2/girlCrush2/YOLOtour/src/main/resources/static/img"
+							"/project3/girlCrush3/girlCrush2/YOLOtour/src/main/resources/static/img"
 							    + file.getOriginalFilename());
 				} catch(IOException e) {
 					e.printStackTrace();
