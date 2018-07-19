@@ -35,8 +35,4 @@ public interface TravelMapper {
 	
 	@Select("SELECT * FROM TRAVEL_BOARD WHERE KEY=2 ORDER BY TRAVEL_ID DESC")
 	public List<Travel> selectForeign();
-	
-
-	
-	
 }
