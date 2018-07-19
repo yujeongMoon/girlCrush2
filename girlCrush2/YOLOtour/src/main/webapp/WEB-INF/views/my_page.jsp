@@ -62,18 +62,24 @@
 								<th scope="col">Title</th>
 								<th scope="col">Writer</th>
 								<th scope="col">Price</th>
-								<th scope="col">     </th>
+								<th scope="col"></th>
+								<th scope="col"></th>
 							</tr>
 						</thead>
 						<c:forEach items="#{mypageD }" var="mypaged">
 							<tr>
-								<td><img src="/img/${mypaged.imgId }" witdh="72px" height="72px"></td>
+								<td><img src="/img/${mypaged.imgId }" witdh="72px"
+									height="72px"></td>
 								<td><a
 									href="<c:url value='/travelboards/view/${mypaged.travelId }'/>">${mypaged.title }</a></td>
 								<td>${mypaged.writer }</td>
 								<td>${mypaged.price }</td>
-								<td><a href="<c:url value='/mypage/delete/${mypaged.travelId }'/>"
-												class="btn btn-primary">Delete</a></td>
+								<td><a
+									href="<c:url value='/mypage/delete/${mypaged.cartId }'/>"
+									class="btn btn-primary">Delete</a></td>
+								<td><a
+									href="<c:url value='/payment/${mypaged.travelId }'/>"
+									class="btn btn-primary">Payment</a></td>
 								<!-- 삭제버튼 : travel_cart에서 해당 튜플 지우기 -->
 							</tr>
 						</c:forEach>
@@ -91,18 +97,24 @@
 								<th scope="col">Title</th>
 								<th scope="col">Writer</th>
 								<th scope="col">Price</th>
-								<th scope="col">     </th>
+								<th scope="col"></th>
+								<th scope="col"></th>
 							</tr>
 						</thead>
 						<c:forEach items="#{mypageF }" var="mypagef">
 							<tr>
-								<td><img src="/img/${mypagef.imgId }" witdh="72px" height="72px"></td>
+								<td><img src="/img/${mypagef.imgId }" witdh="72px"
+									height="72px"></td>
 								<td><a
 									href="<c:url value='/travelboards/view/${mypagef.travelId }'/>">${mypagef.title }</a></td>
 								<td>${mypagef.writer }</td>
 								<td>${mypagef.price }</td>
-								<td><a href="<c:url value='/mypage/delete/${mypagef.travelId }'/>"
-												class="btn btn-primary">Delete</a></td>
+								<td><a
+									href="<c:url value='/mypage/delete/${mypagef.cartId }'/>"
+									class="btn btn-primary" >Delete</a></td>
+								<td><a
+									href="<c:url value='/payment/${mypagef.travelId }'/>"
+									class="btn btn-primary">Payment</a></td>
 							</tr>
 						</c:forEach>
 					</table>
@@ -134,9 +146,9 @@
 								<td>${pay.price }</td>
 							</tr>
 						</c:forEach>
-						
+
 					</table>
-				</div>			
+				</div>
 				<!-- 끝 -->
 			</div>
 		</div>

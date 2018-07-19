@@ -46,18 +46,15 @@ public class MyPageController {
 	}
 	
 	
-	@GetMapping("/delete/{travelId}")
-	public String getDelete(@PathVariable long travelId, HttpSession session, Model model) {
+	@GetMapping("/delete/{cartId}")
+	public String getDelete(@PathVariable int cartId, HttpSession session, Model model) {
 		User user = (User) session.getAttribute("user");
 		
 		if(user != null) {
-			TravelCart travelCart = new TravelCart();
-			travelCart.setTravelCartId(travelId);
-			travelCart.setEmail(user.getEmail());
-			travelCart = mypageMapper.selectById(travelCart);
-			mypageMapper.delete(travelCart);
-		}
-		
+			mypageMapper.delete(cartId);
+		}		
 		return "redirect:/mypage";
 	}
+	
+	
 }
