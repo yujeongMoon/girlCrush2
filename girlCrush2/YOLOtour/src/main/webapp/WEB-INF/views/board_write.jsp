@@ -103,6 +103,14 @@
 	margin-right: 40px;
 	margin-top: 20px;
 }
+
+input[type="text"] {
+	font-size: 16px;
+}
+
+textarea {
+	font-size: 16px;
+}
 </style>
 
 
@@ -137,19 +145,19 @@
 			<div class="single-price">
 				<h4>상품등록</h4>
 				<div class="bs-example">
-				
-				
+
+
 					<form class="form-horizontal"
-						action="<c:url value='/travelboards/write'/>" 
-						method="post" enctype="multipart/form-data">
-						
+						action="<c:url value='/travelboards/write'/>" method="post"
+						enctype="multipart/form-data">
+
 
 						<label class="radiobtn">Domestic <input type="radio"
 							checked="checked" id="key" name="key" align="right" value=1>
 							<span class="checkmark"></span>
 						</label> <label class="radiobtn">Foreign <input type="radio"
-							id="key" name="key" align="right" value=2> 
-							<span class="checkmark"></span>
+							id="key" name="key" align="right" value=2> <span
+							class="checkmark"></span>
 						</label>
 
 
@@ -157,10 +165,12 @@
 
 
 						<div class="form-group">
-							<label for="price" class="control-label col-xs-2">Price</label>
-							<div class="col-xs-10">
-								<input type="text" class="form-control" id="price" name="price" 
+							<div class="form-group">
+								<label for="price" class="control-label col-xs-2">Price</label>
+								<div class="col-xs-10">
+									<input type="text" class="form-control" id="price" name="price"
 										placeholder="가격을 입력하세요" required>
+								</div>
 							</div>
 							<div class="form-group">
 								<label for="title" class="control-label col-xs-2">Title</label>
@@ -180,22 +190,22 @@
 							<div class="form-group">
 								<label for="content" class="control-label col-xs-2">Content</label>
 								<div class="col-xs-10">
-									<textarea class="form-control" rows="20" id="content"
-										name="content" placeholder="상품정보를 입력하세요" required></textarea>
+									<textarea style="font-size: 16px" class="form-control"
+										rows="20" id="content" name="content"
+										placeholder="상품정보를 입력하세요" required></textarea>
 								</div>
 							</div>
-							
+
 						</div>
-					
+
 						<input type="file" name="file">
 						<div class="form-group">
-								<div class="col-xs-offset-2 col-xs-10">
-									<a href="<c:url value='/travelboards'/>"
-										class="btn btn-primary">List</a>
-									<button type="submit" class="btn btn-primary">Save</button>
-								</div>
+							<div class="col-xs-offset-2 col-xs-10">
+								<a href="<c:url value='/travelboards'/>" class="btn btn-primary" style="font-size: 16px">List</a>
+								<button type="submit" class="btn btn-primary" style="font-size: 16px">Save</button>
+							</div>
 						</div>
-					</form>	
+					</form>
 				</div>
 			</div>
 		</div>

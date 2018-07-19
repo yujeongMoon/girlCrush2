@@ -36,6 +36,13 @@
 	margin-right: 40px;
 	margin-top: 20px;
 }
+input[type="text"]{
+	font-size : 16px;
+}
+textarea{
+	font-size : 16px;
+}
+
 </style>
 </head>
 <body>
@@ -108,7 +115,7 @@
 							<div class="form-group">
 								<label for="content" class="control-label col-xs-2">Content</label>
 								<div class="col-xs-10">
-									<textarea class="form-control" rows="20" id="content"
+									<textarea style="font-size: 16px" class="form-control" rows="20" id="content"
 										name="content" placeholder="Content" required>${travel.content }</textarea>
 								</div>
 							</div>
@@ -116,8 +123,8 @@
 							<div class="form-group">
 								<div class="col-xs-offset-2 col-xs-10">
 									<a href="<c:url value='/travelboards'/>"
-										class="btn btn-primary">List</a>
-									<button type="submit" class="btn btn-primary">Save</button>
+										class="btn btn-primary" style="font-size: 16px">List</a>
+									<button type="submit" class="btn btn-primary" style="font-size: 16px">Save</button>
 								</div>
 							</div>
 						</form>

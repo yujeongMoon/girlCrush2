@@ -103,7 +103,11 @@ w3-panel {
 }
 
 .container {
-	padding: 30px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: 20px;
+	padding-left: 20px;
+	width : 840px;
 }
 
 </style>
@@ -126,7 +130,8 @@ w3-panel {
 	</section>
 
 
-	<div class="container">
+	<div class="container" style="
+	width : 800px; height : 440px;">
 		
 
 		<ul class="nav nav-tabs">
