@@ -45,8 +45,11 @@
 		});
 
 		var result = "${result}";
-		if (result) {
+		
+		if (result === "OK") {
 			$("#myModal").modal('show');
+		}else if(result === "NO"){
+			$("#break").modal('show');
 		}
 	});
 </script>
@@ -81,7 +84,7 @@
 						<div class="wrap-input100 validate-input m-b-25"
 							data-validate="Enter password">
 							<input class="input100" type="password" name="password" id="password"
-								placeholder="Password"> <span class="focus-input100"></span>
+								placeholder="Password" required> <span class="focus-input100"></span>
 						</div>
 
 						<div class="container-login100-form-btn">
@@ -146,6 +149,29 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary" data-dismiss="modal">Congratulation!</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div id="break" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h4 class="modal-title">회원 탈퇴 되었습니다!</h4>
+				</div>
+				<div class="modal-body">
+					<p>YOLO TOUR에서 탈퇴 되었습니다.</p>
+					<p class="text-warning">
+						<small>다음에 또 만나요.</small>
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Dear
+						my friend, Bye Bye!</button>
 				</div>
 			</div>
 		</div>

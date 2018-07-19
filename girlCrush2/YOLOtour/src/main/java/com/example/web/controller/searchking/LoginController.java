@@ -67,5 +67,11 @@ public class LoginController {
 		session.invalidate();
 		return "login";
 	}
-
+	
+	@GetMapping("/breakaway")
+	public String breakawayForm() {
+		return "breakaway";
+	}
+	
+	
 }

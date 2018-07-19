@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.example.login.dto.Login;
 import com.example.user.model.User;
 import com.example.user.repository.UserMapper;
 
@@ -36,6 +37,18 @@ public class UserController {
 		userMapper.insert(user);
 		
 		redirectAttributes.addFlashAttribute("result", "OK");
+		return "redirect:/login";
+	}
+	
+	@PostMapping("/delete")
+	public String postUserDelete(User user, Model model, HttpSession session, RedirectAttributes redirectAttributes) {
+		// 클라이언트 단 또는 서버 단에서 데이터 밸리드 체크를 적용하는 것을 권장한다.
+		
+		String email = user.getEmail();
+		
+		userMapper.delete(email);
+		
+		redirectAttributes.addFlashAttribute("result", "NO");
 		return "redirect:/login";
 	}
 }

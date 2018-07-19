@@ -12,7 +12,9 @@ public class User {
 	private String email;
 	private String password;
 	
+	
 	public static String sendEmail(String email) {
 		return email;
 	}
+
 }
