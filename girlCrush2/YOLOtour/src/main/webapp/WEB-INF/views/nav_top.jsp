@@ -58,15 +58,32 @@
 				</li>
 				<li class="nav-item"><a class="nav-link" href="travelboards">TRAVEL</a>
 				</li>
+
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> TRAVEL </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="travelboards">여행</a> <a
+							class="dropdown-item" href="#">국내여행</a> <a class="dropdown-item"
+							href="#">해외여행</a>
+						<!-- <div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Something else here</a> -->
+					</div></li>
 				<li class="nav-item"><a class="nav-link" href="notices">NOTICE</a>
 				</li>
-				<li class="nav-item"><a class="nav-link" href="mypage">MY
-						PAGE</a></li>
+				<li class="nav-item"><a class="nav-link" href="mypage">MYPAGE</a></li>
 				<c:choose>
-					<c:when test="${not empty user }">
+					<c:when test="${not empty user and user.email != 'admin@gmail.com' }">
 						<li class="nav-item"><a class="nav-link" href="logout">LOGOUT</a></li>
-						<li class="nav-item"><a class="nav-link" href="breakaway">회원 탈퇴</a></li>
+						<li class="nav-item"><a class="nav-link" href="breakaway">회원
+								탈퇴</a></li>
+						
 					</c:when>
+					<c:when test="${user.email == 'admin@gmail.com' }">
+							<li class="nav-item"><a class="nav-link" href="order">주문
+									관리</a></li>
+						</c:when>
 					<c:otherwise>
 						<li class="nav-item"><a class="nav-link" href="login">LOGIN</a></li>
 					</c:otherwise>

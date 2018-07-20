@@ -41,14 +41,13 @@
 <script type="text/javascript">
 	$(function() {
 		$('.message a').click(function() {
-			$('form').toggle( "slow" );
+			$('form').toggle("slow");
 		});
-
 		var result = "${result}";
-		
+
 		if (result === "OK") {
 			$("#myModal").modal('show');
-		}else if(result === "NO"){
+		} else if (result === "NO") {
 			$("#break").modal('show');
 		}
 	});
@@ -70,21 +69,22 @@
 						<span class="login100-form-title p-b-37"> Login </span>
 
 						<c:if test="${not empty error }">
-							<h6 style="color:red;">${error }</h6>
+							<h6 style="color: red;">${error }</h6>
 							<br>
 						</c:if>
 
 						<div class="wrap-input100 validate-input m-b-20"
 							data-validate="Enter email">
 							<input class="input100" type="text" name="email" id="email"
-								placeholder="Email" value="${login.email }">
-								<span class="focus-input100"></span>
+								placeholder="Email" value="${login.email }"> <span
+								class="focus-input100"></span>
 						</div>
 
 						<div class="wrap-input100 validate-input m-b-25"
 							data-validate="Enter password">
-							<input class="input100" type="password" name="password" id="password"
-								placeholder="Password" required> <span class="focus-input100"></span>
+							<input class="input100" type="password" name="password"
+								id="password" placeholder="Password" required> <span
+								class="focus-input100"></span>
 						</div>
 
 						<div class="container-login100-form-btn">
@@ -92,27 +92,29 @@
 						</div>
 
 						<div class="text-center">
-							<p class="message"><a class="txt2 hov1"> Register </a></p>
+							<p class="message">
+								<a class="txt2 hov1"> Register </a>
+							</p>
 						</div>
 					</form>
 
 
 					<form class="login100-form register-form"
 						action="<c:url value='/users/enroll'/>" method="post"
-						style="display:none">
+						style="display: none">
 						<span class="login100-form-title p-b-37"> Register </span>
 
 						<div class="wrap-input100 validate-input m-b-20"
 							data-validate="Enter email">
 							<input class="input100" type="text" name="email" id="email"
-								placeholder="Email"> <span
-								class="focus-input100"></span>
+								placeholder="Email"> <span class="focus-input100"></span>
 						</div>
 
 						<div class="wrap-input100 validate-input m-b-25"
 							data-validate="Enter password">
-							<input class="input100" id="password" type="password" name="password"
-								placeholder="Password"> <span class="focus-input100"></span>
+							<input class="input100" id="password" type="password"
+								name="password" placeholder="Password"> <span
+								class="focus-input100"></span>
 						</div>
 
 						<div class="container-login100-form-btn">
@@ -153,8 +155,8 @@
 			</div>
 		</div>
 	</div>
-	
-	
+
+
 	<div id="break" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -176,6 +178,8 @@
 			</div>
 		</div>
 	</div>
+
+
 	<!--===============================================================================================-->
 	<script src="login/vendor/jquery/jquery-3.2.1.min.js"></script>
 	<!--===============================================================================================-->
@@ -193,7 +197,7 @@
 	<!--===============================================================================================-->
 	<script src="login/js/main.js"></script>
 	<c:import url="footer.jsp"></c:import>
-	
+
 	<script src="js/vendor/jquery-2.2.4.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/vendor/bootstrap.min.js"></script>

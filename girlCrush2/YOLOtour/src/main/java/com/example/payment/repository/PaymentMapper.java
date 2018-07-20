@@ -2,9 +2,13 @@
 
 package com.example.payment.repository;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 import com.example.payment.model.Payment;
+import com.example.payment.model.PaymentAll;
 import com.example.payment.model.PaymentCart;
 
 
@@ -12,4 +16,6 @@ import com.example.payment.model.PaymentCart;
 public interface PaymentMapper {
 	public int insert(Payment payment);
 	public int insert_payCart(PaymentCart paymentCart);
+
+	public List<PaymentAll> selectAll();
 }

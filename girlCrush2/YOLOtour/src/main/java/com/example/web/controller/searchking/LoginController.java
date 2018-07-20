@@ -18,6 +18,8 @@ public class LoginController {
 
 	@Autowired
 	private LoginService loginService;
+	
+	
 
 	@ModelAttribute("active")
 	public String active() {
@@ -72,6 +74,8 @@ public class LoginController {
 	public String breakawayForm() {
 		return "breakaway";
 	}
+	
+	
 	
 	
 }

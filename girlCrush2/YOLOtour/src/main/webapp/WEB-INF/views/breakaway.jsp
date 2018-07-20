@@ -40,7 +40,15 @@
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 </head>
-
+<script type="text/javascript">
+	$(function() {		
+		var result = "${result}";
+		
+		if (result) {
+			$("#no").modal('show');
+		}
+	});
+</script>
 
 
 <body>
@@ -60,23 +68,17 @@
 						action="<c:url value='/users/delete'/>" method="post">
 						<span class="login100-form-title p-b-37"> Close account </span>
 
-
-						<c:if test="${not empty error }">
-							<h6 style="color: red;">${error }</h6>
-							<br>
-						</c:if>
-						
 						<div class="wrap-input100 validate-input m-b-20"
 							data-validate="Enter email">
 							<input class="input100" type="text" name="email" id="email"
-								placeholder="Email" value="${user.email }" readonly>
-								<span class="focus-input100"></span>
+								placeholder="Email" value="${user.email }" readonly> <span
+								class="focus-input100"></span>
 						</div>
-						
+
 						<div class="wrap-input100 validate-input m-b-25"
 							data-validate="Enter password">
-							<input class="input100" type="password" name="confirmPassword"
-								id="confirmPassword" placeholder="비밀번호를 다시 입력해 주십시오."> <span
+							<input class="input100" type="password" name="Password"
+								id="Password" placeholder="비밀번호를 다시 입력해 주십시오."> <span
 								class="focus-input100"></span>
 						</div>
 
@@ -89,13 +91,33 @@
 		</div>
 	</div>
 
+	<div id="no" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h4 class="modal-title">잘못 입력하셨습니다.</h4>
+				</div>
+				<div class="modal-body">
+					<p>잘못 입력하셨습니다.</p>
+					<p class="text-warning">
+						<small>잘못 입력하셨습니다.</small>
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">잘못
+						입력하셨습니다.</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 
 
 
 
-	
 
 	<!-- start footer Area -->
 	<c:import url="footer.jsp"></c:import>

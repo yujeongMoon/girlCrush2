@@ -1,5 +1,7 @@
 package com.example.web.controller.marketing;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +16,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.myPage.repository.MyPageMapper;
 import com.example.payment.model.Payment;
+import com.example.payment.model.PaymentAll;
 import com.example.payment.model.PaymentCart;
 import com.example.payment.repository.PaymentMapper;
 import com.example.travelboard.repository.TravelMapper;
 import com.example.user.model.User;
 
 @Controller
-@RequestMapping("/payment/{travelId}")
+@RequestMapping()
 public class PaymentController {
 
 	@Autowired
@@ -32,7 +35,7 @@ public class PaymentController {
 	@Autowired
 	private TravelMapper travelMapper;
 	
-	@GetMapping()
+	@GetMapping("/payment/{travelId}")
 	public ModelAndView getMypageView(
 			@PathVariable long travelId,
 			@RequestParam(name = "email", required = false, defaultValue = "5") String email,
@@ -49,7 +52,7 @@ public class PaymentController {
 		return mav;
 	}
 	
-	@GetMapping("/addPaycart")
+	@GetMapping("/payment/{travelId}/addPaycart")
 	public String getInsertView(@PathVariable long travelId, HttpSession session, Model model) {
 		User user = (User) session.getAttribute("user");
 		
@@ -57,7 +60,7 @@ public class PaymentController {
 		return "payment";
 	}
 	
-	@PostMapping("/addPaycart")
+	@PostMapping("/payment/{travelId}/addPaycart")
 	public String postInsert(@PathVariable long travelId, Payment payment, HttpSession session, Model model) {
 		User user = (User) session.getAttribute("user");
 		PaymentCart paymentCart = new PaymentCart(0,travelId, user.getEmail());
@@ -67,5 +70,13 @@ public class PaymentController {
 			paymentMapper.insert_payCart(paymentCart);
 		}
 		return "redirect:/mypage";
+	}
+	
+	@GetMapping("/order")
+	public String getOrders(HttpSession session, Model model) {
+		List<PaymentAll> payment = paymentMapper.selectAll();
+		
+		model.addAttribute("payment", payment);
+		return "order";
 	}
 }
