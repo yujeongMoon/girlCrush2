@@ -149,31 +149,6 @@ w3-panel {
 		</div>
 
 		<div class="single-price">
-			<h4>국내여행</h4>
-			<div class="row">
-				<c:forEach items="#{domestic}" var="domestic">
-					<div class="card col-sm-6 col-md-4 col-lg-3 mt-4"
-						style="padding-top: 15px; padding-bottom: 15px;">
-						<img src="/img/${domestic.imgId }" width="200px" height="100px" class="center">
-						<div class="card-title">
-							<a
-								href="<c:url value='/travelboards/view/${domestic.travelId }'/>"
-								class="toggle-info btn" style="text-align: center;"> <span class="left"></span> <span
-								class="right"></span> ${domestic.title }
-							</a>
-
-						</div>
-					</div>
-				</c:forEach>
-			</div>
-		</div>
-
-		<c:if test="${user.email == 'admin@gmail.com'}">
-			<a href="<c:url value='/travelboards/write'/>"
-				class="btn btn-primary">write</a>
-		</c:if>
-		
-		<div class="single-price">
 			<h4>해외여행</h4>
 			<div class="row">
 				<c:forEach items="#{foreign}" var="foreign">
@@ -197,7 +172,6 @@ w3-panel {
 			<a href="<c:url value='/travelboards/write'/>"
 				class="btn btn-primary">write</a>
 		</c:if>
-		
 
 	</div>
 

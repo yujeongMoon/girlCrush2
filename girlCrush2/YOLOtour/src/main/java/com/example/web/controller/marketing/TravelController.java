@@ -59,6 +59,42 @@ public class TravelController {
 		mav.addObject("foreign", travelMapper.selectForeign());
 		return mav;
 	}
+	
+	
+	@GetMapping("/domestic")
+	public ModelAndView getDomesticTravelView(
+			// required : 해당파라미터가 반드시 필수인지 여부
+				@RequestParam(name="page", required=false, defaultValue="1") int page,
+				@RequestParam(name="size", required=false, defaultValue="10") int size,
+				@RequestParam(name="bsize", required=false, defaultValue="5") int bsize, HttpSession session, Model model){
+			
+			User user = (User) session.getAttribute("user");
+			model.addAttribute("user", user);
+			
+			ModelAndView mav = new ModelAndView("board_domestic_list");
+
+			mav.addObject("pager", new Pager(page, size, bsize, travelMapper.count()));
+			mav.addObject("domestic", travelMapper.selectDomestic());
+			return mav;
+		}
+	
+	@GetMapping("/foreign")
+	public ModelAndView getforeignTravelView(
+			// required : 해당파라미터가 반드시 필수인지 여부
+				@RequestParam(name="page", required=false, defaultValue="1") int page,
+				@RequestParam(name="size", required=false, defaultValue="10") int size,
+				@RequestParam(name="bsize", required=false, defaultValue="5") int bsize, HttpSession session, Model model){
+			
+			User user = (User) session.getAttribute("user");
+			model.addAttribute("user", user);
+			
+			ModelAndView mav = new ModelAndView("board_foreign_list");
+			
+			mav.addObject("pager", new Pager(page, size, bsize, travelMapper.count()));
+			mav.addObject("foreign", travelMapper.selectForeign());
+			return mav;
+		}
+	
 		
 	// file upload
 	// D:\project3\girlCrush3\girlCrush2\YOLOtour\src\main\resources\static\img

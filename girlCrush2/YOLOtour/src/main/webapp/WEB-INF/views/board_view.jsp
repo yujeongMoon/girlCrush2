@@ -77,10 +77,12 @@ textarea{
                   <div class="single_product_thumb">
                      <div id="product_details_slider" class="carousel slide"
                         data-ride="carousel">
-                        <ol class="carousel-indicators">
-                           <li class="active" data-target="#product_details_slider"
+                        
+                           <%-- <li class="active" data-target="#product_details_slider"
                               data-slide-to="0"
-                              style="background-image: url(img/${travel.imgId});"></li>
+                              style="background-image: url(img/${travel.imgId});"></li> --%>
+                              
+                            <img src="/img/${travel.imgId }" width="200px" height="100px" class="center">  
 
                            <!-- <li data-target="#product_details_slider" data-slide-to="1"
                               style="background-image: url(board/img/product-img/pro-big-2.jpg);">
@@ -92,7 +94,7 @@ textarea{
                               style="background-image: url(board/img/product-img/pro-big-4.jpg);">
                            </li> -->
 
-                        </ol>
+                        
 
                         <!-- <div class="carousel-inner">
                            <div class="carousel-item active">

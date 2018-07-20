@@ -62,8 +62,8 @@
 					aria-expanded="false"> TRAVEL </a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="travelboards">여행</a> <a
-							class="dropdown-item" href="#">국내여행</a> <a class="dropdown-item"
-							href="#">해외여행</a>
+							class="dropdown-item" href="/travelboards/domestic">국내여행</a> <a class="dropdown-item"
+							href="/travelboards/foreign">해외여행</a>
 						<!-- <div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="#">Something else here</a> -->
 					</div></li>
