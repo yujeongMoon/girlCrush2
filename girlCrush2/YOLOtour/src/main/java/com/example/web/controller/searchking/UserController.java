@@ -43,7 +43,7 @@ public class UserController {
 	@PostMapping("/delete")
 	public String postUserDelete(User user, Model model, HttpSession session, RedirectAttributes redirectAttributes) {
 		// 클라이언트 단 또는 서버 단에서 데이터 밸리드 체크를 적용하는 것을 권장한다.
-		
+				
 		User dbUser = userMapper.selectByEmail(user.getEmail());		
 		String dbPassword = dbUser.getPassword();
 		System.out.println("dbPassword= "+dbPassword);
@@ -54,6 +54,7 @@ public class UserController {
 		
 		if(dbPassword.equals(Password)) {
 			userMapper.delete(email);
+			session.removeAttribute("user");			
 			redirectAttributes.addFlashAttribute("result", "NO");
 			return "redirect:/login";
 		}else if(dbPassword != Password){
